@@ -1,0 +1,22 @@
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+a
+ask
+book
+company
+data
+dede
+group
+images
+install
+m
+phpMyadmin
+templates
+templates/lurd
+templates/plus
+templates/system
+templates/wap
+uploads

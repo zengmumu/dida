@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="{dede:global.cfg_soft_lang/}">
+	<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css" />
+	<link rel="stylesheet" href="assets/css/amazeui.min.css" />
+	<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+
+	<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin(){
+	  var taget_obj = document.getElementById('_ajax_feedback');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("{dede:global.cfg_cmsurl/}/member/ajax_feedback.php");
+	  DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:field name='phpurl'/}/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "{dede:global.cfg_phpurl/}/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:global.cfg_phpurl/}/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+	<style>
+	h1,h2,h3,h4,h5,h6{ font-weight: 400; }
+			@media only screen and (min-width: 1200px) {
+			      .blog-g-fixed {
+			        max-width: 1200px;
+			      }
+			    }
+			
+			    @media only screen and (min-width: 641px) {
+			      .blog-sidebar {
+			        font-size: 1.4rem;
+			      }
+			    }
+			
+			    .blog-main {
+			      padding: 20px 0;
+			    }
+			
+			    .blog-title {
+			      margin: 10px 0 20px 0;
+			    }
+			
+			    .blog-meta {
+			      font-size: 14px;
+			      margin: 10px 0 20px 0;
+			      color: #222;
+			    }
+			
+			    .blog-meta a {
+			      color: #27ae60;
+			    }
+			
+			    .blog-pagination a {
+			      font-size: 1.4rem;
+			    }
+			
+			    .blog-team li {
+			      padding: 4px;
+			    }
+			
+			    .blog-team img {
+			      margin-bottom: 0;
+			    }
+			
+			    .blog-footer {
+			      padding: 10px 0;
+			      text-align: center;
+			    }
+			  
+			    .title a{ color:#777;   }
+			    .comment_act{ color: #ccc; padding-left: 2em; }
+			    .newcomment_act .fr a,.fr span{ color: #ccc; }
+			    .newcomment_act .fr span{   margin-right: 15px;}
+			    .newcomment_act { text-align: right; }
+			    .decmt-box2 .am-u-sm-10{ border-bottom: 1px solid #f0f0f0; padding-bottom: 10px }
+			    .evaluate input[type=radio]{ display: none; }
+			    .evaluate label{ 
+			    	display: inline-block;
+			    	width: 30.5%;    
+			    	height: 2.125em;
+    line-height: 2.125;
+    margin-right: .35em;
+    background-color: #fff;
+    color: #666;
+    border: 1px solid #5b9cde;
+    box-sizing: border-box;
+    border-radius: 4px; text-align: center; }
+    .evaluate input:checked + label{
+    	    background-color: #5b9cde;
+    color: #fff;
+    }
+    .blog-meta,.adminname{ color:#ccc;  font-size: 0.8em; font-weight: 400}
+     .blog-meta small{ color:#999; font-size: 0.8em; font-weight: 400}
+    .list{ color:#777; list-style: none; padding: 0; }
+	.c9{ color:#999; }
+	/**/
+	.dis{ font-size: 1rem; text-align: justify;}
+
+
+
+/*header*/
+.am-topbar{ margin-bottom: 0; border-bottom-width: 0;}
+.am-topbar-brand{ font-size: 1.4rem; color:#61caff; font-family: serif;}
+.am-topbar-brand a{ font-size: 1.4rem; color:#fff; font-family: "Segoe UI","Lucida Grande",Helvetica,Arial }
+.blue-block{
+   height: 14rem;
+   background-color: #0e90d2;
+   position: relative;
+   color:#fff;
+   font-size: 1rem;
+   padding: 1.5rem;
+   padding-top:0;
+   margin-bottom: 6rem;
+}
+.light-blue{ color:#5ab7e6; }
+.card{ 
+	height: 14rem; 
+	position: absolute; 
+	background-color: #fff; 
+	left:1.5rem; top:5rem; 
+	right:1.2rem; 
+	box-shadow: 0 4px 8px #ddd; 
+	padding: 1rem;
+	color:#333;
+	/*border-top:4px solid orange;*/
+}
+.rank-num{
+	font-size:2.4rem;
+	font-weight: 900;
+
+}
+
+
+.blue-block .am-fl { line-height: 1.4rem; }
+.blue-block .am-fr{ position: relative; top:-0.2rem; }
+.digg_num{ font-size: 1.4rem; }     
+.card h3{ font-size: 1.8rem; margin-bottom: 0.5rem; }
+.card .am-u-sm-8{ padding: 0; }
+.card .am-u-sm-4{ padding-right: 0; }
+.card .dis{ height: 8rem; overflow: hidden; }
+.card .am-u-sm-4 div{ height: 8rem; overflow: hidden; }
+.card img{ width: 100%; height: auto; max-height: 8rem; }
+.card h3 a{ font-size: 1rem; border:1px solid #5ab7e6; color:#0e90d2; padding-left: .5rem; padding-right: .5rem; margin-left: .5rem; }
+.row{ display: flex; }
+.col{ flex: 1 }
+.tab{  overflow: hidden;}
+.tab-title{
+	margin-top: 2rem; 
+	box-shadow: 0 1px 3px rgba(218,218,218,0.8);
+	height: 3.8rem;
+	line-height: 3.8rem;
+}
+.tab-title .col{ text-align: center; border-right:1px solid #f9f9f9; color:#999; border-bottom: 1px solid transparent;}
+.tab-title .col.active{ color:#333;border-bottom-color:#333; }
+.content{ padding: 1.5rem; }
+.major{ margin:1.5rem 0; color:#333; display: block; padding: 1.5rem; box-shadow: 0 2px 6px rgba(240,240,240,.8) }
+.major .am-icon-angle-right{ color: #999;  }
+
+ .swiper-container {
+      width: 100%;
+      height:16rem ;
+    }
+   /* .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+    
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      width: 40%;
+    }*/
+   .teacher {
+	margin-top: 45px;
+}
+
+.swiper-slide {
+	height: 12rem;
+	width: 20%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 1.4rem;
+	box-shadow: none;
+}
+
+.swiper-slide img {
+	width: 100%;
+	height: auto;
+}
+
+.swiper-slide span {
+	display: block;
+    	
+    }
+    .position{ color: #ddd; font-size: 1.2rem;}
+</style>
+</head>
+<body>
+	{dede:include filename="header_m.htm"/}
+
+	<div class="blue-block">
+
+
+		<div class="card">
+			<h3 >{dede:field.title/}   <a class="" href="{dede:field.surl/}">官网</a> </h3>
+			<div class="am-g">
+
+					<div class="am-u-sm-8 dis">{dede:field.description/}</div>
+					<div class="am-u-sm-4">
+						<div class="">
+							{dede:field.image/}
+						</div>
+					
+					</div>
+			</div>
+
+		</div>
+		<div class="am-cf am-g">
+			<div class="am-fl am-u-sm-7 am-text-right">
+				<div>
+					<span class="rank-num">
+							{dede:sql sql='select rownum,id from (Select @rownum:=@rownum+1 AS rownum,da.id,da.typeid from (SELECT @rownum:=0) rows,dede_archives da where da.typeid=~typeid~ order by goodpost desc) temp where id=~id~'}[field:rownum/]{/dede:sql}
+					</span>名
+				</div>
+				<a href="" class="light-blue">学校排行榜</a>
+			</div>
+			<div class="am-fr am-u-sm-5  am-text-right">
+				<div class="newdigg  " id="newdigg">
+						<div class="diggbox digg_good" onmousemove="this.style.backgroundPosition='left bottom';" onmouseout="this.style.backgroundPosition='left top';" onclick="javascript:postDigg('good',{dede:field.id/})">
+
+							<div class="digg_num"> <i class="am-icon-thumbs-up"></i>&nbsp;
+								<img class="am-hide" src="/templets/default/images/cmt-good.gif"> &nbsp;{dede:field.goodpost/}
+							</div>
+						</div>
+				</div>
+				<div class="light-blue">投一票</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="tab">
+		<div class="row tab-title">
+			<div class="col active">专业</div>
+			<div class="col">评论</div>
+			<div class="col">新闻</div>
+		</div>
+		<div class="tab-content">
+			<div class="content">
+					{dede:sql sql='select id,title from dede_archives LEFT JOIN dede_addonarticle 
+ON  dede_archives.id= dede_addonarticle.aid where dede_addonarticle.sid=~id~ AND dede_archives.typeid=7'}
+					
+						<a  class="major" href='/m/view.php?aid=[field:id/]'>[field:title/]  <i class="am-icon-angle-right am-fr"></i></a>
+					
+					{/dede:sql}
+					
+
+
+				<div class="teacher swiper-container">
+					<div class="wrap swiper-wrapper">
+				{dede:sql sql='select id,title,litpic,shorttitle from dede_archives LEFT JOIN dede_addonarticle 
+ON  dede_archives.id= dede_addonarticle.aid where dede_addonarticle.sid=~id~ AND dede_archives.typeid=8 '}
+						
+							<a  class="major swiper-slide" href='/m/view.php?aid=[field:id/]'> 
+								<img src="[field:litpic/]" alt="">
+								<span class="name">[field:title/]</span>
+								<span class="position">[field:shorttitle/]</span>
+							</a>
+							
+						
+				{/dede:sql}
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				 
+			</div>
+			
+			<div class="content">
+				{dede:sql sql='select id,title,litpic,pubdate from dede_archives LEFT JOIN dede_addonarticle 
+ON  dede_archives.id= dede_addonarticle.aid where dede_addonarticle.sid=~id~ AND dede_archives.typeid=9'}
+
+					<a  class="news [field:litpic runphp='yes']
+	if(@me=='')
+		@me='';
+	else
+		@me='hast';	
+	[/field:litpic]" href='/m/view.php?aid=[field:id/]' >
+						<div class="text">
+							<div class="title">[field:title/]</div>
+							<div class="time">[field:pubdate function="MyDate('Y-m-d H:i',@me)"/]&nbsp;&nbsp;</div>
+						</div>
+						
+						<div class="picwrap">
+							<img src="[field:litpic/]">
+						</div>
+						
+					</a>
+					
+					{/dede:sql}
+			</div>
+		</div>
+	</div>
+<style>
+.news{box-shadow: none; padding:0 ;  height: 90px; border-bottom: 1px solid #f9f9f9; display: block;}
+.news .text{  font-size: 1.8rem; width: 100%; color: #333; padding-bottom: 10px; padding-top: 0;}
+.news .time{ color: #aaa;   font-size: 1rem;}
+.news .picwrap{ display: none;}
+.news .title{ height: 60px; overflow: hidden; line-height: 2.2rem;}
+.news.hast .text{ width: 70%; float: left;}
+.news.hast  .text{ padding-right: 15px;}
+.news.hast .picwrap{ display: block; height: 90px; width: 30%; float: right; overflow: hidden;}
+.picwrap img{ width: 100%; height: auto; display: block;}
+</style>
+
+	<script language="javascript" type="text/javascript">getDigg({dede:field.id/});</script>
+
+	<div class="am-g am-g-fixed blog-g-fixed">
+		
+		<div class="am-u-md-8">
+			<article class="blog-main">
+				
+				
+
+				
+
+				
+				
+
+			
+
+				<!-- <h4 class="am-article-meta blog-meta">
+					<small>时间:</small>
+					{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}&nbsp;&nbsp;
+					<small>来源:</small>
+					{dede:field.source/} &nbsp;&nbsp;
+					<small>作者:</small>
+					{dede:field.writer/} &nbsp;&nbsp;
+					<small>点击:</small>
+					<script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script>
+					次
+				</h4> -->
+				<div class="am-g blog-content" style='padding: 10px;'>
+					<!-- <table width='100%'>
+						<tr>
+							<td>{dede:field.body/} {dede:field.vote/}</td>
+						</tr>
+						<tr>
+							<td>{dede:field.tags/}</td>
+						</tr>
+						<tr>
+							<td class="adminname">(责任编辑：{dede:adminname/})</td>
+						</tr>
+					</table> -->
+				</div>
+				<!-- <ul class="list">
+					<li>{dede:prenext get='pre'/}</li>
+					<li>{dede:prenext get='next'/}</li>
+				</ul> -->
+				<div class="dede_pages">
+					<ul data-am-widget="pagination" class="am-pagination am-pagination-default">{dede:pagebreak/}</ul>
+				</div>
+			</article>
+			<!--<hr class="am-article-divider blog-hr">
+
+			<ul class="am-pagination blog-pagination">
+
+				<li class="am-pagination-prev">{dede:prenext get='pre'/}</li>
+
+				<li class="am-pagination-next">{dede:prenext get='next'/}</li>
+
+			</ul>
+			-->
+			<!-- //AJAX评论区 -->{dede:include file='ajaxfeedback.htm' /}</div>
+		<div class="am-u-md-4 blog-sidebar">
+			<div class="am-panel-group">
+				<section class="am-panel am-panel-default">
+					<div class="am-panel-hd">最近关注</div>
+					<ul class="am-list blog-list">
+						{dede:arclist row='5' orderby='pubdate' titlelen=40}
+						<li>
+							<a href="view.php?aid=[field:id/]">[field:title/]</a>
+						</li>
+						{/dede:arclist}
+					</ul>
+				</section>
+				<section class="am-panel am-panel-default">
+					<div class="am-panel-hd">热点内容</div>
+					<ul class="am-list blog-list">
+						{dede:arclist row='5' orderby='hot' titlelen=40}
+						<li>
+							<a href="view.php?aid=[field:id/]">[field:title/]</a>
+						</li>
+						{/dede:arclist}
+					</ul>
+				</section>
+			</div>
+		</div>
+	</div>
+	{dede:include filename="footer_m.htm"/}
+	<!--[if lt IE 9]>
+	<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+	<script src="assets/js/polyfill/rem.min.js"></script>
+	<script src="assets/js/polyfill/respond.min.js"></script>
+	<script src="assets/js/amazeui.legacy.js"></script>
+	<![endif]-->
+	<!--[if (gte IE 9)|!(IE)]>
+	<!-->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/amazeui.min.js"></script>
+	<!--<![endif]-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+	<script>
+			$(function(){
+				$(".tab .tab-content .content").hide();
+					$(".tab .tab-content .content:eq(0)").show();
+
+				$(".tab .tab-title .col").click(function(){
+					$(".tab .tab-title .col.active").removeClass("active");
+					var ind =$(this).index();
+					$(".tab .tab-content .content").hide();
+					$(".tab .tab-content .content:eq("+ind+")").show();
+					$(this).addClass("active");
+
+				})
+			})
+			 var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      centeredSlides: false,
+      spaceBetween: 5,     
+    });
+	</script>
+</body>
+
+</html>
