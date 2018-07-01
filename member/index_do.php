@@ -253,7 +253,7 @@ else if($fmdo=='login')
             if(strtolower($vdcode)!=$svali || $svali=='')
             {
                 ResetVdValue();
-                ShowMsg('验证码错误！', 'index.php');
+                ShowMsg('验证码错误！', '-1');
                 exit();
             }
             
@@ -261,7 +261,7 @@ else if($fmdo=='login')
         if(CheckUserID($userid,'',false)!='ok')
         {
             ResetVdValue();
-            ShowMsg("你输入的用户名 {$userid} 不合法！","index.php");
+            ShowMsg("你输入的用户名 {$userid} 不合法！","-1");
             exit();
         }
         if($pwd=='')
@@ -331,17 +331,17 @@ else if($fmdo=='login')
         if($rs==0)
         {
             ResetVdValue();
-            ShowMsg("用户名不存在！", "index.php", 0, 2000);
+            ShowMsg("用户名不存在！", "-1", 0, 2000);
             exit();
         }
         else if($rs==-1) {
             ResetVdValue();
-            ShowMsg("密码错误！", "index.php", 0, 2000);
+            ShowMsg("密码错误！", "-1", 0, 2000);
             exit();
         }
         else if($rs==-2) {
             ResetVdValue();
-            ShowMsg("管理员帐号不允许从前台登录！", "index.php", 0, 2000);
+            ShowMsg("管理员帐号不允许从前台登录！", "-1", 0, 2000);
             exit();
         }
         else
@@ -350,7 +350,7 @@ else if($fmdo=='login')
             $cfg_ml->DelCache($cfg_ml->M_ID);
             if(empty($gourl) || preg_match("#action|_do#i", $gourl))
             {
-                ShowMsg("成功登录，5秒钟后转向系统主页...","index.php",0,2000);
+                ShowMsg("成功登录，5秒钟后转向系统主页...","-1",0,2000);
             }
             else
             {
@@ -371,7 +371,7 @@ else if($fmdo=='login')
             $ucsynlogin = uc_user_synlogout();
         }
         #/aip}}
-        ShowMsg("成功退出登录！","index.php",0,2000);
+        ShowMsg("成功退出登录！","/index.php",0,2000);
         exit();
     }
 }
@@ -417,5 +417,5 @@ else if($fmdo=='moodmsg')
 }
 else
 {
-    ShowMsg("本页面禁止返回!","index.php");
+    ShowMsg("本页面禁止返回!","-1");
 }

@@ -129,4 +129,5 @@ if($needMoney>0 || $needRank>1)
     }//金币处理付处理
 }
 
+
 $arc->Display();

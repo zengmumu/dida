@@ -14,10 +14,10 @@ $(document).ready(function()
 	//checkSubmit
 	$('#regUser').submit(function ()
 	{
-		if(!$('#agree').get(0).checked) {
-			alert("你必须同意注册协议！");
-			return false;
-		}
+//		if(!$('#agree').get(0).checked) {
+//			alert("你必须同意注册协议！");
+//			return false;
+//		}
 		if($('#txtUsername').val()==""){
 			$('#txtUsername').focus();
 			alert("用户名不能为空！");
@@ -35,12 +35,12 @@ $(document).ready(function()
 			alert("两次密码不一致！");
 			return false;
 		}
-		if($('#uname').val()=="")
-		{
-			$('#uname').focus();
-			alert("用户昵称不能为空！");
-			return false;
-		}
+//		if($('#uname').val()=="")
+//		{
+//			$('#uname').focus();
+//			alert("用户昵称不能为空！");
+//			return false;
+//		}
 		if($('#vdcode').val()=="")
 		{
 			$('#vdcode').focus();
@@ -51,7 +51,7 @@ $(document).ready(function()
 	
 	//AJAX changChickValue
 	$("#txtUsername").change( function() {
-		$.ajax({type: reMethod,url: "index_do.php",
+		$.ajax({type: reMethod,url: "memindex_do.php",
 		data: "dopost=checkuser&fmdo=user&cktype=1&uid="+$("#txtUsername").val(),
 		dataType: 'html',
 		success: function(result){$("#_userid").html(result);}}); 

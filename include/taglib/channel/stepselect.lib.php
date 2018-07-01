@@ -61,7 +61,11 @@ function GetEnumsValue2($egroup,$evalue=0)
                                                      : $GLOBALS['em_'.$egroup.'s'][$erevalue];
             $GLOBALS['em_'.$egroup.'s'][$evalue] = empty($GLOBALS['em_'.$egroup.'s'][$evalue])? '' 
                                                      : $GLOBALS['em_'.$egroup.'s'][$evalue];
+//          return $GLOBALS['em_'.$egroup.'s'][$erevalue].' -- '.$GLOBALS['em_'.$egroup.'s'][$evalue];
+
             return $GLOBALS['em_'.$egroup.'s'][$erevalue].' -- '.$GLOBALS['em_'.$egroup.'s'][$evalue];
+            
+
         }
     }
 }

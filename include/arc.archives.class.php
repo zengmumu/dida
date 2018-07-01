@@ -173,8 +173,10 @@ class Archives
         if($this->ChannelUnit->ChannelInfos['addtable']!='')
         {
             $row = $this->addTableRow;
+            
             if($this->ChannelUnit->ChannelInfos['issystem']==-1)
             {
+            	
                 $this->Fields['title'] = $row['title'];
                 $this->Fields['senddate'] = $this->Fields['pubdate'] = $row['senddate'];
                 $this->Fields['mid'] = $this->Fields['adminid'] = $row['mid'];
@@ -183,7 +185,7 @@ class Archives
                 $this->Fields['money']=0;
                 $this->Fields['filename'] = '';
             }
-
+			
             if(is_array($row))
             {
                 foreach($row as $k=>$v) $row[strtolower($k)] = $v;
@@ -202,9 +204,13 @@ class Archives
                         {
                             $nk = $k;
                         }
+                        
                         $cobj = $this->GetCurTag($k);
+                      
+                      
                         if(is_object($cobj))
                         {
+                        	
                             foreach($this->dtp->CTags as $ctag)
                             {
                                 if($ctag->GetTagName()=='field' && $ctag->GetAtt('name')==$k)
@@ -276,7 +282,7 @@ class Archives
             $this->TotalPage = count($this->SplitFields);
             $this->Fields['totalpage'] = $this->TotalPage;
         }
-
+		
         //处理默认缩略图等
         if (isset($this->Fields['litpic']))
         {
@@ -323,14 +329,20 @@ class Archives
     //获得当前字段参数
     function GetCurTag($fieldname)
     {
+    	
+            
         if(!isset($this->dtp->CTags))
         {
             return '';
         }
         foreach($this->dtp->CTags as $ctag)
         {
+        	
             if($ctag->GetTagName()=='field' && $ctag->GetAtt('name')==$fieldname)
             {
+            	if($fieldname=='vocation'){
+            		continue;
+            	}
                 return $ctag;
             }
             else
@@ -487,9 +499,12 @@ class Archives
      */
     function GetField($fname, $ctag)
     {
+    	
+                 
         //所有Field数组 OR 普通Field
         if($fname=='array')
         {
+           
             return $this->Fields;
         }
         //指定了ID的节点
@@ -509,7 +524,7 @@ class Archives
             }
         }
         else if( isset($this->Fields[$fname]) )
-        {
+        {		 
             return $this->Fields[$fname];
         }
         return '';
@@ -772,11 +787,13 @@ class Archives
                         }
                     }
                     $this->dtp->Assign($i,$res);
+                   
                 }//end case
 
             }//结束模板循环
 
         }
+        
     }
 
     /**
@@ -1238,6 +1255,7 @@ class Archives
         //恢复超链接
         $body = preg_replace("#(<a(.*))-\]-(.*)-\[-(\/a>)#isU", '\\1>\\3<\\4', $body);
         return $body;
+      
     }
 
 

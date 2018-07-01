@@ -69,7 +69,7 @@
 
 										{dede:sql sql='select id,title from dede_archives LEFT JOIN dede_addonarticle ON dede_archives.id= dede_addonarticle.aid where dede_addonarticle.sid=~id~ AND dede_archives.typeid=7'}
 
-										<a class="major col-md-6" href='plus/view.php?aid=[field:id/]'>[field:title/]
+										<a class="major col-md-6" href='/plus/view.php?aid=[field:id/]'>[field:title/]
 											<i class="am-icon-angle-right am-f arrow-r">
 								<img src='/templets/default/images/arrow-r.svg' width="24"/>
 							</i>
@@ -83,7 +83,7 @@
 										<div class="wrap swiper-wrapper">
 											{dede:sql sql='select id,title,litpic,shorttitle from dede_archives LEFT JOIN dede_addonarticle ON dede_archives.id= dede_addonarticle.aid where dede_addonarticle.sid=~id~ AND dede_archives.typeid=8 '}
 
-											<a class="major swiper-slide" href='plus/view.php?aid=[field:id/]'>
+											<a class="major swiper-slide" href='/plus/view.php?aid=[field:id/]'>
 												<img src="[field:litpic/]" alt="">
 												<span class="name">[field:title/]</span>
 												<span class="position">[field:shorttitle/]</span>
@@ -105,7 +105,7 @@
 		@me='';
 	else
 		@me='hast';	
-	[/field:litpic]" href='plus/view.php?aid=[field:id/]'>
+	[/field:litpic]" href='/plus/view.php?aid=[field:id/]'>
 										<div class="text">
 											<div class="title">[field:title/]</div>
 											<div class="time">[field:pubdate function="MyDate('Y-m-d H:i',@me)"/]&nbsp;&nbsp;</div>

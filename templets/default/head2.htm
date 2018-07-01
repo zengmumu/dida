@@ -1,141 +1,20 @@
-<div class="header_top hidden-xs ">
 
-	<div class="center container">
-		<span id="time" class="time">织梦CMS - 轻松建站从此开始！</span>
+<script>
+	var reMethod = "POST",pwdmin = 4;
+</script>
+<div class="header_top  ">
+
+	<div class="center container index">
+		<span id="time" class="time hidden-xs">嘀嗒 IT教程干货分享网站</span>
 		<div class="toplinks">
-			<a href="{dede:global.cfg_cmsurl/}/plus/heightsearch.php" target="_blank">高级搜索</a>|
-			<a href="{dede:global.cfg_cmsurl/}/data/sitemap.html" target="_blank">网站地图</a>|
-			<a href="{dede:global.cfg_cmsurl/}/tags.php">TAG标签</a>
-			<a href="{dede:global.cfg_dataurl/}/rssmap.html" class="rss">RSS订阅</a><span>[<a href=""onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('{dede:global.cfg_basehost/}');">设为首页</a>] [<a href="javascript:window.external.AddFavorite('{dede:global.cfg_basehost/}','{dede:global.cfg_webname/}')">加入收藏</a>]</span></div>
+			<span id="_login">
+				<a class="" data-toggle="modal" data-target="#myModal">登陆</a>
+				<a class="" data-toggle="modal" data-target="#myModal2">注册</a>
+			</span>
+			</div>
 	</div>
 </div>
-<style>
-	.navbar-default .container {
-		background-color: #0E90D2 !important;
-		border: none;
-		color: #fff;
-	}
-	
-	.navbar-default {
-		background-color: transparent !important;
-		border: none !important;
-	}
-	
-	#navMenu {
-		height: auto;
-	}
-	
-	.search h4 {
-		margin: 0;
-		font-weight: 400;
-		font-size: 14px;
-		color: #bbb;
-		padding-right: 15px;
-		padding-top: 3px;
-	}
-	
-	.tags li {
-		float: left;
-		padding: 3px 10px;
-	}
-	
-	.place {
-		border: none;
-		background: none;
-		color: #ddd;
-	}
-	
-	.place a {
-		color: #999;
-	}
-	
-	.place strong {
-		color: #bbb;
-	}
-	
-	.navbar {
-		margin-bottom: 0;
-		border-radius: 0;
-	}
-	
-	.navbar-default .navbar-nav>li>a {
-		color: #fff;
-	}
-	
-	.navbar-nav li.hover {
-		background-color: #097fbb;
-	}
-	
-	.navbar-form .form-control {
-		background-color: #097fbb;
-		border: none;
-		color: #fff;
-		/*border-radius: 0;*/
-		margin-left: -5px;
-	}
-	
-	.navbar-form .form-control::-webkit-input-placeholder {
-		color: #70cefd;
-	}
-	
-	#search-option {
-		color: #5ab7e6;
-		padding-left: 3px;
-		padding-right: 3px;
-	}
-	
 
-	
-	.btn-outline {
-		color: #097fbb;
-		background-color: #70cefd;
-		border-color: #097fbb;
-	}
-	
-	.navbar-default .navbar-brand {
-		color: #70cefd;
-		font-weight: 400;
-		font-size: 14px;
-	}
-	
-	.navbar-default .navbar-toggle .icon-bar {
-		background-color: #5ab7e6;
-	}
-	
-	.navbar-default .navbar-toggle {
-		border: none;
-	}
-	
-	.navbar-nav {
-		margin: 0;
-	}
-	
-	@media only screen and (max-width:768px) {
-		.navbar-nav {
-			margin-left: -15px;
-			margin-right: -15px
-		}
-		.navbar-form {
-			display: flex;
-		}
-		.navbar-form .form-group {
-			flex: 1;
-		}
-		.navbar-form button {
-			width: 60px;
-		}
-		.navbar .container {
-			padding-left: 15px;
-			padding-right: 15px;
-		}
-		#search-keyword {
-			width: 100%;
-		}
-		.navbar-default .navbar-form {
-			border: none;
-		}
-	}
-</style>
 <div class="navbar navbar-default">
 	<div class="container">
 		<div class="navbar-header">
@@ -147,20 +26,19 @@
 	      </button>
 			<a class="navbar-brand visible-xs" href='{dede:global.cfg_cmsurl/}/'><span>嘀嗒培训</span></a>
 		</div>
-
-		<!-- //菜单 -->
 		<div class="collapse navbar-collapse" id="nav">
-
-			<!-- //如果不使用currentstyle，可以在channel标签加入 cacheid='channeltoplist' 属性提升性能 -->
-
 			<ul class="nav navbar-nav">
-				{dede:channel type='top' row='10' currentstyle="
+				<li >
+					<a href="/">首页</a>
+				</li>
+				{dede:channel type='top' row='3' orderby='sortrank' currentstyle="
 				<li class='hover'>
 					<a href='~typelink~' ~rel~><span>~typename~</span></a>
 				</li>"}
 				<li>
 					<a href='[field:typeurl/]' [field:rel/]><span>[field:typename/]</span></a>
 				</li>
+				
 				{/dede:channel}
 			</ul>
 			<form class="navbar-form navbar-right" action="{dede:global.cfg_cmsurl/}/plus/search.php">
@@ -175,9 +53,8 @@
 				</div>
 				<button type="submit" class="btn btn-default btn-outline">搜索</button>
 			</form>
-
-			
-
 		</div>
 	</div>
 </div>
+
+

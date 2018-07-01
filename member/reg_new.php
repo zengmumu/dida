@@ -59,6 +59,7 @@ if($step == 1)
         $pwd = trim($userpwd);
         $pwdc = trim($userpwdok);
         $rs = CheckUserID($userid, '用户名');
+        $uname= $userid;
         if($rs != 'ok')
         {
             ShowMsg($rs, '-1');
@@ -232,6 +233,8 @@ if($step == 1)
                 exit();
             }else{
                 $dsql->ExecuteNoneQuery("INSERT INTO `{$membermodel->table}` (`mid`) VALUES ('{$mid}');");
+                 showmsg('注册', '-1');
+                
             }
             
             //----------------------------------------------
@@ -276,7 +279,7 @@ if($step == 1)
                 ShowMsg("完成基本信息的注册，接下来完善详细资料...","index_do.php?fmdo=user&dopost=regnew&step=2",0,1000);
                 exit();
             } else {
-                require_once(DEDEMEMBER."/templets/reg-new3.htm");
+//              require_once(DEDEMEMBER."/templets/reg-new3.htm");
                 exit;
             } 
         } else {
@@ -298,6 +301,7 @@ if($step == 1)
         }
     }
     $membermodel = new membermodel($cfg_ml->M_MbType);
+    
     $postform = $membermodel->getForm(true);
     if($dopost == 'reginfo')
     {
@@ -354,9 +358,10 @@ if($step == 1)
             $dsql->ExecuteNoneQuery("UPDATE `#@__member` SET `spacesta`='2' WHERE `mid`='{$cfg_ml->M_ID}'");
             // 清除缓存
             $cfg_ml->DelCache($cfg_ml->M_ID);
-            require_once(DEDEMEMBER."/templets/reg-new3.htm");
+//          require_once(DEDEMEMBER."/templets/reg-new3.htm");
             exit;
         }
     }
-    require_once(DEDEMEMBER."/templets/reg-new2.htm");
+   
+//  require_once(DEDEMEMBER."/templets/reg-new2.htm");
 }

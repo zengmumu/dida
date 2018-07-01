@@ -789,7 +789,7 @@ input,select,button{
 							overflow: hidden;
 						}
 						
-						.card .title a {
+						.card .title a,.outline {
 							font-size: 12px;
 							border: 1px solid #5ab7e6;
 							color: #0e90d2;
@@ -948,6 +948,7 @@ input,select,button{
 						.news {
 							width: 50%;
 							float: left;
+							padding-left: 15px;
 						}
 						
 						.arrow-r {
@@ -1010,5 +1011,6 @@ input,select,button{
 							.news {
 								width: 100%;
 								clear: both;
+								padding-left: 0;
 							}
 						}

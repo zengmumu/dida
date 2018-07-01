@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+		<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+		<meta name="keywords" content="{dede:field.keywords/}" />
+		<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--<meta http-equiv="mobile-agent" content="format=xhtml;url={dede:global.cfg_mobileurl/}/view.php?aid={dede:field.id/}">-->
+		<!--<script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="{dede:global.cfg_mobileurl/}/view.php?aid={dede:field.id/}";}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script>-->
+		<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+		<style>.body{ clear: both;}
+			.outline{ display: block; padding: 5px 8px; float:left; clear: both; margin-left: 0;} .clearb{clear: both;}
+			.col-xs-8 h2{ margin-bottom: 0;}
+			@media only screen and (max-width: 768px) {
+.col-xs-8 h2{ margin-top: 0;}
+.des .text-left{ word-wrap: break-word;}
+.des{ height: 140px;}	
+}
+
+		</style>
+	</head>
+
+	<body class="articleview">
+		{dede:include filename="head2.htm"/}
+		<!-- /header -->
+		<div class="container artitle main_content clear ">
+			<div class="row">
+				<div class="col-md-12">
+
+					
+					<div class="row card">
+						
+						<div class="content clearfix">
+							<div class="col-xs-8 col-md-9">
+								<h2 class="title">{dede:field.title/} </h2>
+								<p>让高科技产品回归人性</p>
+								<div class="des">
+									<p>
+										<a class="outline" href="{dede:field.source /}">正版购买地址</a>
+										
+									</p>
+									<br/><br/>
+									<!--<div>{dede:field.vocation/}{dede:field.vocation function="Getsysenum2(@me,'vocation')" /}</div>-->
+									<div class="clearb"><b>免费pdf试看下载:</b></div>
+									<div class="text-left">{dede:field.ourl/}</div>
+									<br />
+									<div><b>查看次数:</b><script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script></div>
+								</div>
+								<!--{dede:field.body function='html2text(@me)'/}</div>-->
+							</div>
+							<div class="col-xs-4  col-md-3">
+								<div class="img-wrap">
+									{dede:field.image/}
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+					<div class="article">
+						<div class="tab">
+							<div class="row row-f tab-title">
+								<div class="col active">简介</div>
+								<div class="col">评论</div>
+								
+							</div>
+							<div class="tab-content">
+								<div class="content clearfix">
+									
+									
+									<!--<div class="major-list clearfix">
+
+										{dede:sql sql='select id,title from dede_archives LEFT JOIN dede_addonarticle ON dede_archives.id= dede_addonarticle.aid where dede_addonarticle.sid=~id~ AND dede_archives.typeid=7'}
+
+										<a class="major col-md-6" href='plus/view.php?aid=[field:id/]'>[field:title/]
+											<i class="am-icon-angle-right am-f arrow-r">
+								<img src='/templets/default/images/arrow-r.svg' width="24"/>
+							</i>
+										</a>
+
+										{/dede:sql}
+
+									</div>-->
+									<h3>相关书籍</h3>
+
+									<div class="teacher swiper-container">
+										<div class="wrap swiper-wrapper">
+											{dede:sql sql='select id,title,litpic,shorttitle from dede_archives LEFT JOIN dede_addonarticle ON dede_archives.id= dede_addonarticle.aid where dede_addonarticle.vocation like ~vocation~ AND dede_archives.typeid=10'}
+											<a class="major swiper-slide" href='plus/view.php?aid=[field:id/]'>
+												<img src="[field:litpic/]" alt="">
+												<span class="name">[field:title/]</span>
+												<span class="position">[field:shorttitle/]</span>
+											</a>
+
+											{/dede:sql}
+										</div>
+									</div>
+									<div class="body">
+										{dede:field.body/}
+									</div>
+								</div>
+								<div class="content">
+
+								</div>
+
+								
+							</div>
+						</div>
+
+						<center class="hidden">{dede:qrcode/}</center>
+
+						
+						<!-- //顶踩部份的源码结束 -->
+						<!-- //分享代码开始 -->
+						{dede:bshare/}
+						<!-- //分享代码结束 -->
+
+						<!-- /handle -->
+					</div>
+					<!-- /viewbox -->
+					<!-- //AJAX评论区 -->
+					{dede:include file='ajaxfeedback.htm' /} </div>
+
+			</div>
+
+			<!-- //左边内容结束 -->
+
+		</div>
+
+		{dede:include filename="footer.htm"/}
+		<!-- /footer -->
+	
+			
+		<script language="javascript" type="text/javascript">
+			<!--
+			function CheckLogin() {
+				var taget_obj = document.getElementById('_ajax_feedback');
+				myajax = new DedeAjax(taget_obj, false, false, '', '', '');
+				myajax.SendGet2("{dede:global.cfg_cmsurl/}/member/ajax_feedback.php");
+				DedeXHTTP = null;
+			}
+
+			function postBadGood(ftype, fid) {
+				var taget_obj = document.getElementById(ftype + fid);
+				var saveid = GetCookie('badgoodid');
+				if(saveid != null) {
+					var saveids = saveid.split(',');
+					var hasid = false;
+					saveid = '';
+					j = 1;
+					for(i = saveids.length - 1; i >= 0; i--) {
+						if(saveids[i] == fid && hasid) continue;
+						else {
+							if(saveids[i] == fid && !hasid) hasid = true;
+							saveid += (saveid == '' ? saveids[i] : ',' + saveids[i]);
+							j++;
+							if(j == 10 && hasid) break;
+							if(j == 9 && !hasid) break;
+						}
+					}
+					if(hasid) {
+						alert('您刚才已表决过了喔！');
+						return false;
+					} else saveid += ',' + fid;
+					SetCookie('badgoodid', saveid, 1);
+				} else {
+					SetCookie('badgoodid', fid, 1);
+				}
+				myajax = new DedeAjax(taget_obj, false, false, '', '', '');
+				myajax.SendGet2("{dede:field name='phpurl'/}/feedback.php?aid=" + fid + "&action=" + ftype + "&fid=" + fid);
+			}
+
+			function postDigg(ftype, aid) {
+				var taget_obj = document.getElementById('newdigg');
+				var saveid = GetCookie('diggid');
+				if(saveid != null) {
+					var saveids = saveid.split(',');
+					var hasid = false;
+					saveid = '';
+					j = 1;
+					for(i = saveids.length - 1; i >= 0; i--) {
+						if(saveids[i] == aid && hasid) continue;
+						else {
+							if(saveids[i] == aid && !hasid) hasid = true;
+							saveid += (saveid == '' ? saveids[i] : ',' + saveids[i]);
+							j++;
+							if(j == 20 && hasid) break;
+							if(j == 19 && !hasid) break;
+						}
+					}
+					if(hasid) {
+						alert("您已经顶过该帖，请不要重复顶帖 ！");
+						return;
+					} else saveid += ',' + aid;
+					SetCookie('diggid', saveid, 1);
+				} else {
+					SetCookie('diggid', aid, 1);
+				}
+				myajax = new DedeAjax(taget_obj, false, false, '', '', '');
+				var url = "{dede:global.cfg_phpurl/}/digg_ajax.php?action=" + ftype + "&id=" + aid;
+				myajax.SendGet2(url);
+			}
+
+			function getDigg(aid) {
+				var taget_obj = document.getElementById('newdigg');
+				myajax = new DedeAjax(taget_obj, false, false, '', '', '');
+				myajax.SendGet2("{dede:global.cfg_phpurl/}/digg_ajax.php?id=" + aid);
+				DedeXHTTP = null;
+			}
+			-->
+		</script>
+		<script language="javascript" type="text/javascript">getDigg({dede:field.id/});</script>
+		<script src="{dede:global.cfg_cmsurl/}/m/assets/js/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+		<script>
+			$(function() {
+				$(".tab .tab-content .content").hide();
+				$(".tab .tab-content .content:eq(0)").show();
+
+				$(".tab .tab-title .col").click(function() {
+					$(".tab .tab-title .col.active").removeClass("active");
+					var ind = $(this).index();
+					$(".tab .tab-content .content").hide();
+					$(".tab .tab-content .content:eq(" + ind + ")").show();
+					$(this).addClass("active");
+
+				})
+			})
+			var swiper = new Swiper('.swiper-container', {
+				slidesPerView: 'auto',
+				centeredSlides: false,
+				spaceBetween: 5,
+			});
+		</script>
+	</body>
+
+</html>
