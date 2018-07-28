@@ -2,7 +2,7 @@ app.factory("$userData",["$http",function($http){
 	return {
 		getUser:function(callback){
 			var that = this;
-			$http.get("http://127.0.0.1/member/ajax_login.php")
+			$http.get("/member/ajax_login.php")
 			.success(function(data){
 				that.user = data;
 				if(callback){callback()}//如果存在回掉函数就执行回掉函数
@@ -72,7 +72,7 @@ app.factory("$userData",["$http",function($http){
  		return{
  			get:function(){
  				var that=this;
- 				var host="http://127.0.0.1";
+ 				var host="";
  				 $http.get(host+"/member/ajax_login.php")
 					.success(function(data){							
 						if(!data.M_ID){
@@ -103,7 +103,7 @@ app.factory("$userData",["$http",function($http){
 			courseList:null,
 			out:function(){
 				var that=this;
-				var host="http://127.0.0.1";
+				var host="";
 				$http.post(host+"/member/index_login.php",{					
 				"dopost":"exit",					
 
