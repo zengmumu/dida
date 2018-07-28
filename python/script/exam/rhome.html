@@ -1,0 +1,87 @@
+<div ng-controller="homeCtrl">
+    <div class=" bar bar-header bar-positive">
+        <a class="button icon icon-button ion-ios-arrow-back" href="#/resultlist"></a>
+        <h2 class="title">奇酷{{  current.classes_name  }}-{{ current.add_time }}满意度调查</h2>
+
+    </div>
+    <ion-content class="has-header has-footer">
+        <div>
+2
+                <div class="box blue text-center">
+                    <br/><br/>
+                    <img  src="http://statics.qikuedu.com/images/logo.png">
+                    <h2 class="center">{{ current.classes_name }}</h2>
+                    <p class="center">{{ current.len }}人 参加</p>
+                    <p>{{ current.score }}</p>
+
+                </div>
+
+              <div ng-repeat="question in questions" class="question">
+                <div class="answer-title">{{question.title}}</div>
+
+
+                  <div class="answer-option" ng-class="{'selected':question.currentSelect==item.op}" ng-repeat="item in question.optionData" >
+                      <i class="op-xu" ng-if="$index==0">A</i>
+                      <i class="op-xu" ng-if="$index==1">B</i>
+                      <i class="op-xu" ng-if="$index==2">C</i>
+                      <i class="op-xu" ng-if="$index==3">D</i>
+                      <span class="op-content" ng-click="">{{ item.op }} </span>
+                  </div>
+                  <div class="count">
+                      <h4>分析:</h4>
+                      <div ng-if="question.type==1">
+
+                          <div class="count_opt">
+                              <div>A : {{ question.users.userA.length }}人</div>
+                               <p><span class="user" ng-repeat="it in question.users.userA">{{ it.fields.username }}</span></p>
+                          </div>
+                          <div class="count_opt">
+                              <div>B : {{ question.users.userB.length}}人</div>
+                               <p><span class="user" ng-repeat="it in question.users.userB">{{ it.fields.username }}</span></p>
+                          </div>
+                           <div class="count_opt" ng-if="question.optionData.length>=3">
+                              <div>C : {{ question.users.userC.length}}人</div>
+                               <p><span class="user"  ng-repeat="it in question.users.userC">{{ it.fields.username }}</span></p>
+                          </div>
+                           <div  class="count_opt" ng-if="question.optionData.length>=4">
+                              <div>D : {{ question.users.userD.length }}</div>
+                               <p><span class="user" ng-repeat="it in question.users.userD">{{ it.fields.username }}</span></p>
+                          </div>
+                      </div>
+                      <div ng-if="question.type==2">
+                             <p><span class="user"  ng-repeat="user in question.users">{{ user.name}} : {{ user.answer }}</span></p>
+                      </div>
+                       <div ng-if="question.type==4">
+                             <div><div class="user"  ng-repeat="user in question.users">
+                                 <div>{{ user.name}} : </div>
+                                 <div>{{ user.answer }}</div>
+                             </div>
+                      </div>
+
+                  </div>
+
+
+              </div>
+
+
+        </div>
+
+
+    </ion-content>
+    <div class="answer-sheet" ng-show="current.showAnswerSheet">
+        <ion-content>
+            <div class="disbox">
+                <i class="op-xu" ng-click="slideTo($index+1)" ng-repeat="question in questions" ng-class="{'selected':question.currentAnswer}"><span>{{ $index+1 }}</span></i>
+            </div>
+        </ion-content>
+
+    </div>
+    <div class="bar bar-footer bar-stable row " ng-if="false">
+        <button class="button button-clear "><i class="icon ion-ios-star-outline energized"></i>收藏</button>
+        <button class="button button-clear" ng-click="current.showAnswerSheet=!current.showAnswerSheet"><i class="icon ion-ios-keypad-outline  "></i></button>
+
+        <span ><span >{{ current.page }}/{{ questions.length }}</span></span>
+
+    </div>
+
+ </div>

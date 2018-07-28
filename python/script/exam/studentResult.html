@@ -1,0 +1,67 @@
+<div ng-controller="homeCtrl">
+    <div class=" bar bar-header bar-positive">
+        <a class="button icon icon-button ion-ios-arrow-back" href="#/resultlist"></a>
+        <h2 class="title">奇酷{{  current.classes_name  }}-{{ current.add_time }}</h2>
+
+    </div>
+    <ion-content class="has-header has-footer">
+        <div>
+
+                <div class="box blue text-center">
+                    <br/><br/>
+
+                    <p>{{ current.classes_name }}</p>
+                   <h2 class="center"> {{ current.user_name }}</h2>
+
+                    <p>{{ current.score }}分</p>
+
+                </div>
+
+              <div ng-repeat="question in questions" class="question">
+                <div class="answer-title">{{question.title}}</div>
+
+
+                  <div class="answer-option" ng-class="{'selected':question.currentSelect==item.op,'right':checkRight($index,question.answer),'uerr':checkuErr($index,question.answer,question.users,question.type),'uright':checkuRight($index,question.answer,question.users)}" ng-repeat="item in question.optionData" >
+                      <i class="op-xu" ng-if="$index==0">A</i>
+                      <i class="op-xu" ng-if="$index==1">B</i>
+                      <i class="op-xu" ng-if="$index==2">C</i>
+                      <i class="op-xu" ng-if="$index==3">D</i>
+                      <span class="op-content" ng-click="">{{ item.op }} </span>
+                  </div>
+                  <div class="count">
+                      <h4>学生答案:</h4>
+
+                       <div>
+                             <div><div class="user">
+                                 <div>{{ question.users}} </div>
+
+                             </div>
+                      </div>
+
+                  </div>
+
+
+              </div>
+
+
+        </div>
+
+
+    </ion-content>
+    <div class="answer-sheet" ng-show="current.showAnswerSheet">
+        <ion-content>
+            <div class="disbox">
+                <i class="op-xu" ng-click="slideTo($index+1)" ng-repeat="question in questions" ng-class="{'selected':question.currentAnswer}"><span>{{ $index+1 }}</span></i>
+            </div>
+        </ion-content>
+
+    </div>
+    <div class="bar bar-footer bar-stable row " ng-if="false">
+        <button class="button button-clear "><i class="icon ion-ios-star-outline energized"></i>收藏</button>
+        <button class="button button-clear" ng-click="current.showAnswerSheet=!current.showAnswerSheet"><i class="icon ion-ios-keypad-outline  "></i></button>
+
+        <span ><span >{{ current.page }}/{{ questions.length }}</span></span>
+
+    </div>
+
+ </div>

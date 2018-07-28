@@ -1,0 +1,16 @@
+<div ng-controller="listCtrl">
+    <div class=" bar bar-header bar-positive">
+        <h2 class="title">试卷列表</h2>
+    </div>
+    <ion-content class="has-header has-footer">
+        <div class="list">
+            <a class="item item-icon-right" ng-repeat="item in testlist" href="#/home/{{item.pk}}/{{item.fields.name}}">{{ item.fields.name }}  <i class="icon ion-ios-arrow-right gray"></i>
+            </a>
+            
+        </div>
+
+
+    </ion-content>
+   
+
+ </div>

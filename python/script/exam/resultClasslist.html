@@ -1,0 +1,17 @@
+<div ng-controller="resultClassListCtrl">
+    <div class=" bar bar-header bar-positive">
+        <h2 class="title">班级列表</h2>
+    </div>
+    <ion-content class="has-header has-footer">
+        <div class="list">
+            <a class="item item-icon-right" ng-repeat="item in resultlist" href="#/resultUser/{{item.classes}}/{{ item.add_time }}/{{ item.classes_name }}/{{ item.len }}/{{ resultlist.id }}">{{ item.classes_name }}班  {{ item.add_time }}
+                <i class="icon ion-ios-arrow-right gray"></i>
+            </a>
+            
+        </div>
+
+
+    </ion-content>
+   
+
+ </div>

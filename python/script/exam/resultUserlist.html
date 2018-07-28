@@ -1,0 +1,16 @@
+<div ng-controller="listUserCtrl">
+    <div class=" bar bar-header bar-positive">
+        <h2 class="title">{{ resultlist.classes_name }}-学生列表</h2>
+    </div>
+    <ion-content class="has-header has-footer">
+        <div class="list">
+            <a class="item item-icon-right" ng-repeat="item in resultlist" href="#/home/{{resultlist.classes}}/{{ resultlist.add_time }}/{{ resultlist.classes_name }}/{{ resultlist.len }}/{{ resultlist.id }}/{{ item.pk }}/{{ item.fields.username }}">{{ item.fields.username }}   <i class="icon ion-ios-arrow-right gray"></i>
+            </a>
+            
+        </div>
+
+
+    </ion-content>
+   
+
+ </div>

@@ -1,0 +1,78 @@
+<div ng-controller="homeCtrl">
+    <div class=" bar bar-header bar-positive">
+        <h2 class="title">奇酷-{{ current.testName }}</h2>
+
+            <button class="button" ng-click="popover.show($event)">{{ user.username }} </button>
+
+    </div>
+    <ion-content class="has-header has-footer">
+        <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged()">
+              <ion-slide>
+                <div class="box blue text-center">
+                    <br/><br/><br/><br/><br/>
+                    <img  src="http://statics.qikuedu.com/images/logo.png">
+                    <br/><br/><br/><br/><br/>
+                    <btton  class="button button-assertive button-outline " ng-click="slideTo(1)">开始答题</btton>
+                </div>
+              </ion-slide>
+              <ion-slide ng-repeat="question in questions">
+                  <div class="answer-title"><span class="tip" ng-if="question.type==1">单选</span> <span class="tip" ng-if="question.type==2">多选</span> <span class="tip"  ng-if="question.type==4">问答</span >{{question.title}}</div>
+
+
+                  <div class="answer-option" ng-if="question.type==1" ng-class="{'selected':question.currentSelect==item.op,'mul-line':item.op.length>18}" ng-repeat="item in question.optionData" ng-click="selectHd(question,item.op,item.answer, $parent.$index)">
+                      <i class="op-xu" ng-if="$index==0">A</i>
+                      <i class="op-xu" ng-if="$index==1">B</i>
+                      <i class="op-xu" ng-if="$index==2">C</i>
+                      <i class="op-xu" ng-if="$index==3">D</i>
+                      <span class="op-content" ng-class="{'mul-line':item.op.length>18}">{{ item.op }} </span>
+                  </div>
+                   <div  ng-if="question.type==2">
+                     <div  class="answer-option mutil" ng-class="{'selected':checkMulSelect(question,item.op),'mul-line':item.op.length>18}" ng-repeat="item in question.optionData" ng-click="selectMulHd(question,item.op,item.answer, $parent.$index)">
+                      <i class="op-xu" ng-if="$index==0">A</i>
+                      <i class="op-xu" ng-if="$index==1">B</i>
+                      <i class="op-xu" ng-if="$index==2">C</i>
+                      <i class="op-xu" ng-if="$index==3">D</i>
+                      <span class="op-content" ng-class="{'mul-line':item.op.length>18}">{{ item.op }} </span>
+                     </div>
+                      <button class="button button-positive button-full" ng-click="mulHdNext(question)">确定</button>
+                  </div>
+                   <div  ng-if="question.type==4">
+                       <div>
+                           <textarea placeholder="请输入您的意见或者答案" name="" id="" width="90%" height="50" ng-model="question.currentAnswer"></textarea>
+                       </div>
+
+                      <button class="button button-positive button-full" ng-click="QaHdNext(question)">确定</button>
+                  </div>
+
+
+              </ion-slide>
+            <ion-slide>
+                <div class="box blue text-center">
+                    <br/><br/><br/><br/><br/>
+                    <img  src="http://statics.qikuedu.com/images/logo.png">
+                    <br/><br/><br/><br/><br/>
+                    <p>感谢您的认真作答</p>
+                    <btton ng-show="!current.result" class="button button-assertive button-outline " ng-click="submitTest()">提交试卷</btton>
+                    <p ng-show="current.result">您的意见和建议已经上传到服务器! <span class="m-gray" ng-click="slideTo(1)">回到首页</span></p>
+                </div>
+              </ion-slide>
+
+        </ion-slide-box>
+
+
+    </ion-content>
+    <div class="answer-sheet" ng-show="current.showAnswerSheet">
+        <ion-content>
+            <div class="disbox">
+                <i class="op-xu" ng-click="slideTo($index+1)" ng-repeat="question in questions" ng-class="{'selected':question.currentAnswer}"><span>{{ $index+1 }}</span></i>
+            </div>
+        </ion-content>
+
+    </div>
+    <div class="bar bar-footer bar-stable text-center " ng-if="current.page>0">
+        <button class="button button-clear" ng-click="current.showAnswerSheet=!current.showAnswerSheet"><i class="icon ion-ios-keypad-outline  "></i></button>
+        <span ng-show="current.page<questions.length" >&nbsp;&nbsp;&nbsp;<span class="text-danger">{{ current.page }}</span>/{{ questions.length }}</span>
+
+    </div>
+
+ </div>
