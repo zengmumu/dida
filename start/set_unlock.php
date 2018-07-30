@@ -28,7 +28,7 @@ require_once(dirname(__FILE__)."/../include/wap.inc.php");
 //     
 //    
 
-
+$time = GetMkTime(mktime());
 $res=array(); 
 $row=$dsql->GetOne("
 	 SELECT id FROM `#@__test_unlock` as tp WHERE tp.unlock=$unlock and  tp.user=$user and tp.type=$type;
@@ -41,8 +41,8 @@ if(is_array( $row)){
 
 }else{
 // echo $user;
-
-	$sql = "INSERT INTO `#@__test_unlock` ( `unlock`, `user`, `type`) VALUES ($unlock,$user,$type);";//插入记录数据库
+	
+	$sql = "INSERT INTO `#@__test_unlock` ( `unlock`, `user`, `type`,`addtime`) VALUES ($unlock,$user,$type,$time);";//插入记录数据库
 	// $dsql->SetQuery($sql);//格式化查询语句
 	// $dsql->ExecNoneQuery();//执行SQL操作
 	$dsql->ExecuteNoneQuery($sql);
@@ -74,7 +74,7 @@ if(is_array( $row)){
             if(!is_array($last)){
 
             
-            	$sql3 = "INSERT INTO `#@__test_unlock` ( `unlock`, `user`, `type`) VALUES ($typeid,$user,3);";
+            	$sql3 = "INSERT INTO `#@__test_unlock` ( `unlock`, `user`, `type`,`addtime`) VALUES ($typeid,$user,3,$time);";
             	$dsql->ExecuteNoneQuery($sql3);
             	$res["chapter"]=$typeid;
             } 

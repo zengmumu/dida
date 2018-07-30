@@ -3,7 +3,7 @@ require_once (dirname(__FILE__) . "/../include/common.inc.php");
 
 header("Content-Type: application/json; charset=utf-8");
 
-require_once(dirname(__FILE__)."/../include/wap.inc.php");
+//require_once(dirname(__FILE__)."/../include/wap.inc.php");
  /* 文档类
  *
  * @version        $Id: arc.archives.class.php 4 15:13 2010年7月7日Z tianya $
@@ -25,7 +25,7 @@ require_once(dirname(__FILE__)."/../include/wap.inc.php");
     $id = $_GET["id"];
     
     if($ptype==3){
-       $sq="Select id From `#@__arctype` as tu where tu.id<$id and tu.reid=$typeid";
+       $sq="Select id From `#@__arctype` as tu where tu.id<$id and tu.reid=$typeid  order by id desc";
          $preid=$dsql->GetOne($sq);
          // echo $sq;
         // exit();
@@ -54,7 +54,8 @@ require_once(dirname(__FILE__)."/../include/wap.inc.php");
 
 
    if($ptype==2){
-    $aid=$dsql->GetOne("Select id From `#@__arctiny` as arc  where arc.id<$id And arc.typeid=typeid and arcrank>-1 ");
+   	// 查找 比当前id还小并且是一个typeid
+    $aid=$dsql->GetOne("Select id From `#@__arctiny` as arc  where arc.id<$id And arc.typeid=$typeid and arcrank>-1 order by id desc");
    
     if(is_array($aid)){
 
@@ -62,7 +63,7 @@ require_once(dirname(__FILE__)."/../include/wap.inc.php");
 
        // 查找在test_unlock里面有没有有
         $unlockid=$dsql->GetOne("Select id From `#@__test_unlock` as tu  where tu.unlock=$aid and tu.type=$ptype and tu.user=$user");
-        if(is_array( $unlockid)){
+        if(is_array($unlockid)){
             $arr["status"]=1;
             $arr["msg"]="成功";
 

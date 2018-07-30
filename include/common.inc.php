@@ -6,8 +6,8 @@
  * @license        http://help.dedecms.com/usersguide/license.html
  * @link           http://www.dedecms.com
  */
-
-
+header('Access-Control-Allow-Origin:http://192.168.0.105'); 
+header('Access-Control-Allow-Credentials:true');
 
 // 生产环境使用production
 define('DEDE_ENVIRONMENT', 'production');

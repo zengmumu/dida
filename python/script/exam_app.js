@@ -1,6 +1,6 @@
 					var app=angular.module("examApp",["ionic",'ngAnimate'])
 					.controller("mainCtrl",["$scope","$state","$ionicHistory","$stateParams","$http","$getUser","$ionicSideMenuDelegate","$rootScope","$userData",function($scope,$state,$ionicHistory,$stateParams,$http,$getUser, $ionicSideMenuDelegate,$rootScope,$userData){
-					  $scope.host="http://127.0.0.1";					
+					  $scope.host="";					
 						 
 						 $scope.goback=function(){
 						 	$ionicHistory.goBack();						 	
@@ -161,7 +161,7 @@
 
 						$scope.changeState=function(item,index){
 						
-							$http.get($scope.host+"/start/permission.php?ptype=3&id="+item.id+"&typeid=2&user="+$scope.data.user.M_ID)
+							$http.get($scope.host+"/start/permission.php?ptype=3&id="+item.id+"&typeid="+$scope.data.course.id+"&user="+$scope.data.user.M_ID)
 							.success(function(data){
 								if(data.status){
 									// if(index==1){
@@ -226,7 +226,7 @@
 										console.log(data,"unitunlock");
 										console.log($scope.units,"units");
 										setTimeout(function(){
-										if(data.length){
+										if(data.length&&$scope.units.length){
 											for(var i=0;i<$scope.units.length;i++){
 												for(var k=0;k<data.length;k++){
 													if($scope.units[i].id==data[k].unlock){									
