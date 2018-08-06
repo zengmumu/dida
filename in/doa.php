@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @
  * @Description:
@@ -31,17 +30,10 @@ if ($action == 'import') { //导入XLS
 			$id = $xls->sheets[0]['cells'][$i][1];
 			$typeid = $xls->sheets[0]['cells'][$i][2];			
 			$title = $xls->sheets[0]['cells'][$i][3];
-			$subtitle = addslashes($xls->sheets[0]['cells'][$i][4]);
-			$type = $xls->sheets[0]['cells'][$i][5];
-			$optiona = $xls->sheets[0]['cells'][$i][6];
-			$optionb = $xls->sheets[0]['cells'][$i][7];
-			$optionc = $xls->sheets[0]['cells'][$i][8];			
-			$optiond = $xls->sheets[0]['cells'][$i][9];
-			$answer = $xls->sheets[0]['cells'][$i][10];
-			
-			$data_values .= "('$id','$typeid','$title',30),";
-			$data_values2 .= "('$id','$typeid','$subtitle','$type','$optiona','$optionb','$optionc','$optiond','$answer'),";
-			$data_values3 .= "('$id','$typeid',30),";
+			$body =addslashes($xls->sheets[0]['cells'][$i][4]);
+			$data_values .= "('$id','$typeid','$title',1),";
+			$data_values2 .= "('$id','$typeid','$body'),";
+			$data_values3 .= "('$id','$typeid',1),";
 //			echo $id."<br/>";
 
 		}
@@ -53,15 +45,16 @@ if ($action == 'import') { //导入XLS
 	 
 //		$query = mysql_query("insert into student (name,sex,age) values $data_values");//批量插入数据表中
 //		echo 	"insert into student (name,sex,age) values $data_values";
-		 $arcquery = "insert into  dede_archives (id,typeid,title,channel) values $data_values";
+		 $arcquery = "insert into  dede_archives (`id`,`typeid`,`title`,`channel`) values $data_values";
 //		 echo $arcquery;
 			          $dsql->ExecuteNoneQuery($arcquery);
 //			    
 //			        //保存到附近加表
-				    $query = "insert into  dede_addonarticle30 (aid,typeid,subtitle,type,optiona,optionb,optionc,optiond,answer) values  $data_values2";
+				    $query = "insert into  dede_addonarticle (`aid`,`typeid`,`body`) values  $data_values2";
 //				    echo $query;
 			        $dsql->ExecuteNoneQuery($query);
 //                  $fieldvalue = '';
+echo $query;
 //			        //保存到微表
 			        $tinyquery = "insert into  dede_arctiny (id,typeid,channel) values $data_values3";
 //			        echo   $tinyquery;

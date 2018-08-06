@@ -29,6 +29,7 @@ foreach($arraylist as $v){
 	$q2="
 	 SELECT * FROM $addId as tp WHERE tp.aid=$v
 	";
+//	echo "$q2";
 	$r2=$dsql->GetOne($q2);
 //	print_r($r2);
 	array_push($data,array_merge($r, $r2));

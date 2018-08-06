@@ -1,0 +1,211 @@
+  *{box-sizing:border-box;}
+  .m-nav{ display: none;}
+    @media (max-width: 767px) {
+      body{ padding-top: 0;}
+#header{ display: none;}
+ .m-nav{ display: block;}
+}
+.m-nav #gback{ fill:#fff; }
+ .m-nav .detail #gback{ fill:#ccc; }
+
+
+
+
+  #wrapper,#wrapper2{ height: 43px; line-height: 43px; width: 100%;  overflow: hidden; background-color: #f0f0f0;}
+    #scroller,#scroller2{ width: 300%;}
+    #scroller li, #scroller2 li{ width: auto; float:left; text-align: center;}
+  #scroller li.active,#scroller2 li.active{ color: #A01D1D; font-weight: bold;}
+  .course-nav-item,.course-nav-item a{ height: 38px; line-height: 38px; }
+  .plus-menu{ height: 38px; width: 38px; color: #f80; line-height: 38px; position: absolute; right: 0; top:0; background-color: #fff; text-align: center; font-size: 24px; box-shadow: -0px 0px 1px #777; z-index: 1000;}
+  .scroll-nav{ position: relative;}
+  .m-nav{ height: 43px; line-height: 43px; background-color: #44a5fc; position: relative; border-bottom: 1px solid #44a5fc;}
+  .menu-icon{ height: 38px; line-height: 38px; width: 38px; position: absolute; top:0; right:10px;}
+ #menu path{fill:#fff;}
+  .course-nav-item{ margin-left: 3px; margin-right: 3px;}
+ .btn_dati_beiti_wrap{ /* border:;*/  -webkit-box-flex: 1; 
+              -webkit-flex: 1;
+              overflow: hidden;
+              flex: 1;}
+          .btn_dati_beiti{
+              height: 29px; width:150px; 
+              margin-top: 5px;
+              border:1px  solid #999;
+              border-radius: 6px;
+              -webkit-border-radius:6px;
+              margin-left: auto;
+              margin-right: auto;
+              overflow: hidden;
+          }
+          .btn_dati,.btn_bei{ width: 50%;   display: block; float: left;height:27px; line-height: 27px;
+            text-align: center;}
+          
+          .btn_dati.select,.btn_bei.select{ background-color: #999; 
+              color: #fff;}
+           .btn_bei.select{ background-color: #999; color: #fff;}
+           .menu-ctrl{ height: 100%; width: 100%; overflow: scroll; position: absolute; left:0;top:0; background-color: #fff; padding-top: 43px; width: 100%;z-index: 1001; transition:transform 0.7s ease;-webkit-transition:transform 0.7s ease; transform:translate(100%,0);-webkit-transform:translate(100%,0);}
+
+           .menu-ctrl.show{transform:translate(0,0);}
+  .menu-ctrl .c-header{ height: 43px; line-height: 43px; text-align: center; position: fixed; left: 0; top:0; border-bottom: 1px solid #f0f0f0; width: 100%; background-color: #fff; font-size: larger;}
+  .c-header .c-back{ position: absolute; left: 0; top:0; width: 43px; height: 43px;padding:5px; padding-left: 0;}
+  #gback{ fill:#aaa;}
+.c-main{ height: 43px; background-color: #f6f6f6;}
+.c-main li{ float: left; padding-left:5px; padding-right: 5px;  height: 38px; line-height: 38px; }
+.c-main li a{ display: block; font-size: larger; padding-left: 5px; padding-right: 5px; color: #484848;}
+.c-list h4{ height: 38px; line-height: 38px; font-size: small; clear: both; margin: 0;}
+.c-list h4 a{ border-left:3px solid #f80; color: #999; padding-left: 20px; font-weight: normal;}
+.c-list .sub li{ float: left; margin:3px 6px;}
+.c-list .sub li a{ display: block; padding: 8px 12px; border-radius: 38px; border:1px solid #f0f0f0; color: #333;}
+.c-list .sub li a:hover{ background-color: #f0f0f0; color: #666;}
+ul:empty{ display: none;}
+
+/*banner*/
+.banner{ height: 150px; overflow: hidden; background: url(../images/pj.jpg) center center; background-size: auto 100%;}
+.icon-menu{ height: 96px; background-color: #fff;}
+.icon-menu li{ width: 25%; float: left; text-align: center;}
+.icon-menu li i{ max-width: 40px; max-height: 40px; width: 40px; display: block; margin: 15px auto 5px;}
+
+.icon-menu li i img{width: 100%; height: auto; max-width: 40px;}
+
+.icon-menu a{ color: #666;}
+.ulist { height: 100px; margin-top: 8px; padding: 8px; background-color: #fff; }
+.ulist .uimg a{ display: block; height: 84px; overflow: hidden; width: 90%;}
+.uimg{ width: 40%; height:84px; float: left;}
+.uimg img{ width: 100%; height: auto; max-width: 100%;}
+.utext{ width: 60%; height: 84px; float: left; padding-left: 10px;  position: relative;}
+.ulist h3{ color:#666666; font-weight: normal; margin-top: 0;}
+.ulist .time{ font-size: 12px; color: #aaa; position: absolute; left: 8px; bottom: 8px; margin-bottom: 0;}
+.ulist .start{ position: absolute; right: 8px; bottom:0px; color:#44a5fc; border-radius: 20px; padding: 4px 12px; border:1px solid #44a5fc; font-size: 12px; margin-bottom: 0px}
+
+.m-nav .brand{ margin-left: 8px; float: left;}
+.list-content{ text-align: center;display: block; color: #fff;  margin-right: 50px; margin-left: 50px;}
+
+.course-content{ width: 100%;}
+.uilist{  padding-top:0 !important;/*background:url(../image/ullistbg.jpg) center top repeat-x; background-size: 100% auto;*/ background-color: #fff;}
+.uulist{ background-color: transparent; height: 120px; margin-top: 0;}
+.uilist   .m-nav{ background-color: transparent; border:none; text-align: center; color: #fff; font-size: 16px;}
+.uilist  #gback {
+    fill: #aaa;
+}
+.uilist .uimg{ width: 30%;}
+.uilist .utext { width: 70%; height: 75px; margin-bottom: 30px;}
+/*.uilist .utext a,.uilist .utext a h3{ color: #fff;}*/
+.uilist .u-des{ color: #000; margin-top: 30px; clear: both;}
+.uivideo .m-nav{ background:red; height:38px;}
+.uivideo .m-nav,.uivideo .c-header{ position:absolute; background-color:transparent; left:0;top:0; z-index:10000;  width:100%;}
+#a1,#a1 video{ position:relative; z-index:1;}
+#ckplayer_a1{ position:relative;z-index:0;}
+
+.uivideo .m-nav .c-header{ position:absolute;}
+.uivideo .m-nav .c-header{ background-color:transparent; border:none;}
+.learnchapter h3 em{
+    
+    float: left;
+    padding-left: 20px;
+}
+.dcmp-stand{display:none;}
+#_ajax_feedback #notuser{ display:none;}
+#_ajax_feedback {}
+.mt1 .more{ display:none;}
+#badfb87,.newcomment_act .quote,#badfb88{ display:none;}
+.video li a.active{ color:#f80;}
+
+
+
+.dcmp-post{ height: auto;}
+dl,dt,dd{ margin:0; padding:0;}
+.dcmp-post .dcmp-userinfo input{ height: 35px;}
+
+   .m-nav{ display: none;}
+@media (max-width: 767px){
+.ulist {clear:both;}
+.banner{clear:both;}
+.course-content img{ width:100%;height:auto;}
+#validateimg{width:auto;height:auto;}
+.brand img{ width:28px; float:left; margin-top:6px;}
+#header{ display: none;}
+ .m-nav{ display: block; clear:both;}
+.course textarea {
+    width: 100%;
+    visibility: visible !important;
+    display: block !important;
+  
+
+}
+#cke_msg{ display: none!important;}
+
+.c-header{ height: 43px; line-height: 43px; text-align: center; position: fixed; left: 0; top:0; border-bottom: 1px solid #f0f0f0; width: 100%; background-color: #fff; font-size: larger;}
+  .c-header .c-back{ position: absolute; left: 0; top:0; width: 43px; height: 43px;padding:5px; padding-left: 0;}
+.m-nav #gback{ fill:#aaa;}
+  .tbox dt{ height:38px; line-height:38px;}
+.dcmp-stand input{ margin-left:25px;}
+.dcmp-stand{ height:38px; height:38px; line-height:38px;}
+.dcmp-userinfo{ margin-top:10px;}
+.mt1{ margin-top:35px; border-top:1px solid #f0f0f0;}
+}
+.mt1 a{color:#aaa; font-size:12px;}
+.mt1 .more{ float:right;}
+.mt1 .fr{ float:right;}
+.newcomment_act span{padding-left:15px; color:#888;}
+.comment_act span.fl{ color:#bbb;padding-left:15px; font-size:12px;}
+
+.comment_act+div{ font-size:16px; color:#222; padding-top:15px; padding-bottom:15px;}
+.plpic{float:left;}
+#commetcontent .decmt-box2 .title{    float: left;
+    width: 80%;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 15px;
+    border: none;}
+    .text-small a:first-of-type{display:none;}
+    .text-small *:first-letter{ display:none;}
+  .text-small{    color: #f0f0f0 !important;
+    padding-bottom: 0.5em !important;}
+  
+}
+
+/**uienter*/
+.tutorial img{ max-width:100%; height:auto;}
+	.bigtitle{width:100%; height:320px; overflow:hidden; display:none; overflow: hidden;
+    text-align: center;
+    color: #fff;
+    padding: 35px 25px; padding-top:50px; box-sizing:border-box;}
+	.guide-content.c-bg{ overflow:hidden;}
+	.bigtitle h1{ font-size:42px; text-shadow:2px 1px 1px rgba(0,0,0,.2); font-weight:600;clear:both; margin-bottom:25px; }
+	.bigtitle p{ font-size:1.3em; text-shadow:0px 1px 1px rgba(0,0,0,.2);  float:none;}
+   .bigtitle .des{ font-size:1em; width:80%; margin:0 auto;}
+.date {
+	height:35px;
+	line-height:35px;padding-right:2em;
+	
+   
+    color: #9f9f9f;
+   
+    font-size: 12px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+  .date .qkt-click{ color:#f80;}
+  .plus{ text-align:center;}
+  .tutorial .g_header{ font-weight:normal; color:#353535; clear:both;}
+  
+ .g_header .number{ font-size:72px; font-weight:bold; font-family:Arial, Helvetica, sans-serif; color:#f80; display:inline-block; position:relative; padding-right:10px;}
+ .g_header .number:after{ content:"\0020"; display:inline-block; height:80px; width:1px; border-left:1px solid #d0d0d0; transform:rotate(25deg); position:absolute; right:0px; top:-5px;}
+ .g_content { clear:both; margin-bottom:80px;}
+  .g_content:after{ content:""; clear:both; height:0px; display:block; visibility:hidden;}
+.guide .g_content .g_one{ width:30%; margin-right:2%; float:left; height:180px; overflow:hidden;  padding:1%;  background-color:#f6f6f6; box-shadow:0 0 5px rgba(0,0,0,.1); transition: all 0.3 ease;}
+.guide .g_content .g_one:nth-of-type(3n){ margin-right:0;}
+ .guide .g_content .g_one:hover{background-color:#fafafa;  box-shadow:0 0 10px rgba(0,0,0,.3);}
+ .guide .g_content .g_one a{ display:block;color:#fff; display:block; overflow:hidden;}
+ .guide .g_content .g_one a img{ width:100%; height:auto;}
+ .guide .g_content .g_one a .bigtitle{ padding:10px; display:block; height:150px; margin-top:0; transition:transform 0.5s; background-color:#b9cdcd; }
+   .guide .g_content .g_one a:hover .bigtitle{ transform:scale(1.1,1.1); }
+ .guide .g_content .g_one a .g_one_header{ color:#fff; font-size:40px;  margin-bottom:10px; display:block; margin-top:15px; text-shadow:1px 1px 1px rgba(0,0,0,.3);}
+.guide .g_content .g_one a  .bigtitle .des { color:#fff; font-size:14px;  line-height:25px; display:block; text-shadow:1px 1px 1px rgba(0,0,0,.2);}
+.tutorial p, .tutorial div, .tutorial { font-size:14px;}
+.digg_act,.digg_percent{ display:none;}
+.guide { padding-top:0;}
+.course{ overflow-x:hidden;}
+ .guide .m-nav, .guide .c-header{ position:absolute; background-color:transparent; left:0;top:0; z-index:10000;  width:100%; border:none;}
+/*ui »Î√≈ */
+
+

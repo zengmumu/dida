@@ -19,3 +19,12 @@ function litimgurls($imgid=0)
     //返回结果
     return $lit_imglist;
 }
+function bigimg() {
+    return "";
+}
+function checkBtnDown() {
+    return "";
+}
+function checkBtnDemo() {
+     return "";
+}

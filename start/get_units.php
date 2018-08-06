@@ -14,7 +14,7 @@ if(!isset($tid)){
 
 $sql = "
 	 SELECT id,typeid,title FROM `#@__archives` as arc WHERE arc.typeid=$tid
-	  	and arcrank>=0";
+	  	and arcrank>=0 order by id asc";
 
 
 $dsql->SetQuery($sql);//将SQL查询语句格式化
