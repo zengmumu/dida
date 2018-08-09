@@ -17,10 +17,22 @@
     
   <!-- 左侧菜单 -->
   <ion-side-menu side="left">
-      <div class="user-box bg-positive ">
-       <div class="avatar" ng-bind="data.user.M_UserName|limitTo:1"></div>
-      <div><span ng-bind="data.user.M_UserName|limitTo:15"></span><div class="r jf"><span ng-bind="'积分:'+data.user.M_Scores"></span></div>
-      <div class="row"><div class="col-75 col-center text-left"><span ng-bind="data.user.fields.email"></span><br/></div> <div class="col-25"> <button class="button button-clear button-positive" ng-click="loginOut()" ng-bind="switchName(data.user.M_UserName)"></button></div></div>
+    <div class="user-box bg-positive ">
+    	<div class="avatar" ng-bind="data.user.M_UserName|limitTo:1"></div>
+      	<span ng-bind="data.user.M_UserName|limitTo:15"></span>
+      	<div class="r jf"><span ng-bind="'积分:'+data.user.M_Scores"></span></div>
+     	<div class="row">
+      		<div class="col-75 col-center text-left"><span ng-bind="data.user.fields.email"></span><br/></div> 
+	      	<div class="col-25"> 
+	      		<button class="button button-clear button-positive" ng-click="loginOut()" ng-bind="switchName(data.user.M_UserName)"></button>
+	      	</div>
+      	</div>
+     </div>  
+       <div class="list">
+       	 
+       			<a href="/" class="item"> ← 返回轻课堂首页</a>
+       		 
+
        </div>
   </ion-side-menu>
 

@@ -28,3 +28,6 @@ function checkBtnDown() {
 function checkBtnDemo() {
      return "";
 }
+function adds($str){
+	return addslashes(htmlspecialchars($str));
+}

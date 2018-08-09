@@ -36,7 +36,7 @@
 .list-group-item a{ color: #777;}
 h3 a{ color: #333; font-size: 18px;}
 h3 .more{ color: #999; font-size: 12px; float: right;}
-.block{ box-shadow: 0 3px 5px rgba(213, 235, 255); border-radius: 6px; overflow: hidden; margin-bottom: 30px;  height: 394px;}
+.block{ box-shadow: 0 3px 5px rgba(230,243,255.7); border-radius: 6px; overflow: hidden; margin-bottom: 30px;  height: 394px;}
 .padding20{ padding: 20px;}
 .f1 li a{ color: #777; font-size: 12px; }
 .f1 li{ height: 38px;}
@@ -64,25 +64,6 @@ h3 .more{ color: #999; font-size: 12px; float: right;}
  #uc_member .row{ margin-bottom: 10px;}
 .vad{ width: 40%; display:inline-block;}
 .index .userinfo .welcome{ width: auto;}
-.it-block{color:#666; text-align: center; padding: 1.5rem; padding-top: 3rem; height: 34rem; display: block; }
-.it-block:hover{ color:#333;box-shadow:0 4px 6px rgba(40, 157, 239, 0.4); text-decoration: none; cursor:pointer}
-.it-block p{ font-size: 1.2rem; text-align: left;}
-.it-block img{ border-radius: 50%;}
-.button-blue{
-	position:relative;
-    background-color: #387ef5;
-    background-image: linear-gradient(90deg, #4e8cfd 0%, #2ac3fc 80%, #38b9fd 100%);
-    border-radius: 50px;
-    color:#fff;
-    box-shadow: 0 2px 10px rgba(40, 157, 239, 0.7);
-    
-		
-	}
-.button-blue:hover{
-	top:1px;
-	 box-shadow: 0 2px 10px rgba(40, 157, 239, 1);
-}
-.it-block .button-blue{ display: inline-block; line-height: 3rem;padding:0 3rem; margin-top: 1rem;}
 </style>
 </head>
 <body class="index">
@@ -91,45 +72,45 @@ h3 .more{ color: #999; font-size: 12px; float: right;}
 <div class="container">
 	<div class="row">
 		<div class="col-md-9">
-			<div class="row padding20">
-				<div class="col-md-4 ">
-					<a class=" block it-block" href="/it">
-						<img width="35%" src="{dede:global.cfg_templets_skin/}/images/python.png" alt="python" />
-						<h3>Python 3 教程</h3>
-						<p>Python，是当今最流行的编程语言之一，免费学习！通过简短的课程和有趣的小测验进行学习冲浪，展示你的技能。</p>
-						<p>还等t什么！沉下心来,开始你的python编程之旅</p>
-						<span class="button button-blue">开始学习</span>
-					</a>
-				</div>
 			
-				<div class="col-md-4 ">
-					<a class="block it-block" href="javascript:alert('客观您别急，课程赶制中')">
-						<img width="35%" src="{dede:global.cfg_templets_skin/}/images/js.png" alt="js" />
-						<h3>Javascript 教程</h3>
-						<p>本教程涵盖了JavaScript编程的所有基本语法，使网站更具交互性、网站内容动态更改、表单验证、创建Cookie等方法。</p>
-						<p>一讲一练,引导你创建属于自己的JavaScript代码。</p>
-						<span class="button button-blue">前端学习</span>
-					</a>
-				</div>
-				
-				<div class="col-md-4">
-					<a class=" block it-block" href="javascript:alert('稍后推出')">
-						<img width="35%" src="{dede:global.cfg_templets_skin/}/images/python.png" alt="python" />
-						<h3>CSS 教程</h3>
-						<p>我们的CSS教程是一个学习游戏，通过精心挑选的内容，进行互动测验,教会你如何设置和控制网站的风格和布局。</p>
-						<p>新手，还是江湖老鸟，开始吧！获取项新技能</p>
-						<span class="button button-blue">开始学习</span>
-					</a>
-				</div>
+			<div class="onenews"> 
+				{dede:arclist flag='h'  orderby='pubdate' limit='0,1' infolen='230'}
+    				<h2><a href="[field:arcurl/]">[field:title/]</a></h2>
+    				<p>[field:info/]...<a href="[field:arcurl/]">[查看全文]</a></p>
+   				 {/dede:arclist} 
 			</div>
-		
-		
+			<!-- /onenews -->
+			<div class=" "> {dede:arclist flag='h'   orderby='pubdate' limit='1,4'}
+   				 <div class=''><a href="[field:arcurl/]">[field:title/]</a></div>
+    			{/dede:arclist} 
+			</div>
+   			<!--/头条-->
+			<h4>图文资讯</h4>
+			<ul>
+				{dede:arclist row=10 orderby='pubdate' type='image'  }
+				<li>
+					
+				<a class="news [field:litpic runphp='yes']	if(@me=='')		@me='';	else@me='hast';	[/field:litpic]" href='plus/view.php?aid=[field:id/]'>
+										<div class="text">
+											<div class="title">[field:title/]</div>
+											<div class="dis">[field:description/]</div>
+											<div class="time">[field:pubdate function="MyDate('Y-m-d',@me)"/]&nbsp;&nbsp;</div>
+										</div>
+
+										<div class="picwrap">
+											<img src="[field:litpic/]">
+										</div>
+
+				</a>
+				</li>
+				{/dede:arclist}
+			</ul>
 			<div class="row padding20">
-				{dede:channelartlist  typeid='8,138,177,223'}
+				{dede:channelartlist  typeid='8,27,133,177'}
 				<div class="col-md-6 block">
-					<h3>	<a href="/plus/list.php?tid={dede:field name='id'/}">{dede:field name='typename'/} </a>  <a class="more" href="/plus/list.php?tid={dede:field name='id'/}">查看更多 &raquo;</a></h3>					
+					<h3>	<a href="/plus/list.php?tid={dede:field name='id'/}">{dede:field name='typename'/} </a>  <a class="more" href="plus/list.php?tid={dede:field name='id'/}">查看更多 &raquo;</a></h3>					
 				   
-					<ul class="list-group">{dede:arclist titlelen='60' row='8' orderby='lastpost'}
+					<ul class="list-group">{dede:arclist titlelen='60' row='8'}
 						<li class="list-group-item"> <a href="/plus/view.php?aid=[field:id/]" class="am-list-item-hd">[field:title /]</a></li>
 					{/dede:arclist}
 					</ul>
@@ -151,14 +132,14 @@ h3 .more{ color: #999; font-size: 12px; float: right;}
      <!--<div id="loading"> 正在载入,请稍候... </div>-->
      <div id="uc_digg" class="">
      	<ul class="list-group-item">
-      {dede:arclist orderby='scores' row='8' subday='30' titlelen='30'}
+      {dede:arclist orderby='scores' row='8' subday='30' titlelen='42'}
       <li class="list-group-item"> <a href="[field:arcurl/]">[field:title/]</a> <span><small>点击:</small>[field:click/]</span> <span><small>评价:</small>[field:scores/]</span></li>
       {/dede:arclist}
      </ul>
      </div>
      <div id="uc_comment">
      	<ul class=" list-group">
-      {dede:feedback row='5' titlelen='20' infolen='30'}
+      {dede:feedback row='5' titlelen='24' infolen='80'}
       <li class="list-group-item"> <small><a href="#" class="username">[field:username function="(@me=='guest' ? '游客' : @me)"/]</a> 评论 <a href="[field:global.cfg_phpurl/]/feedback.php?aid=[field:aid/]" class="title">[field:title/]</a></small>
        <p>[field:msg/]</p>
       </li>
