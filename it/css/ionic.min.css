@@ -265,15 +265,25 @@ ion-content{
       padding-left: 0;  
        padding-right: 0;
 }
+
 .question .options{
     background: #fff;
     padding: 0 0px;
     box-shadow: 0 2px 10px rgba(40, 157, 239, 0.3);
     border-radius: 12px;
     overflow: hidden;
+    display: block;
 }
 .options .answer-option{
     border-bottom:1px dashed #f0f0f0;
+    border-style: dashed;
+}
+.options .item-complex .item-content, .options .item-radio .item-content {
+    position: relative;
+    z-index: 2;
+    padding: 0;
+    border: none;
+    background-color: #fff;
 }
 .options .answer-option.answertrue{
     background-color: #33cd5f;
@@ -592,3 +602,13 @@ alert{
 /*.unlock span  svg path{
     fill: #2754a3;
 }*/
+
+/*代码高亮*/
+.options .syntaxhighlighter table {
+    overflow: hidden !important;
+    margin-top: 17px !important;
+    /* margin-bottom: 10px !important; */
+    font-size: 1.5rem !important;
+}
+.options .syntaxhighlighter{ padding: 0 !important; margin: 0 !important; border-left: none; background-color:transparent !important;}
+.options .syntaxhighlighter .line.alt2,.options .syntaxhighlighter .line.alt1{ background-color: transparent !important;}

@@ -1,0 +1,966 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"var",
+				"var_dump($_REQUEST);exit"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"over",
+				"overflow"
+			],
+			[
+				"box-s",
+				"box-shadow"
+			],
+			[
+				"bs",
+				"bs3-tabs\tbs3-tabs"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"felx",
+				"flex-start"
+			],
+			[
+				"ali",
+				"align-content"
+			],
+			[
+				"text-a",
+				"text-align"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"align",
+				"align-content"
+			],
+			[
+				"sp",
+				"space-around"
+			],
+			[
+				"wrap",
+				"wrap-reverse"
+			],
+			[
+				"clas",
+				"classBlack"
+			],
+			[
+				"tre",
+				"treasure-ic.svg"
+			],
+			[
+				"on",
+				"one.svg"
+			],
+			[
+				"bac",
+				"background-repeat"
+			],
+			[
+				"s",
+				"space-around"
+			],
+			[
+				"span",
+				"space-around"
+			],
+			[
+				"c",
+				"column"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"im",
+				"images"
+			],
+			[
+				"bg",
+				"bg-primary"
+			],
+			[
+				"pb",
+				"padding-bottom"
+			],
+			[
+				"fi",
+				"fixed"
+			],
+			[
+				"text",
+				"text-center"
+			],
+			[
+				"ca",
+				"card-icon.svg"
+			],
+			[
+				"bo",
+				"border-box"
+			],
+			[
+				"OV",
+				"overflow"
+			],
+			[
+				"cl",
+				"class"
+			],
+			[
+				"l",
+				"line.png\tw:1 h:146"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"Pro",
+				"PriceQuote"
+			],
+			[
+				"Product",
+				"ProductService"
+			],
+			[
+				"get",
+				"getProduct"
+			],
+			[
+				"pro",
+				"product-detail/"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"conso",
+				"constructor"
+			],
+			[
+				"greet",
+				"greetText"
+			],
+			[
+				"love",
+				"lovePhp"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"ng-s",
+				"ng-enter-stagger"
+			],
+			[
+				"fil",
+				"fill"
+			],
+			[
+				"que",
+				"question"
+			],
+			[
+				"button-s",
+				"button-stable"
+			],
+			[
+				"inline",
+				"inline-flex"
+			],
+			[
+				"an",
+				"answer"
+			],
+			[
+				"show",
+				"showAnswer"
+			],
+			[
+				"unlock",
+				"unlockQuestion"
+			],
+			[
+				"mi",
+				"middle"
+			],
+			[
+				"vert",
+				"vertical-align"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"con",
+				"content"
+			],
+			[
+				"ro",
+				"rootScope"
+			],
+			[
+				"p",
+				"padding"
+			],
+			[
+				"pad",
+				"padding-right"
+			],
+			[
+				"a",
+				"absolute"
+			],
+			[
+				"b",
+				"block"
+			],
+			[
+				"cla",
+				"clear"
+			],
+			[
+				"tras",
+				"transparent"
+			],
+			[
+				"goSate",
+				"goState('login"
+			],
+			[
+				"ng-c",
+				"ng-click"
+			],
+			[
+				"log",
+				"login"
+			],
+			[
+				"sub",
+				"substring"
+			],
+			[
+				"ionic",
+				"ionicHistory"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"bu",
+				"button-balanced"
+			],
+			[
+				"local",
+				"localData"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"inln",
+				"inline-block"
+			],
+			[
+				"backc",
+				"background-color"
+			],
+			[
+				"hi",
+				"history"
+			],
+			[
+				"cha",
+				"chapters"
+			],
+			[
+				"staet",
+				"stateParams"
+			],
+			[
+				"ui",
+				"units"
+			],
+			[
+				"index",
+				"indexOf"
+			],
+			[
+				"state",
+				"stateParams"
+			],
+			[
+				"ng-",
+				"ng-click"
+			],
+			[
+				"fa",
+				"factory"
+			],
+			[
+				"u",
+				"userid"
+			],
+			[
+				"optionD",
+				"optionData"
+			],
+			[
+				"cur",
+				"currentAnswer"
+			],
+			[
+				"cu",
+				"currentAnswer"
+			],
+			[
+				"qe",
+				"question"
+			],
+			[
+				"json_",
+				"json_encode"
+			],
+			[
+				"sh",
+				"sh/"
+			],
+			[
+				"还没有",
+				"还没有内容先去做题吧！"
+			],
+			[
+				"tr",
+				"transparent"
+			],
+			[
+				"border",
+				"border-box"
+			],
+			[
+				"ovh",
+				"ovy-h\toverflow-y: hidden;"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"transf",
+				"transform-origin"
+			],
+			[
+				"v",
+				"valign"
+			],
+			[
+				"classR",
+				"classroom_isWork"
+			],
+			[
+				"article",
+				"article_id"
+			],
+			[
+				"e",
+				"edit_page"
+			],
+			[
+				"H",
+				"HttpResponse"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"lh",
+				"line-height"
+			],
+			[
+				"sl",
+				"slider1.jpg\tw:2000 h:350"
+			],
+			[
+				"line",
+				"line-height"
+			],
+			[
+				"border-top",
+				"border-top-color"
+			],
+			[
+				"url",
+				"url()"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"rel",
+				"relative"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"文字",
+				"文字居中"
+			],
+			[
+				"rgb",
+				"rgb()"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"pt",
+				"padding-top"
+			],
+			[
+				"ov",
+				"overflow"
+			],
+			[
+				"re",
+				"repeat-x"
+			],
+			[
+				"border-col",
+				"border-color"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"le",
+				"letter-spacing"
+			],
+			[
+				"texta",
+				"text-align"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"cell",
+				"cellspacing\tAttr"
+			],
+			[
+				"cle",
+				"cellpadding"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 157.0,
+		"last_filter": "wrap",
+		"selected_items":
+		[
+			[
+				"wrap",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"ssj",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ss",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package→删除插件"
+			],
+			[
+				"in",
+				"Package Control: Install Package→安装插件"
+			],
+			[
+				"i",
+				"Package Control: Install Package→安装插件"
+			]
+		],
+		"width": 835.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Emmet/emmet/snippets.json",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Tag-st3/Insert As Tag/Commands.sublime-commands",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Emmet/emmet_completions/trackers.py",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Emmet/messages/official1.0.txt",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Emmet/emmet_completions/meta.py",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Text/lorem.sublime-snippet",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Text/Plain text.tmLanguage",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/User/XML.sublime-settings",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Emmet/Default (Windows).sublime-keymap",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Emmet/emmet/context.py",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Emmet/emmet/caniuse.json",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Emmet/emmet_completions/__init__.py",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Emmet/misc/generate-keymap.py",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Emmet/Emmet.sublime-settings",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Emmet/editor.js",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Emmet/Default.sublime-commands",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/User/Emmet.sublime-settings",
+		"/C/Users/mumu/Desktop/svg/第二个单元",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Tag-st3/Tag Close Tag/Default (Windows).sublime-keymap",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/User/Preferences.sublime-settings",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Tag/Tag Package.sublime-settings",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Tag-st3/Tag Close Tag/Commands.sublime-commands",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Tag-st3/Main.sublime-menu",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Tag-st3/Tag Package.sublime-settings",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Tag-st3/Tag Indent/Default (Windows).sublime-keymap",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Tag-st3/Close Tag On Slash/Default (Windows).sublime-keymap",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Tag-st3/Tag Indent/Commands.sublime-commands",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/Tag-st3/Default/Commands.sublime-commands",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/User/Tag Package.sublime-settings",
+		"/C/Users/mumu/Desktop/head2.htm",
+		"/C/Users/mumu/Desktop/index.htm",
+		"/C/phpStudy/PHPTutorial/WWW/templets/default/header_m.htm",
+		"/C/Users/mumu/Desktop/common.inc.php",
+		"/C/Users/mumu/Desktop/guideui.htm",
+		"/C/phpStudy/PHPTutorial/WWW/templets/default/style/ui.css",
+		"/C/phpStudy/PHPTutorial/WWW/start/permission.php",
+		"/C/phpStudy/PHPTutorial/WWW/start/get_units.php",
+		"/C/phpStudy/PHPTutorial/WWW/python/css/ionic.min.css",
+		"/C/phpStudy/PHPTutorial/WWW/member/reg_new2.php",
+		"/C/Users/mumu/Desktop/view.php",
+		"/C/Users/mumu/Downloads/res/anim/slide_out_right.xml",
+		"/D/work/木木老师/周报与计划/素材与案例/第三阶段/理论app/新建文件夹/Payload/Py.app/assets/jsons/course13.json",
+		"/D/work/木木老师/周报与计划/素材与案例/第三阶段/理论app/新建文件夹/Payload/Python.app/GoogleSignIn.bundle/zh_CN.lproj/GoogleSignIn.strings",
+		"/D/work/木木老师/周报与计划/素材与案例/第三阶段/理论app/新建文件夹/Payload/Mimo.app/tracks/tracks.json",
+		"/D/work/木木老师/周报与计划/素材与案例/第三阶段/理论app/新建文件夹/Payload/Mimo.app/tracks/tutorial-97/tutorial.json",
+		"/D/work/木木老师/周报与计划/素材与案例/第三阶段/理论app/新建文件夹/Payload/Mimo.app/tracks/tutorial-97/lessons/97-1-0.html",
+		"/D/work/木木老师/周报与计划/素材与案例/第三阶段/理论app/新建文件夹/Payload/Mimo.app/tracks/tutorial-97/lessons/97-0-0.html",
+		"/D/work/木木老师/周报与计划/素材与案例/第三阶段/理论app/新建文件夹/Payload/Mimo.app/tracks/tutorial-97/lessons/97-0-2.html",
+		"/D/work/木木老师/周报与计划/素材与案例/第三阶段/理论app/新建文件夹/Payload/Mimo.app/tracks/tutorial-97/lessons/97-0-5.html",
+		"/D/work/木木老师/周报与计划/素材与案例/第三阶段/理论app/新建文件夹/Payload/Mimo.app/tracks/tutorial-97/lessons/97-0-6.html",
+		"/D/work/木木老师/周报与计划/素材与案例/第三阶段/理论app/新建文件夹/Payload/Mimo.app/tracks/tutorial-97/lessons/97-5-12.html",
+		"/C/Users/mumu/Downloads/新建文件夹/jsr305_annotations/Jsr305_annotations.gwt.xml",
+		"/C/Users/mumu/Downloads/新建文件夹/AndroidManifest.xml",
+		"/D/work/木木老师/周报与计划/素材与案例/第三阶段/理论app/新建文件夹/Payload/Python.app/Frameworks/libswiftFoundation.dylib",
+		"/C/phpStudy/PHPTutorial/WWW/test.php",
+		"/C/phpStudy/PHPTutorial/WWW/include/dedetag.class.php",
+		"/D/wamp/www - 副本/include/common.func.php",
+		"/C/phpStudy/PHPTutorial/WWW/include/extend.func.php",
+		"/C/phpStudy/PHPTutorial/WWW/include/arc.archives.class.php",
+		"/C/Users/mumu/Downloads/Booleans.txt",
+		"/C/phpStudy/PHPTutorial/WWW/common.inc.php",
+		"/C/Users/mumu/Downloads/include/extend.func.php",
+		"/D/wamp/www - 副本/include/extend.func.php",
+		"/C/Users/mumu/Downloads/pyton.txt",
+		"/C/Users/mumu/Downloads/mg_arctiny.sql",
+		"/C/Users/mumu/Downloads/mg_arctype.sql",
+		"/C/Users/mumu/Downloads/mg_test_unlock.sql",
+		"/C/Users/mumu/Downloads/mg_addonarticle30.sql",
+		"/C/Users/mumu/Downloads/mg_addonarticle.sql",
+		"/C/Users/mumu/Downloads/mg_archives.sql",
+		"/C/Users/mumu/Desktop/Page/07/581d9a1a08234d1fbda86d07da603407/581d9a1a08234d1fbda86d07da603407.rppkg",
+		"/C/Users/mumu/Desktop/document.settings",
+		"/C/Users/mumu/Downloads/邓西百度网盘批量分享工具/databases-incognito/0/1",
+		"/C/Users/mumu/Desktop/.gitignore",
+		"/C/phpStudy/PHPTutorial/WWW/dede/inc/inc_archives_functions.php",
+		"/C/phpStudy/PHPTutorial/WWW/templets/default/article_article_m.htm",
+		"/C/phpStudy/PHPTutorial/WWW/dede/archives_add.php",
+		"/C/phpStudy/PHPTutorial/WWW/dede/templets/archives_add.htm",
+		"/C/phpStudy/PHPTutorial/WWW/dede/templets/archives_sg_add.htm",
+		"/C/phpStudy/PHPTutorial/WWW/dede/templets/article_add.htm",
+		"/C/phpStudy/PHPTutorial/WWW/dede/article_edit.php",
+		"/C/phpStudy/PHPTutorial/WWW/dede/templets/article_edit.htm",
+		"/C/phpStudy/PHPTutorial/WWW/dede/article_add.php",
+		"/C/phpStudy/PHPTutorial/WWW/templets/default/article_article.htm",
+		"/C/phpStudy/PHPTutorial/WWW/include/helpers/archive.helper.php",
+		"/C/phpStudy/PHPTutorial/WWW/plus/digg_ajax.php",
+		"/C/phpStudy/PHPTutorial/WWW/include/typelink.class.php",
+		"/C/phpStudy/PHPTutorial/WWW/templets/default/ajaxfeedback.htm",
+		"/C/phpStudy/PHPTutorial/WWW/plus/feedback_ajax.php",
+		"/C/phpStudy/PHPTutorial/WWW/plus/feedback.php",
+		"/C/Users/mumu/Desktop/sublime.lnk",
+		"/C/phpStudy/PHPTutorial/WWW/plus/digg_ajax2.php",
+		"/C/wamp/www/include/dedeajax2.js",
+		"/C/wamp/www/plus/feedback_ajax.php",
+		"/C/phpStudy/PHPTutorial/WWW/index.php",
+		"/C/phpStudy/PHPTutorial/WWW/include/dedesql.class.php",
+		"/C/phpStudy/PHPTutorial/WWW/include/dedesqli.class.php",
+		"/C/phpStudy/PHPTutorial/WWW/include/dedesqlite.class.php",
+		"/C/phpStudy/PHPTutorial/WWW/templets/default/index_article.htm",
+		"/C/wamp/www/templets/default/ajaxfeedback.htm",
+		"/C/wamp/www/templets/default/ajaxfeedback2.htm",
+		"/C/wamp/logs/apache_error.log",
+		"/C/Users/mumu/Desktop/hosts",
+		"/C/Users/mumu/Desktop/index.html",
+		"/C/wamp/www/m/view.php",
+		"/C/wamp/www/include/dedesqli.class.php",
+		"/C/wamp/www/company/tpl/index.htm",
+		"/C/wamp/www/company/tpl/default/index.tpl.htm",
+		"/C/wamp/www/company/tpl/default/index.htm",
+		"/C/wamp/www/include/arc.archives.class.php",
+		"/C/wamp/www/templets/default/footer_m.htm",
+		"/C/wamp/www/templets/default/index_default_m.htm",
+		"/C/wamp/www/templets/default/article_article_m.htm",
+		"/C/wamp/www/member/feed.php",
+		"/C/wamp/www/templets/default/article_article.htm",
+		"/C/wamp/www/include/dedesql.class.php",
+		"/C/wamp/www/member/ajax_feedback.php",
+		"/C/wamp/www/member/feedback.php",
+		"/C/wamp/www/plus/feedback.php",
+		"/C/wamp/www/include/dedesqlite.class.php",
+		"/C/wamp/www/plus/feedback_js.php",
+		"/C/Users/mumu/Desktop/bootstrap/bt/bootstrap-表格.html",
+		"/C/Users/mumu/Desktop/bootstrap/01-起步模板.html",
+		"/D/Applications/Sublime Text 3.3126x64/Data/Packages/bs3-sublime/alerts/bs3-alert.sublime-snippet",
+		"/C/Users/mumu/Desktop/rem/flex-案例5-流式布局.html",
+		"/C/Users/mumu/Desktop/rem/index.html"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 179.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"lang",
+			"space",
+			"sp",
+			"inp",
+			"alt+shift+w",
+			"pre",
+			"inp",
+			"input",
+			"inp",
+			"input",
+			" [9, 8, 7, 6, 5]",
+			"alt+.",
+			"ctrl+shift+a",
+			"tag_close_tag",
+			"bdy",
+			"\n \n",
+			"  \n",
+			"<text value=\"",
+			"<text type=\"break\" />",
+			"font-family",
+			"value=“=”",
+			"html",
+			"\" />",
+			"<text value=\"",
+			"用户名密码",
+			"Display",
+			" Archives",
+			"$arc",
+			"Display",
+			"$arc",
+			"body",
+			"mg",
+			"mg_zengmumu",
+			"button",
+			"$litpic",
+			"picname",
+			"autolitpic",
+			"form",
+			"autolitpic",
+			"ddisremote",
+			" 下载远程图片和资源",
+			"htm",
+			"html",
+			"ddisremote",
+			"主页",
+			"$totalcount;",
+			"GetPageList",
+			"onclick=",
+			"发表",
+			"valid",
+			"vali",
+			"vad",
+			"safeCheck",
+			"$this->safeCheck",
+			"FALSE",
+			"$this->safeCheck",
+			"safe",
+			"safe\n",
+			"safeCheck\n",
+			"           \n",
+			"commetcontent",
+			"validate",
+			"Display",
+			"coment",
+			"评论",
+			"$arc",
+			"qrc",
+			"评论",
+			"$this->safeCheck ",
+			"class",
+			"btn",
+			"class",
+			"col",
+			"<div class=\"buzzButton bsStyle1\" style=\"height:24px;color:#333;;background:transparent url(http://static.bshare.cn/frame/images/button_custom1-zh-c.gif) no-repeat;text-align:center;width:110px;\"><span style=\"font-weight: bold; position: relative; line-height: 25px; float: none; left: 36px; color: rgb(255, 255, 255);\" class=\"shareCount\">0</span></div>",
+			"<div id=\"header-name\">阮一峰的网络日志 <span id=\"site_location\"> » <a href=\"http://www.ruanyifeng.com/blog/\" accesskey=\"1\">首页</a></span><span id=\"site_archive\"> » <a href=\"http://www.ruanyifeng.com/blog/archives.html\">档案</a></span>\n</div>",
+			"is",
+			"user",
+			"isAuthorized",
+			"e.",
+			"i.",
+			"isAuthorized",
+			"o",
+			"alert",
+			"trial",
+			"expired",
+			"过期",
+			"constructor",
+			"@800",
+			");\n",
+			"product",
+			"Referer",
+			"180100031051",
+			":",
+			"dots",
+			"renderImage",
+			"M_KeepTime",
+			"MemberLogin",
+			"$cfg_ml ",
+			"$keeptime",
+			"MemberLogin",
+			"UserExamQuestions",
+			"TestStudenResult",
+			"\");",
+			"post",
+			"localData",
+			"logout",
+			"hasLog",
+			"has-log",
+			"onParamChange",
+			"www",
+			"alert",
+			"<ion-item",
+			"list",
+			"sub",
+			"comment",
+			"com",
+			"commet",
+			"slideTo",
+			" k < len;",
+			"question",
+			"goSli",
+			"change",
+			"textAgain",
+			"unlock=",
+			"unlock",
+			"index+1",
+			"积分",
+			"10"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			" ",
+			"",
+			"@1600",
+			"=>",
+			";",
+			"echo json_encode($re);",
+			"$re[",
+			"$dsql",
+			"“",
+			"'"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 70.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 202.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

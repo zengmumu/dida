@@ -95,6 +95,18 @@
 							$getUser.out();
 							
 						}
+						function getPrecent(){
+						if($scope.data.user.M_ID!=undefined){
+							$http.get($scope.host+"/start/get_precent.php?tid="+$stateParams.course+"&user="+$scope.data.user.M_ID).success(function(data){
+								$scope.preData=data;
+				
+								})
+						}else{
+									setTimeout(function(){  getPrecent()},50)
+								}
+							
+						}
+						 getPrecent();
 						$http.get($scope.host+"/start/get_chapters.php?reid="+$stateParams.course).success(function(data){
 							$scope.chapters=data;
 
@@ -139,6 +151,7 @@
 								
 
 									getunlock();
+									 getPrecent();
 							 })
 						     $scope.sc={};
 						     $scope.sc.t=0;
@@ -350,6 +363,7 @@
 		                     	 				data.data[i].subtitle = data.data[i].subtitle.replace(/[\r]/g, "<br/>");
 		                     				}
 					                     	var n =  data.data[i].subtitle.match(/\[space\]/g)||[];
+//					                     	console.log(n);
 					                     		var temp=data.data[i].answer.split(",");
 					                     		data.data[i].blank_len=[];
 					                     		console.log(data.data[i].blank_len);
@@ -359,14 +373,60 @@
 
 
 											for(var j=0; j<n.length;j++){
-												console.log( data.data[i]);
+//												console.log( data.data[i]);
 												 data.data[i].userAnswer[j]="";
-												 console.log( data.data[i]);
-												 data.data[i].subtitle = data.data[i].subtitle.replace(/\[space\]/, "<input type='text' id='q_"+i+"_"+j+"' myinput style=\"width:"+data.data[i].blank_len[j]*18+"px\" ng-keyup=\"keyup(question,"+i+","+j+")\"  ng-model=\"question.userAnswer["+j+"]\" maxlength='"+data.data[i].blank_len[j]+"' size='"+data.data[i].blank_len[j]+"' />");
-												break;
+//												 console.log( data.data[i]);
+												 data.data[i].subtitle = data.data[i].subtitle.replace(/\[space\]/, "<input type='text' id='q_"+i+"_"+j+"' myinput style=\"width:"+data.data[i].blank_len[j]*14+"px\" ng-keyup=\"keyup(question,"+i+","+j+")\"  ng-model=\"question.userAnswer["+j+"]\" maxlength='"+data.data[i].blank_len[j]+"' size='"+data.data[i].blank_len[j]+"' />");
+												
 											}
 
 					                     }
+					                     if (data.data[i].subtitle&&data.data[i].channel==30&&data.data[i].type==5) {
+					                     	
+//					                     	if(data.data[i].subtitle.indexOf("<br /><br/>")){
+//					                     		var temp=data.data[i].subtitle.split("<br /><br/>");
+//					                     	}else if(data.data[i].subtitle.indexOf("<br />")){
+//					                     		var temp=data.data[i].subtitle.split("<br />");
+//					                     	}
+//					                     	else if(data.data[i].subtitle.indexOf("/\r/g")){
+//					                     		var temp=data.data[i].subtitle.split("/\r/g");
+//					                     	}
+//					                     	else{
+//					                     		var temp=data.data[i].subtitle.split("<br/>");
+//					                     	}
+											if(data.data[i].subtitle.lastIndexOf(/\r\n/)){
+												data.data[i].subtitle=data.data[i].subtitle.substr(0,data.data[i].subtitle.length-1);
+											}
+											if(data.data[i].subtitle.indexOf("brush")!=-1){
+//												console.log(data.data[i].subtitle.substr(data.data[i].subtitle.length));
+												console.log("hit pre")
+												data.data[i].subtitle=data.data[i].subtitle.replace(/\r\n/g,"<br/>");
+        										data.data[i].subtitle=data.data[i].subtitle.replace(/\n/g,"<br/>");  
+        										console.log("org",data.data[i].subtitle);
+					                     		var temp=data.data[i].subtitle.split("<br/>");
+											}else if(data.data[i].subtitle.indexOf("<br")){
+												console.log("hit <br");
+												var temp=data.data[i].subtitle.split("<br/>");
+											}
+											else{
+												data.data[i].subtitle=data.data[i].subtitle.replace(/\r\n/g,"<br/>");
+        										data.data[i].subtitle=data.data[i].subtitle.replace(/\n/g,"<br/>");  
+        										console.log("org",data.data[i].subtitle);
+					                     		var temp=data.data[i].subtitle.split("<br/>");
+											}
+											
+					                     
+//					                     	console.log("org",data.data[i].subtitle);
+//					                     	console.log("tem",temp);
+					                     	data.data[i].lists=[];
+					                     	for(var z=0;z<temp.length;z++){
+//					                     				data.data[i].lists.push({text:"<pre class='brush:xml'>"+temp[z]+"</pre>",order:[z]});
+					                     				data.data[i].lists.push({text:temp[z],order:[z]});
+					                     				
+					                     		}
+//					                     	console.log("list",data.data[i].lists);
+					                     }
+					                     
 					                 }
 									 $scope.questions=data.data
 									 $scope.questions[0].unlock=true;
@@ -377,6 +437,28 @@
 					})
 
 									 })
+								//排序
+				$scope.moveItem=function(item,from,to,question,$event){
+//					console.log("event",$event.target);
+					question.lists.splice(from,1);
+					question.lists.splice(to,0,item);
+					var userAnswer=[];
+					 for(var i=0;i<question.lists.length;i++){
+					 	 userAnswer.push(question.lists[i].order);
+					 }
+					
+					 question.currentAnswer=userAnswer.toString();
+//					 var sy=new SyntaxHighlighter();
+//					 sy.config.tagName="span";
+//					 sy.highlight();
+//					 console.log("abc",abc);
+					
+//var brush = new SyntaxHighlighter.brushes.JScript(),
+//	code = document.getElementById('input').innerHTML	
+//	brush.init({ toolbar: false });
+//	html = brush.getHtml(code);
+//	document.write(html);
+				}
 							$scope.selectHd=function(question,op,answer,index){
 								question.currentSelect=op;
 								question.currentAnswer=answer
@@ -588,9 +670,9 @@
 					}
 					$scope.checkAnswer=function(question){
 						//"answer": question.userAnswer.toString().replace(/（/g,"(").replace(/）/g,")").replace(/；/g,";").replace(/。/g,".").replace(/”/g,"\"").replace(/”/g,"\"").replace(/？/g,"?").replace(/：/g,":"),
-						
+//						 console.log("an",question.answer,question.currentAnswer);
 						if (question.answer==question.currentAnswer||question.answer==question.userAnswer.toString().replace(/（/g,"(").replace(/）/g,")").replace(/；/g,";").replace(/。/g,".").replace(/”/g,"\"").replace(/”/g,"\"").replace(/？/g,"?").replace(/：/g,":")) {
-							 
+							
 							$http.post($scope.host+"/start/set_unlock.php",{
 										"unlock":question.id,
 										"user":$scope.data.user.M_ID,

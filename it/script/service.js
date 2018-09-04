@@ -61,6 +61,7 @@ app.factory("$userData",["$http",function($http){
  		
  			window.setTimeout(function(){
  			 SyntaxHighlighter.highlight();	
+
  			 },50)
  		
 

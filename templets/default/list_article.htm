@@ -21,88 +21,79 @@
 }
 </style>
 </head>
-<body class="articlelist">
+<body class="articlelist" style="background-color: #f6f6f6;">
 {dede:include filename="head2.htm"/}
 <!-- /header -->
-<div class="channel-nav w960 center clear">
-	<div class='sonnav'>
-	{dede:channel type='self' currentstyle="<span><a href='~typelink~' class='thisclass'>~typename~</a></span>"}
-		<span><a href='[field:typeurl/]'>[field:typename/]</a></span>{/dede:channel}
-	</div>
-</div><!-- /channel-nav -->
 <div class="container">
- <div class="col-md-9">
- <div class="position">
-		 {dede:field name='position'/}
-	</div>
+
+ <div class="position" style="margin:0;  padding-top:1em; padding-bottom: 1em; font-size:1em;"> {dede:field name='position'/}</div>
   <!-- /place -->
-  <div class="listbox">
-   <ul class="e2">
-    {dede:list pagesize='10'}
-    <li> [field:array runphp='yes']@me = (empty(@me['litpic']) ? "" : "<a href='{@me['arcurl']}' class='preview'><img src='{@me['litpic']}'/></a>"); [/field:array]
-     [<b>[field:typelink/]</b>] <a href="[field:arcurl/]" class="title">[field:title/]</a> <span class="info"> <small>日期：</small>[field:pubdate function="MyDate('Y-m-d',@me)"/] <small>点击：</small>[field:click/] </span>
-     <p class="intro"> [field:description/]... </p>
-    </li>
-    {/dede:list}
-   </ul>
-  </div>
-  <!-- /listbox -->
-  <div class="dede_pages">
-   <ul class="pagelist">
-    {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
-   </ul>
-  </div>
-  <!-- /pages -->
+  
+ <div class="row">
+ 	
+ 		<div class="col-md-9 c-bg">
+ 			<div class="listbox">
+			   <ul class="e2">
+			    {dede:list pagesize='10' orderby="id" orderway="asc"}
+			    <li> 
+			      <a href="[field:arcurl/]" class="title"  style="clear: both;">[field:title/]</a> 
+			       <span class="info pull-left "> <small>日期：</small>[field:pubdate function="MyDate('Y-m-d',@me)"/] <small>点击：</small>[field:click/] </span>  <span class="gray pull-left" style="padding-left: 15px;">[field:typelink/]</span> 
+			     
+			     <p class="intro" style="clear: both;"> [field:description/]... </p>
+			    </li>
+			    {/dede:list}
+			   </ul>
+			  </div>
+			  <!-- /listbox -->
+			  <div class="dede_pages">
+			   <ul class="pagelist">
+			    {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+			   </ul>
+			  </div>
+			  <!-- /pages -->
+ 		</div>
+ 		<div class="col-md-3">
+ 			<div class="panel panel-default">
+  					<div class="panel-heading">{dede:field.typeid function="GetParentTypename(@me)"/}</div>
+  					<div class="panel-body">
+  						<ul class="list-unstyled">
+					      {dede:channel type='self' currentstyle="
+					      <li><a href='~typelink~' class='thisclass'>~typename~</a></li>
+					      "}
+					      <li><a href='[field:typeurl/]'>[field:typename/]</a></li>
+					      {/dede:channel}
+				     </ul>
+  					</div>
+   				</div>
+   			<div class="panel panel-default">
+  					<div class="panel-heading">推荐内容</div>
+  					<div class="panel-body">
+  						<ul class="list-unstyled">
+					      {dede:arclist flag='c' titlelen=32 row=6}
+					      <li><a href="[field:arcurl/]">[field:title/]</a>
+					       
+					      </li>
+					      {/dede:arclist}
+				     </ul>
+  					</div>
+   			</div>
+   			<div class="panel panel-default">
+  					<div class="panel-heading">热点内容</div>
+  					<div class="panel-body">
+  						<ul class="list-unstyled">
+					     {dede:arclist row=10 orderby=click}
+					      <li><a href="[field:arcurl/]">[field:title/]</a></li>
+					      {/dede:arclist}
+				     </ul>
+  					</div>
+   			</div>
+ 		</div>
+ 	</div>
  </div>
- <!-- /pleft -->
- <div class=" col-md-3">
-  <div>
-   <dl class="tbox">
-    <dt><strong>栏目列表</strong></dt>
-    <dd>
-     <ul class="d6">
-      {dede:channel type='son' currentstyle="
-      <li><a href='~typelink~' class='thisclass'>~typename~</a></li>
-      "}
-      <li><a href='[field:typeurl/]'>[field:typename/]</a></li>
-      {/dede:channel}
-     </ul>
-    </dd>
-   </dl>
-  </div>
+  
+  
+  
 
-  <div class="commend">
-   <dl class="tbox light">
-    <dt class='light'><strong>推荐内容</strong></dt>
-    <dd class='light'>
-     <ul class="d4">
-      {dede:arclist flag='c' titlelen=42 row=6}
-      <li><a href="[field:arcurl/]">[field:title/]</a>
-       <p>[field:description function='cn_substr(@me,80)'/]...</p>
-      </li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-  </div>
-  <!-- /commend -->
-  <div class="hot mt1 light">
-   <dl class="tbox">
-    <dt class='light'><strong>热点内容</strong></dt>
-    <dd class='light'>
-     <ul class="c1 ico2">
-      {dede:arclist row=10 orderby=click}
-      <li><a href="[field:arcurl/]">[field:title/]</a></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-  </div>
-
-
- </div>
- <!-- /pright -->
-</div>
 
 
 {dede:include filename="footer.htm"/}

@@ -1,0 +1,22 @@
+ <ion-view>
+<div ng-controller="unitsCtrl"  on-drag="toggleLeft($event)">
+    <div class=" bar bar-header bar-positive">
+    	<button class="button button-icon icon  ion-ios-arrow-thin-left" ng-click="goback()"></button>
+        <h2 class="title">{{typename}}</h2>
+    </div>
+    <ion-content class="has-header has-footer">
+        <div class="row-unit" >
+            <div class="unit-50 unit-out"  ng-repeat="item in units" ng-class-odd="'unit-odd'" ng-class-odd="'unit-even'">
+               	<a class="unit" id="units{{$index}}" ng-class="{'unlock':item.unlock,'delock':item.delock}"  ng-click=changeState(item)>
+            		{{item.title}}
+          		</a>
+            </div>
+            
+        </div>
+
+
+    </ion-content>
+   
+
+ </div>
+  </ion-view>

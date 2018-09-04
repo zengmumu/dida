@@ -1041,7 +1041,7 @@ a.list-praise em{
 	display:inline-block;
 }
  .plus { margin-top:50px; margin-bottom:50px; border-top:1px solid #f0f0f0; clear:both; padding-top:35px;}
- .plus .icon_good{ cursor:pointer; background-image:url(../images/good.png); display:inline-block; padding-left:55px; height:40px; line-height:40px; width:50px; border-radius:20px; border:1px solid #f60; color:#f60; font-size:1em; background-position:20px 5px; text-align:left;}
+ .plus .icon_good{ width: 6rem; cursor:pointer; background-image:url(../images/good.png); display:inline-block; padding-left:55px; height:40px; line-height:40px;  border-radius:20px; border:1px solid #f60; color:#f60; font-size:1em; background-position:20px 5px; text-align:left;}
 .icon_good.on{
 	background-position:right top
 }
@@ -1264,8 +1264,8 @@ margin-top: 35px;
 }
 
 
-.tutor .coment{   width: 890px;
-    float: left; margin-top:4em;}
+.tutor .coment{  
+    }
 .tutor .coment .title{
 	box-sizing:content-box;
 	 position: relative;

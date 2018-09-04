@@ -1,0 +1,43 @@
+ <ion-view>
+<div ng-controller="regCtrl">
+    <div class=" bar bar-header bar-positive">
+        <button class="button button-icon icon  ion-ios-arrow-thin-left" ng-click="goback()"></button>      
+        <h2 class="title">用户注册</h2>
+    </div>
+    <ion-content class="has-header has-footer">
+
+                <div class="box blue text-center">
+                   <br/><br/><br/>
+                    <h3>轻课堂</h3>
+                 </div>
+         <div class="list list-inset">
+           <label class="item item-input">
+                <i class="icon ion-ios-email placeholder-icon"></i>
+                <input type="text" placeholder="邮箱" ng-model="reg.email">
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-ios-person placeholder-icon"></i>
+                <input type="text" placeholder="用户名" ng-model="reg.username">
+            </label>
+             <label class="item item-input">
+                <i class="icon ion-key placeholder-icon"></i>
+                <input type="password"  placeholder="密码" placeholder="" ng-model="reg.password">
+            </label>
+
+
+         </div>
+        <div class="padding">
+             <button class="button  button-blue button-block" ng-click="regHd()"><ion-spinner icon="spiral" ng-show="!isreg"></ion-spinner> 注册</button>
+             <button class="button button-clear button-stable button-block" ng-click="goState('login')">登陆</button>
+        </div>
+
+        <div class="help padding text-danger">{{reg.help }}</div>
+       
+
+
+
+    </ion-content>
+     </ion-view>
+<!-- <div class=" bar bar-footer  text-center bar-light">
+     
+    </div> -->

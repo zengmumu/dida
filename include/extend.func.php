@@ -31,3 +31,16 @@ function checkBtnDemo() {
 function adds($str){
 	return addslashes(htmlspecialchars($str));
 }
+function GetParentTypename($id){
+  global $dsql ;
+  
+   $reid = $dsql->GetOne("SELECT reid FROM dede_arctype where id=$id");
+   $reid = $reid['reid'];
+   if(empty($reid)){ //当前栏目不存在父级id,查询当前栏目名称
+    $row1 = $dsql->GetOne("SELECT typename FROM dede_arctype where id=$id");
+    return $row1['typename'];
+   }else{//当前栏目存在父级id,查询父级栏目名称
+    $row1 = $dsql->GetOne("SELECT typename FROM dede_arctype where id=$reid");
+    return "<a href='/plus/list.php?tid=".$reid."'>".$row1['typename']."</a>";
+   }
+ }

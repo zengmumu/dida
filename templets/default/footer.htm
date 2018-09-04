@@ -135,6 +135,8 @@
 </div>
 <style>
 	/*header2*/
+	a{ color: #666;}
+	a:hover{ color: #333;}
 .navbar-default .container {
 		background-color: #0E90D2 !important;
 		border: none;
@@ -264,6 +266,25 @@
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #fff;
 }
+#_login{display: inline-block;}
+.index .userinfo .welcome{ padding: 0;}
+.dcmp-stand{ margin-top: -3px; font-size: 12px;height: 20px; line-height: 20px; font-weight: normal;}
+.dcmp-post .dcmp-userinfo{margin: 0;}
+ .dcmp-post .dcmp-userinfo input{width: auto;}
+ .p0{ padding: 0 !important;}
+.on,.on a{ color: #0E90D2 ;}
+.panel-body a {
+    line-height: 2rem;
+}
+.c-bg {
+    background-color: #fff;
+    -webkit-box-shadow: 0px 1px 2px #bbb;
+    -moz-box-shadow: 0px 1px 2px #bbb;
+    box-shadow: 0px 1px 2px #bbb;
+}
+.e2 span.info{ color: #aaa;}
+.gray a{ color: #aaa!important; font-weight: 100;}
+.listbox .title{ display: block; clear: both; padding-left: 15px;}
 	@media only screen and (max-width:768px) {
 		.navbar-nav {
 			margin-left: -15px;
@@ -301,7 +322,7 @@
 	function CheckLogin(){
 	  var taget_obj = document.getElementById('_login');	  
 	  myajax = new DedeAjax(taget_obj,false,false,'','','');
-	  myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_loginsta.php");
+	  myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_loginsta2.php");
 	  DedeXHTTP = null;
 	}
 

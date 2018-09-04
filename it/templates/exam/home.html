@@ -1,0 +1,173 @@
+<ion-view>
+<div ng-controller="homeCtrl" >
+<!-- on-drag="toggleLeft($event)" -->
+    <alert  msg="alertServer.msg" class="addNote"></alert>
+    <div class=" bar bar-header bar-positive">
+    <button class="button button-icon icon  ion-ios-arrow-thin-left" ng-click="goback()"></button>
+        <h2 class="title">{{ unitname}}</h2>
+
+           
+
+    </div>
+    <div class="bar bar-subheader sub"> 
+     <ion-scroll zooming="true" direction="x" style="width: 100%; height: 36px">
+        <div style="width:{{questions.length*50}}px;margin-top:4px;margin-left: auto;margin-right: auto;"> <i class="" id="questons{{$index}}"  ng-click="slideTo($index,question)" ng-repeat="question in questions" ng-class="{'selected':question.currentAnswer,'unlock':question.unlock}">
+        <span ng-if="question.channel==1">
+          <svg focusable="false" width="28" height="28" viewBox="0 0 24 24" data-reactid="157"> <path fill="#{{current.page==$index?'ffffff':'316ad1'}}" d="M10.555 7.17l6 4a1 1 0 0 1 0 1.664l-6 4A1 1 0 0 1 9 16.002v-8a1 1 0 0 1 1.555-.832z
+ M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z" data-reactid="158"></path></svg>
+        </span>
+         <span ng-if="question.channel==30">
+         <svg focusable="false" width="28" height="28" viewBox="0 0 24 24" data-reactid="141"><path fill="#{{current.page==$index?'ffffff':'316ad1'}}" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z
+ M8.748 17.434a.5.5 0 0 1-.744-.496l.47-3.757-2.328-2.327a.5.5 0 0 1 .283-.849l3.258-.465 1.879-3.288a.5.5 0 0 1 .868 0l1.879 3.288 3.258.465a.5.5 0 0 1 .283.849l-2.328 2.327.47 3.757a.5.5 0 0 1-.744.496L12 15.576l-3.252 1.858z
+ M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z" data-reactid="142"></path></svg>
+        </span>
+ </i></div>
+</ion-scroll>
+    </div>
+    <ion-content delegate-handle="ques" class="has-header has-subheader article-ion" ng-class="{'has-footer':current.showbar}" overflow-scroll='false'>
+        <ion-slide-box disable-scroll="true" enable-slide="false" show-pager="false" on-slide-changed="slideHasChanged(index)">
+             <!--  <ion-slide>
+                <div class="box blue text-center">
+                    <br/><br/><br/><br/><br/>
+                    <img  src="http://statics.qikuedu.com/images/logo.png">
+                    <br/><br/><br/><br/><br/>
+                    <btton  class="button button-assertive button-outline " ng-click="slideTo(1)">开始答题</btton>
+                </div>
+              </ion-slide> -->
+              <ion-slide ng-repeat="question in questions" >
+                  
+                  <div class="article" ng-if="question.channel==1">
+                    <div class="article-content">
+                      <div class="article-title " >
+                        {{question.title}}
+                      </div>
+
+                      <div  class="article-body sh-block" ng-bind-html="question.body|to_trusted">
+                      </div>
+                    </div>
+                    <div class="row-error"></div>
+                    <div class="row">
+                  <div class="col positive text-left">
+                  <button class="button button-small button-clear button-positive" ng-click="getComents(question)" >{{question.comentCount}}  <i class="icon ion-chatbubble-working placeholder-icon"></i></button></div>
+                  <div class="col text-right col-40 "><button class="button button-blue button-block" ng-click="nextSlide(question)">继续</button></div>
+                    </div>
+                  </div>
+                  
+                  
+
+              <div  class="question" ng-if="question.channel==30">
+
+              <div class="answer-title selectable" ><span class="tip" ng-if="question.type==1">单选</span> <span class="tip" ng-if="question.type==2">多选</span> <span class="tip"  ng-if="question.type==4">问答</span >
+               <span class="tip"  ng-if="question.type==3">填空</span >  <span class="tip"  ng-if="question.type==5">排序</span >
+              {{question.title}}</div>
+               <div dy-compile ng-if="question.subtitle&&question.type!=5" content="question.subtitle" class="fill-blank "> </div>
+            <div class="options">
+                  <div class="answer-option {{getAnswer(item,question)}}{{question.showAnswer}}" ng-if="question.type==1" ng-class="{'selected':question.currentSelect==item.op,'mul-line':item.op.length>18}" ng-repeat="item in question.optionData" ng-click="selectHd(question,item.op,item.answer, $parent.$index)">
+                      <i class="op-xu" ng-if="$index==0">A</i>
+                      <i class="op-xu" ng-if="$index==1">B</i>
+                      <i class="op-xu" ng-if="$index==2">C</i>
+                      <i class="op-xu" ng-if="$index==3">D</i>
+                      <span class="op-content" ng-class="{'mul-line':item.op.length>18}">{{ item.op }} </span>
+
+                  </div>
+                   <div  ng-if="question.type==2">
+                     <div  class="answer-option mutil" ng-class="{'selected':checkMulSelect(question,item.op),'mul-line':item.op.length>18}" ng-repeat="item in question.optionData" ng-click="selectMulHd(question,item.op,item.answer, $parent.$index)">
+                      <i class="op-xu" ng-if="$index==0">A</i>
+                      <i class="op-xu" ng-if="$index==1">B</i>
+                      <i class="op-xu" ng-if="$index==2">C</i>
+                      <i class="op-xu" ng-if="$index==3">D</i>
+                      <span class="op-content" ng-class="{'mul-line':item.op.length>18}">{{ item.op }} </span>
+                     </div>
+                  </div>
+                  
+                  	
+                  	
+                     
+            </div>
+            <ion-list  show-reorder="true"  ng-if="question.type==5" class="options" >
+					<ion-item ng-repeat="item in question.lists" class="answer-option ">
+						<ion-reorder-button 
+							class="ion-navicon"
+							on-reorder="moveItem(item,$fromIndex,$toIndex,question,this)"
+							>
+						</ion-reorder-button>
+						<span class="sh-block" ng-bind-html="item.text|to_trusted"></span>
+					</ion-item>
+            </ion-list>      
+                  <!--
+                   <button class="button button-positive button-full" ng-click="mulHdNext(question)">确定</button>
+                  -->
+                   <div  ng-if="question.type==4">
+                       <div>
+                           <textarea placeholder="请输入您的意见或者答案" name="" id="" width="90%" height="50" ng-model="question.currentAnswer"></textarea>
+                       </div>
+
+                      <button class="button button-positive button-full" ng-click="QaHdNext(question)">确定</button>
+                  </div>
+                   <!-- <div  ng-if="question.type==3" >
+                        <div dy-compile  content="question.subtitle" class="fill-blank "> </div>
+                  </div> -->
+
+                   <!--check
+                -->
+                <div class="row row-error">
+                    <div class="col-60">
+                    <div class="err-tip" ng-show="question.showErr">&times; 错误    <span class="tip-back " ng-click="preSlide(question)"><i class="icon balanced ion-ios-arrow-thin-left"></i> 返回</span> <i class="icon  ion-ios-unlocked-outline" ng-click="unlockQuestion(question)"> 解锁</i> </div>
+                    </div>
+                    <div class="col">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col text-left col-center"> <button class="button button-clear button-positive" ng-show="question.showErr" ng-click="getComents(question)">{{question.comentCount}} <i class="icon ion-chatbubble-working placeholder-icon"></i></button></div>
+                    <div class="col col-40 text-right">
+                    <button class="button  button-block button-blue " ng-click="checkAnswer(question)"  ng-show="!question.showErr" >检查</button>
+                    <button class="button  button-block button-blue " ng-show="question.showErr" ng-click="testAgain(question)">再做一次</button>
+
+                    </div>
+                  </div>
+                  <!--check
+                -->
+
+                </div>
+
+               
+                  <div class="question-com">
+                          <div class="coments" dy-compile content="question.coments" >
+                         
+                          </div>
+
+                </div>
+
+                
+
+              </ion-slide>
+           
+
+        </ion-slide-box>
+
+           <div class="coment-button" ng-hide="true">+</div>
+    </ion-content>
+    <div class="answer-sheet" ng-show="current.showAnswerSheet">
+        <ion-content>
+            <div class="disbox">
+                <i class="op-xu" ng-click="slideTo($index,question)" ng-repeat="question in questions" ng-class="{'selected':question.currentAnswer}"><span>{{ $index+1 }}</span></i>
+            </div>
+        </ion-content>
+
+    </div>
+   <div class="bar bar-footer bar-stable text-center   item-input-inset" ng-show="current.showbar">
+   <label class="item-input-wrapper">
+    <i class="icon ion-chatbubble-working placeholder-icon"></i>
+   <textarea name="" id="" cols="30" rows="10" ng-model="current.msg"></textarea>
+  </label>
+  <button class="button button-balanced button-small button-outline" ng-click="comment()">
+    评论
+  </button>
+   </div>
+        <!-- <button class="button button-clear" ng-click="current.showAnswerSheet=!current.showAnswerSheet"><i class="icon ion-ios-keypad-outline  "></i></button>
+        <span ng-show="current.page<questions.length" >&nbsp;&nbsp;&nbsp;<span class="text-danger">{{ current.page }}</span>/{{ questions.length }}</span> -->
+
+    </div> 
+
+ </div>
+ </ion-view>
