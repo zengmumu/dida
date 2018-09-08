@@ -4,6 +4,41 @@
 		<meta charset="UTF-8">
 		<title ng-bind="$root.data.course.typename"></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		 <style>
+         	ion-content{
+  overflow-scroll: true;
+}
+
+.scroll-content {
+  -webkit-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  user-select: auto !important;}
+
+.selectable {
+  -webkit-user-select: auto;
+}
+
+*{
+  -webkit-touch-callout:default;
+  -webkit-user-select:auto;
+  -khtml-user-select:text;
+  -moz-user-select:text;
+  -ms-user-select:text;
+  user-select:text;
+  -o-user-select:default;
+}
+* {-webkit-user-select:auto;}
+/*注意：在html页面设置*/
+
+.selectable {
+  -webkit-user-select: text;
+}
+.selectable *{
+	  -webkit-user-select: text !important;
+}
+         	
+         </style>
 	</head>
 	<body ng-controller="mainCtrl" class=""  >
 		
@@ -31,7 +66,7 @@
        <div class="list">
        	 
        			<a href="/" class="item"> ← 返回轻课堂首页</a>
-       		 
+       		    <a href="" class="item" ng-click="share()">分享</a>
 
        </div>
   </ion-side-menu>
@@ -42,7 +77,8 @@
 		<link rel="stylesheet" href="./css/ionic.min.css"/>
 		<script src="./js/ionic.bundle.min.js"></script>
 		<script src="./script/exam_app.js"></script>
-		<script src="./script/service.js"></script>		
+		<script src="./script/service.js"></script>	
+		<script src="./script/api.js"></script>
 		
          <script>
          	function downLoadCss(url){
@@ -73,5 +109,6 @@
     		
 
          </script>
+        
 	</body>
 </html>

@@ -1,0 +1,110 @@
+<ion-view>
+	<div ng-controller="tutorialCtrl" class="index-book">
+		<div class=" bar bar-header bar-positive">
+			<button class="button button-icon icon  ion-ios-arrow-thin-left" ng-click="goback()"></button>
+			<h2 class="title">{{data.course.typename}} 网络教程 	</h2>
+		</div>
+
+	<ion-content class="has-header has-footer" overflow-scroll="true" scroll="true">
+		<div class="selectable" data-tap-disabled="true">
+			<div class="row booklist" ng-repeat="item in tutorList">
+				<div> <img  src="{{item.litpic}}" width="105" alt="" /> </div>
+				<div class="col">
+					<h4>{{item.title}}</h4>
+					<p>{{item.description}}</p>
+					<div class="row">
+						<div class="col-66">
+							{{item.ourl}}
+						</div>
+						<div class="col-34 text-right">
+							<a href="{{item.official}}" class="btn button-blue">官网学习</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<style>
+				.booklist .row {
+					padding: 0;
+				}
+				
+				.booklist .col-66 {
+					font-size: 10px;
+					color: #bbb;
+					line-height: 12px;
+					word-break: break-all;
+					height: 35px;
+					overflow: hidden;
+					-ms-text-overflow: ellipsis;
+					text-overflow: ellipsis;
+					display: -webkit-box;
+					/** 对象作为伸缩盒子模型显示 **/
+					-webkit-box-orient: vertical;
+					/** 设置或检索伸缩盒对象的子元素的排列方式 **/
+					-webkit-line-clamp: 3;
+					/** 显示的行数 **/
+				}
+				
+				.booklist .col {
+					border-bottom: 1px solid #f0f0f0;
+				}
+				
+				.booklist {
+					padding-right: 15px !important;
+					padding-top: 10px !important;
+				}
+				
+				.booklist h4 {
+					font-size: 16px;
+					height: 25px;
+					margin: 0;
+					line-height: 25px;
+					white-space: nowrap;
+					overflow: hidden;
+					-ms-text-overflow: ellipsis;
+					text-overflow: ellipsis;
+				}
+				
+				.booklist p {
+					font-size: 12px;
+					line-height: 14px;
+					color: #bbb;
+					min-height: 28px;
+					/*position: absolute;*/
+					overflow: hidden;
+					-ms-text-overflow: ellipsis;
+					text-overflow: ellipsis;
+					display: -webkit-box;
+					/** 对象作为伸缩盒子模型显示 **/
+					-webkit-box-orient: vertical;
+					/** 设置或检索伸缩盒对象的子元素的排列方式 **/
+					-webkit-line-clamp: 2;
+					/** 显示的行数 **/
+				}
+				
+				.booklist .btn {
+					text-align: center;
+					font-size: 12px;
+					text-decoration: none;
+					display: block;
+					width: 70px;
+					max-width: 100%;
+					float: right;
+					padding: 4px 0;
+				}
+			</style>
+		</div>
+	</ion-content>
+	<div class="tabs tabs-icon-top">
+		<a class="tab-item " href="#/">
+			<i class="icon ion-ios-lightbulb-outline"></i> 课程
+		</a>
+		<a class="tab-item tab-item-active" href="#/book">
+			<i class="icon ion-ios-book-outline"></i> 书籍
+		</a>
+		<a class="tab-item" href="#/tutorial" style="color: dodgerblue;">
+			<i class="icon ion-ios-color-wand"></i> 教程
+		</a>
+
+	</div>
+	</div>
+</ion-view>

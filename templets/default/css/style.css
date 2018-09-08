@@ -1293,7 +1293,7 @@ dl,dt,dd{ margin:0;}
 .tbox dt{ height:38px; line-height:38px;}
 .dcmp-stand input{ margin-left:25px;}
 .dcmp-stand{ height:38px; height:38px; line-height:38px;}
-.dcmp-userinfo{ margin-top:10px;}
+.dcmp-userinfo{ margin-top:0px;}
 .mt1{ margin-top:35px; border-top:1px solid #f0f0f0;}
 }
 .mt1 a{color:#aaa; font-size:12px;}
@@ -1522,7 +1522,7 @@ dl,dt,dd{ margin:0;}
 .tbox dt{ height:38px; line-height:38px;}
 .dcmp-stand input{ margin-left:25px;}
 .dcmp-stand{ height:38px; height:38px; line-height:38px;}
-.dcmp-userinfo{ margin-top:10px;}
+.dcmp-userinfo{ margin-top:0px;}
 .mt1{ margin-top:35px; border-top:1px solid #f0f0f0;}
 }
 .mt1 a{color:#aaa; font-size:12px;}

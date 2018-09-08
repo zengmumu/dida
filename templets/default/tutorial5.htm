@@ -52,7 +52,8 @@
   					<h3 class="title"><span>发表评论</span></h3>
  						<div id="course_note" class="p10">
        				<ul class="commentcon">
-         				{dede:include file='ajaxfeedback2.htm' /} 
+         				{dede:include file='ajaxfeedback5.htm' /} 
+
       				</ul>
       			</div>
  					</div>  <!--评论列表-->
@@ -91,7 +92,7 @@
 			</div><!--container ed-->
 		</div><!--courseed-->
   <!--课程-->
-   {dede:include filename="footer.htm"/}
+   {dede:include filename="footer2.htm"/}
 <script>
 	function postBadGood(ftype, fid) {
 	var taget_obj=document.getElementById(ftype + fid);
@@ -190,16 +191,23 @@ $(function() {
 			$(this).find("span").html("+");
 		}
 	}
-	) if($("#single-product-bar").is(":empty")) {
+	) 
+	if($("#single-product-bar").is(":empty")){
 		$("#single-product-bar").remove();
 	}
 	$("#single-product-bar").addClass("noEmpty");
-}
+	
+})
+getDigg({dede:field.id/});
+setTimeout(function(){
+	if($(window).width()<768){
+	 
+		$(".dcmp-content textarea").show().css({"visibility":"visible","width":"100%"});
+		$("#cke_msg").hide();
+	}
+	
+},2000)
 
-)
-getDigg({
-	dede: field.id /
-});
 </script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 

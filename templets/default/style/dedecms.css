@@ -782,6 +782,7 @@ input,select,button{
 						
 						.digg_num img {
 							width: 24px;
+							display:none;
 						}
 						
 						.des {

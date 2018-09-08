@@ -3,7 +3,12 @@
 					  $scope.host="";					
 						 
 						 $scope.goback=function(){
-						 	$ionicHistory.goBack();						 	
+						 	var abc = $ionicHistory.goBack();	
+						 	console.log($ionicHistory,$ionicHistory.backView(),"backview");
+						 	if($ionicHistory.backView()==null){
+						 		window.history.back();
+						 	}
+						 	
 						 }
 						 $scope.checkUser = function(){
 							if(!$scope.userData.user.M_LoginID){		
@@ -21,6 +26,7 @@
 						$scope.data=$getUser;
 						$scope.data.get();
 						$rootScope.data=$getUser;
+						console.log($scope.data);
 						
 
 
@@ -58,6 +64,21 @@
 							$scope.data.courseList=data;
 							console.log($scope.data.courseList);
 						})
+						$scope.share=function(){
+							if(api){
+								
+							
+							var sharedModule = api.require('shareAction');
+							var abc=sharedModule.share({
+							    text: '一个学习python好地方',
+							    type: 'url',
+							    path:'http://www.qinkt.com/it/'
+							});
+//							alert(abc);
+							}else{
+								alert("没有api")
+							}
+						}
 
 					}])
 					.controller("indexCtrl",["$scope","$state","$ionicHistory","$stateParams","$http","$getUser","$rootScope","$ionicScrollDelegate",function($scope,$state,$ionicHistory,$stateParams,$http,$getUser,$rootScope,$ionicScrollDelegate){
@@ -1088,6 +1109,65 @@
 								    
 					            })
 					    }])
+					   .controller("bookCtrl",["$scope","$http",function($scope,$http){
+stop_browser_behavior: false
+  
+self.touchStart = function(e) {
+  self.startCoordinates = getPointerCoordinates(e);
+
+  if ( ionic.tap.ignoreScrollStart(e) ) {
+    return;
+  }
+
+  if( ionic.tap.containsOrIsTextInput(e.target) ) {
+    // do not start if the target is a text input
+    // if there is a touchmove on this input, then we can start the scroll
+    self.__hasStarted = false;
+    return;
+  }
+
+  self.__isSelectable = true;
+  self.__enableScrollY = true;
+  self.__hasStarted = true;
+  self.doTouchStart(e.touches, e.timeStamp);
+  // e.preventDefault();
+};
+					    }])
+
+  .controller("tutorialCtrl",["$scope","$http","$stateParams",function($scope,$http,$stateParams){
+  	$scope.typeid=$stateParams.typeid;
+   $scope.name="mumu";
+$http.get("/start/get_tutorial_list.php?typeid="+$scope.typeid)
+.success(function(data){
+	
+	$scope.tutorList=data;
+	console.log($scope.tutorList);
+	
+})
+	
+//stop_browser_behavior: false
+//
+//self.touchStart = function(e) {
+//self.startCoordinates = getPointerCoordinates(e);
+//
+//if ( ionic.tap.ignoreScrollStart(e) ) {
+//  return;
+//}
+//
+//if( ionic.tap.containsOrIsTextInput(e.target) ) {
+//  // do not start if the target is a text input
+//  // if there is a touchmove on this input, then we can start the scroll
+//  self.__hasStarted = false;
+//  return;
+//}
+//
+//self.__isSelectable = true;
+//self.__enableScrollY = true;
+//self.__hasStarted = true;
+//self.doTouchStart(e.touches, e.timeStamp);
+//// e.preventDefault();
+//};
+				    }])
 					
 									
 

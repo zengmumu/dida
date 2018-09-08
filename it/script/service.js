@@ -224,6 +224,16 @@ app.factory("$userData",["$http",function($http){
 							templateUrl:"./templates/exam/main.html",
 							
 						})
+						.state("book",{
+							url:"/book",
+							templateUrl:"./templates/exam/book.html",
+							
+						})
+						.state("tutorial",{
+							url:"/tutorial/:typeid",
+							templateUrl:"./templates/exam/tutorial.html",
+							
+						})
 
 						//地址栏路由服务
 						$urlRouterProvider
