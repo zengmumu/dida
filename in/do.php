@@ -53,22 +53,25 @@ if ($action == 'import') { //导入XLS
 	 
 //		$query = mysql_query("insert into student (name,sex,age) values $data_values");//批量插入数据表中
 //		echo 	"insert into student (name,sex,age) values $data_values";
-		 $arcquery = "insert into  dede_archives (id,typeid,title,channel) values $data_values";
+		 $arcquery = "insert into  qkt_archives (id,typeid,title,channel) values $data_values";
 //		 echo $arcquery;
 			          $dsql->ExecuteNoneQuery($arcquery);
 //			    
 //			        //保存到附近加表
-				    $query = "insert into  dede_addonarticle30 (aid,typeid,subtitle,type,optiona,optionb,optionc,optiond,answer) values  $data_values2";
+				    $query = "insert into  qkt_addonarticle30 (aid,typeid,subtitle,type,optiona,optionb,optionc,optiond,answer) values  $data_values2";
 //				    echo $query;
 			        $dsql->ExecuteNoneQuery($query);
 //                  $fieldvalue = '';
 //			        //保存到微表
-			        $tinyquery = "insert into  dede_arctiny (id,typeid,channel) values $data_values3";
+			        $tinyquery = "insert into  qkt_arctiny (id,typeid,channel) values $data_values3";
 //			        echo   $tinyquery;
 			        
 			        $dsql->ExecuteNoneQuery($tinyquery);
 	    if($query){
-		    echo '导入成功！';
+	    	echo "$arcquery";
+	    	echo "$query";
+	    	echo "$tinyquery";
+		  
 	    }else{
 		    echo '导入失败！';
 	    }

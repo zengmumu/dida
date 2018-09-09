@@ -1,4 +1,3 @@
-					//245
 					var app=angular.module("examApp",["ionic",'ngAnimate'])
 					.controller("mainCtrl",["$scope","$state","$ionicHistory","$stateParams","$http","$getUser","$ionicSideMenuDelegate","$rootScope","$userData",function($scope,$state,$ionicHistory,$stateParams,$http,$getUser, $ionicSideMenuDelegate,$rootScope,$userData){
 					  $scope.host="";					
@@ -243,8 +242,7 @@
 								if(data.status){
 									$state.go("home",{"typeid":item.typeid,"id":item.id,"unitname":item.title,"typename":$scope.typename});
 								}else{
-									$state.go("home",{"typeid":item.typeid,"id":item.id,"unitname":item.title,"typename":$scope.typename});
-//									alert(data.msg);
+									alert(data.msg);
 								}
 
 							})
@@ -262,7 +260,7 @@
 										console.log(data,"unitunlock");
 										console.log($scope.units,"units");
 										setTimeout(function(){
-										if(data.length&&$scope.units&&$scope.units.length){
+										if(data.length&&$scope.units.length){
 											for(var i=0;i<$scope.units.length;i++){
 												for(var k=0;k<data.length;k++){
 													if($scope.units[i].id==data[k].unlock){									
@@ -303,6 +301,21 @@
 							$scope.current.result=false;
 							$scope.alertServer=alertServer;
 
+
+
+
+
+
+
+							
+					// $scope.goback=function(){
+					// var re=$ionicHistory.goBack();
+					// 	 	if(re==undefined){
+					// 	 		alert("un");
+					// 	 		$state.go("main");
+					// 	 	}
+						 	
+					// 	 }
 						
 							
 							$scope.popover = $ionicPopover.fromTemplate('<ion-popover-view></ion-content><div class="list"><div class="item" ng-click="logout()">退出</div></div></ion-content></ion-popover-view>', {
@@ -1132,28 +1145,7 @@ $http.get("/start/get_tutorial_list.php?typeid="+$scope.typeid)
 	
 })
 	
-//stop_browser_behavior: false
-//
-//self.touchStart = function(e) {
-//self.startCoordinates = getPointerCoordinates(e);
-//
-//if ( ionic.tap.ignoreScrollStart(e) ) {
-//  return;
-//}
-//
-//if( ionic.tap.containsOrIsTextInput(e.target) ) {
-//  // do not start if the target is a text input
-//  // if there is a touchmove on this input, then we can start the scroll
-//  self.__hasStarted = false;
-//  return;
-//}
-//
-//self.__isSelectable = true;
-//self.__enableScrollY = true;
-//self.__hasStarted = true;
-//self.doTouchStart(e.touches, e.timeStamp);
-//// e.preventDefault();
-//};
+
 				    }])
 					
 									
