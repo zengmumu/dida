@@ -59,10 +59,21 @@ app.factory("$userData",["$http",function($http){
  		restrict:"ECMA",
  		link: function(scope, element, attr) {
  		
+ 			
  			window.setTimeout(function(){
+ 				/*if(!window.SyntaxHighlighter){
+ 				     	
+        			downLoadJs("./sh/shCore.js")//      	
+        			downLoadCss("sh/shCoreDefault.css");
+        			setTimeout(function(){ SyntaxHighlighter.highlight();	},500)
+ 				}else{
+ 					 SyntaxHighlighter.highlight();	
+ 				}
+ 				*/
+
  			 SyntaxHighlighter.highlight();	
 
- 			 },50)
+ 			 },500)
  		
 
  			

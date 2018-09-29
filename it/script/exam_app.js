@@ -1,4 +1,5 @@
-					//245
+					//245 解锁课程
+					//211 解锁章节
 					var app=angular.module("examApp",["ionic",'ngAnimate'])
 					.controller("mainCtrl",["$scope","$state","$ionicHistory","$stateParams","$http","$getUser","$ionicSideMenuDelegate","$rootScope","$userData",function($scope,$state,$ionicHistory,$stateParams,$http,$getUser, $ionicSideMenuDelegate,$rootScope,$userData){
 					  $scope.host="";					
@@ -208,7 +209,8 @@
 									// }
 									$state.go("units",{"typeid":item.id,typename:item.typename});
 								}else{
-									alert(data.msg);
+									$state.go("units",{"typeid":item.id,typename:item.typename});
+									//alert(data.msg);
 								}
 
 							})
@@ -456,6 +458,7 @@
 					 }
 					
 					 question.currentAnswer=userAnswer.toString();
+					 console.log( question.currentAnswer," question.currentAnswer");
 //					 var sy=new SyntaxHighlighter();
 //					 sy.config.tagName="span";
 //					 sy.highlight();

@@ -25,7 +25,7 @@ foreach($arraylist as $v){
 	 SELECT * FROM `#@__archives` as tp WHERE tp.id=$v
 	";
 	$r=$dsql->GetOne($q);
-	$r["channel"]==1?$addId='dede_addonarticle':$addId='dede_addonarticle'.$r["channel"];
+	$r["channel"]==1?$addId='#@__addonarticle':$addId='#@__addonarticle'.$r["channel"];
 	$q2="
 	 SELECT * FROM $addId as tp WHERE tp.aid=$v
 	";

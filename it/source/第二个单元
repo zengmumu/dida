@@ -955,8 +955,7 @@ DRY 原则（Don't repeat yourself）不做重复的事
 
 Functions-函数
 
-<div>
-你已经在以前的课程中使用过函数。<br>
+<div>你已经在以前的课程中使用过函数。<br>
 
 任何由一个单词组成的语句，在括号中的信息后面是一个函数调用。<br>
 
@@ -1179,10 +1178,8 @@ def print_num():
   return
   print(4)
   print(6)
-
- [space]
 </pre>
-
+ [space]
  Comments（注释）
 
 <p>注释是用于使代码更容易理解的注释。它们不影响代码的运行方式。</p>
