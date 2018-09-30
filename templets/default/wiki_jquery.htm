@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+    <meta name="keywords" content="{dede:field.keywords/}" />
+	<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link href="{dede:global.cfg_templets_skin/}/wiki/style/wiki_bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{dede:global.cfg_templets_skin/}/wiki/style/mui.min.css" />
+	<style>
+		.mui-table-view-cell.mui-collapse .mui-table-view .mui-table-view-cell{
+			padding-left: 16px;
+			font-size: 14px;
+			line-height: 30px;
+			color: #555;
+		}
+		.mui-table-view-cell.mui-collapse .mui-table-view .mui-table-view-cell .mui-btn{
+			font-size: 12px;
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+		.mui-btn-outlined.mui-btn-grey{color: #aaa; position: relative;z-index: 5;}
+		.modal-title{ position:relative;left: -60px;}
+		.mui-navigate-right{ line-height: 32px;}
+		.btn-ppt{
+			float: right;
+    		margin-right: 25px;
+    		line-height: 32px;
+    		padding-top: 3px;
+		}
+		.article{ 
+			padding-left: 0;
+			padding-right: 0;
+			}
+		.btn-ppt .mui-btn{ padding: 3px 4px; font-size: 12px;}
+		@media (min-width: 768px){
+			.modal-dialog {
+			    width: 820px;
+			    margin: 30px auto;
+			}
+		}
+		.toolbar{ display: none;}
+		@media screen and (max-width: 768px) {
+			.modal .mui-btn.mui-btn-grey{ padding: 3px 0px; width: 26px; font-size: 8px;}
+			.modal-body{ padding: 5px;}
+			.btn-text{ display: none;}
+			/*.toogleSource{ display: none;}*/
+			pre table .code,.syntaxhighlighter .code{ font-size: 12px !important;}
+			.modal-title{ font-size: 12px; left: -20px;}
+			.mui-table-view-cell{ padding: 5px 15px;}
+			.mui-table-view-cell.mui-collapse .mui-collapse-content{ padding-top: 4px;}
+			.mui-navigate-right{ font-size: 14px; color: #282828;}
+		}
+		.syntaxhighlighter{ margin-top: 0 !important;margin-bottom: 0 !important;}
+		
+		
+	</style>
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ 
+
+    </head>
+    <body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+	    <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+	          <a class="navbar-brand" href="">jquery</a>
+	    </div>
+	    <div id="navbar" class="collapse navbar-collapse">
+	        <ul class="nav navbar-nav navbar-right">
+	        	<!-- <li ><a href="http://www.520mg.com" target="_blank">首页</a></li>
+	        	<li ><a href="http://www.520mg.com/wiki/jquery/index.html" target="_blank">jquery教程</a></li>
+	        	<li ><a href="http://www.qingkt.com" target="_blank">UI视频教程</a></li>
+	        	<li ><a href="http://qingkt.com/a/course/" target="_blank">前端教程</a></li> -->
+	        	
+	      	</ul>
+	    </div>
+    <!--/.nav-collapse --> 
+    </div>
+</nav>
+<div >
+<div class="container article">
+<ul class="mui-table-view">
+	
+	{dede:channelartlist}
+	<li class="mui-table-view-cell mui-collapse">
+		<div class="mui-navigate-right">
+			<a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>	
+			<!-- <span class="btn-ppt">
+				<a href="ppt/第二章jQuery选择器.pptx" class="mui-btn mui-btn-green mui-btn-outlined">ppt下载</a>						
+			</span>	 -->													
+		</div>					
+		<div class="mui-collapse-content mui-table-view">
+			{dede:arclist titlelen='60' row="200"  addfields='officialurl,officialdemo,softlinks' channelid='3' orderway="asc" }
+			<div  class="mui-table-view-cell">
+				<a class="cell-info pull-left" href="[field:arcurl /]" >
+					[field:title /] </a>
+				<span class="mui-pull-right">
+					<a href="" target="_blank" data-video="[field:officialurl /]" class="mui-btn mui-btn-outlined mui-btn-primary toogleVideo"  data-toggle="modal" data-target=".mytan">
+						<i class="glyphicon  glyphicon-play-circle"></i>
+						<span class="btn-text">视频教程</span>
+					</a>
+					<a href="[field:officialdemo /]" target="_blank" class="mui-btn mui-btn-outlined mui-btn-grey">
+						<i class="mui-icon-extra mui-icon-extra-classroom" style="font-size:14px ;"></i>
+						<span class="btn-text">案例演示</span></a>
+				  
+				    <a href="" target="_blank" data-source="[field:officialdemo /]" class="mui-btn mui-btn-outlined mui-btn-grey toogleSource"  data-toggle="modal" data-target=".mytan">
+				    	<i class="mui-icon mui-icon-eye"></i>
+				    	<span class="btn-text">查看源码</span></a>
+				</span>
+			</div>
+			{/dede:arclist}
+			
+		</div>
+	</li>
+	{/dede:channelartlist}
+			
+</ul>
+ </div>   
+</div>  
+<!--container ed-->
+<!--modal-->
+<!--模块-->
+
+<div class="modal fade bs-example-modal-sm mytan" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    		<div class="modal-header">
+    			<span class="video-down-btn mui-pull-left">
+    				<a class="mui-btn mui-btn-grey mui-btn-outlined down-video" href="">
+    					<i class="mui-icon mui-icon-download" style="font-size: 14px;"></i>    					
+    				</a>
+    			</span>
+    			
+    			
+	    			<span class="mui-pull-left coder-btns">
+		    			<button class="mui-btn mui-btn-grey mui-btn-outlined coder-js">js</button>
+		    			<button class="mui-btn mui-btn-grey mui-btn-outlined coder-html">html</button>
+		    			<button class="mui-btn mui-btn-grey mui-btn-outlined coder-css">css</button>
+	    			</span>
+    			
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel">视频播放</h4>
+      </div>
+      <div class="modal-body">
+    		<video id="video" src="" width="100%"  poster="{dede:global.cfg_templets_skin/}/wiki/images/pre.gif" controls="controls"  >
+    			
+    		</video>
+    		<div class="pre">
+    			<pre class='brush:js;'></pre>
+    		</div>
+      		
+      </div>
+     
+    </div>
+  </div>
+<!--弹出模块-->
+
+<script src="{dede:global.cfg_templets_skin/}/js/jquery.js"></script> 
+
+				<!-- <script src="{dede:global.cfg_templets_skin/}/wiki/js/mui.js"></script> -->
+<!-- <link rel="stylesheet" href="{dede:global.cfg_templets_skin/}/wiki/style/shCoreDefault.css" />
+<link rel="stylesheet" href="{dede:global.cfg_templets_skin/}/wiki/style/shThemeFadeToGrey.css" />
+<script src="{dede:global.cfg_templets_skin/}/wiki/js/shCore.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/wiki/js/shBrushJScript.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/wiki/js/shBrushXml.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/wiki/js/shBrushCss.js "></script> -->
+<script src="{dede:global.cfg_templets_skin/}/wiki/js/shCore.js"></script>
+<style>
+.syntaxhighlighter{ 
+		padding: 16px;
+		border-radius: 6px;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important; 
+		background-color: #f7f7f7 !important;
+		}
+	.syntaxhighlighter .line.alt1,
+	.syntaxhighlighter .line.alt2{
+		/*background-color:#383838 !important;*/
+		
+  
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7 !important;
+    border-radius: 3px;
+		
+	}
+	.syntaxhighlighter .comments, .syntaxhighlighter .comments a {
+        color: #998 !important;
+    font-style: italic !important;
+}	
+</style>
+<script>
+			
+			
+			$(function(){
+				var wiki_load=false;
+				var bt=$("<script>");
+				$("body").append(bt);
+				bt.attr('src','{dede:global.cfg_templets_skin/}/js/bootstrap.min.js');
+				
+				
+				
+				
+				
+				$(".toogleVideo").click(function(){
+					var ti=$(this).parent().parent().find(".cell-info").html();
+					var src=$(this).attr("data-video");
+					$(".modal-title").html(ti+'视频教程');
+					$(".video-down-btn").show();
+					$(".video-down-btn .down-video").attr("href",src);
+					$(".coder-btns").hide();
+					$("#video").show();
+					$(".modal-body .pre").hide()
+					$("#video").attr("src",src).trigger("click");
+				})
+				var coder;
+				$(".toogleSource").click(function(){
+
+					var ti=$(this).parent().parent().find(".cell-info").html();
+					$(".modal-title").text(ti+'源码')
+					var src=$(this).attr("data-source");
+					$("#video").hide();
+					$(".video-down-btn").hide();
+					$(".video-down-btn a").attr("href","");
+					$(".coder-btns").show();
+					$(".modal-body .pre").show();
+					
+					$.get(src).success(function(res){
+						coder=res;
+						var obj=$("<div id='coder' style='display:none'></div>")
+						obj.html(res);						
+//						$(".modal-body .pre pre").text(res);
+						$(".modal-body .pre").text("");
+						$(".modal-body .pre").append("<pre class='brush:js;'></pre>");
+						$(".modal-body .pre pre").text(obj.find("script:not([src])").html());	
+						SyntaxHighlighter.defaults['gutter'] = false;
+						SyntaxHighlighter.highlight();	
+					})
+					
+					
+				})
+				$(".coder-js").click(function(){
+					
+					var obj=$("<div id='coder' style='display:none'></div>");
+					obj.html(coder);					
+						
+					$(".modal-body .pre").text("");
+					$(".modal-body .pre").append("<pre class='brush:js;'></pre>");
+					$(".modal-body .pre pre").text(obj.find("script:not([src])").html());	
+					SyntaxHighlighter.defaults['gutter'] = false;						
+					SyntaxHighlighter.highlight();	
+				})
+				$(".coder-css").click(function(){
+					var obj=$("<div id='coder' style='display:none'></div>");
+					obj.html(coder);					
+					$(".modal-body .pre").text("");
+					$(".modal-body .pre").append("<pre class='brush:css;'></pre>");
+					$(".modal-body .pre pre").text(obj.find("style").html());	
+					SyntaxHighlighter.defaults['gutter'] = false;						
+					SyntaxHighlighter.highlight();	
+				})
+				$(".coder-html").click(function(){
+					var obj=$("<div id='coder' style='display:none'></div>");
+					obj.html(coder);
+					$(".modal-body .pre").text("");
+					$(".modal-body .pre").append("<pre class='brush:xml;'></pre>");
+					$(".modal-body .pre pre").text(obj.html());	
+					SyntaxHighlighter.defaults['gutter'] = false;						
+					SyntaxHighlighter.highlight();	
+				})
+
+				$(".mui-collapse").click(function(e){
+					
+					
+					$(this).toggleClass("mui-active");
+					if($(this).hasClass("mui-active")){
+						$(this).siblings(".mui-active").removeClass("mui-active");
+					}
+				})
+				$(".mui-collapse:eq(0)").addClass("mui-active");
+				if(!wiki_load){
+						wiki_load=true;
+						$("body").append('<link rel="stylesheet" href="{dede:global.cfg_templets_skin/}/wiki/style/shCoreDefault.css" />');
+						$("body").append('<link rel="stylesheet" href="{dede:global.cfg_templets_skin/}/wiki/style/shThemeEclipse.css" />');
+						
+						var elem2=$("<script>");						
+						var elem3=$("<script>");						
+						var elem4=$("<script>");
+						
+						$("body").append(elem2).append(elem3).append(elem4);
+						elem2.attr('src','{dede:global.cfg_templets_skin/}/wiki/js/shBrushJScript.js');
+						elem3.attr('src','{dede:global.cfg_templets_skin/}/wiki/js/shBrushXml.js');
+						elem4.attr('src','{dede:global.cfg_templets_skin/}/wiki/js/shBrushCss.js ');
+
+
+					}
+
+			})
+
+			
+
+// SyntaxHighlighter.highlight();			
+</script>
+<div style="display:none">
+	
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8a47d1da4c549706691aaab4bb7d0e39";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</div>
+</body>
+</html>

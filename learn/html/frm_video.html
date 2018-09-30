@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <style>
+  
+    </style>
+</head>
+<body>
+
+<script src="../script/zepto.min.js"></script>
+<script>
+localStorage.setItem("vindex",0);
+  localStorage.setItem("potime",0);
+  localStorage.setItem("seekTime",0);
+   localStorage.setItem("duration", 0);
+     localStorage.setItem("playts",null);
+var path;
+var vdata;
+var vindex=0;
+
+var playlist=[];
+var playts=0;
+var playtsArr=[];
+
+
+    apiready = function () {
+      
+var urlv=api.pageParam;
+
+
+api.ajax({
+    url: 'http://www.qingkt.com/ckplayer/youku2.php?url=['+urlv.vurl+']',
+    method: 'get',
+   
+},function(ret, err){
+    if (ret) {
+      
+       // path=ret.data.url[0].downlink;
+        vdata=ret.data.url;
+         for(var k in vdata){
+         playlist.push( vdata[k].downlink);
+         playts+=vdata[k].ts;
+         playtsArr.push(playts);
+         }
+         // alert( playts);
+         localStorage.setItem("playts",playts);
+         path=playlist[vindex];
+         // alert(path);
+         playv();
+         // switchVideom();
+         open2();
+         // nextvm();
+    } else {
+         alert(JSON.stringify(err));
+    }
+});
+
+
+
+
+
+
+
+
+
+
+          
+    }
+ function playv(){
+// alert("playv");
+
+obj = api.require('polyvVideoModule');
+
+obj.open({
+    rect: {
+      x: 0,
+      y: 0,
+      // w:api.winHeight,
+      // h:api.winWidth
+     
+    },
+    path:path, // 传递本地路径
+      // vid:'sl8da4jjbx1c8baed8a48212d735d905_s', // 传递 vid
+    autoPlay: false,
+    fixedOn: api.frameName,
+    fixed: true
+},function(ret,err){
+  localStorage.setItem("vindex",0);
+  localStorage.setItem("potime",0);
+  localStorage.setItem("seekTime",0);
+   localStorage.setItem("duration", 0);
+     localStorage.setItem("playts",null);
+     alert(localStorage.getItem("seekTime"));
+    // var duration = ret.duration;
+    // var current = ret.current;
+  
+});
+setTimeout(function(){
+console.log("stop");
+ obj.pause(); 
+},700)
+
+
+
+}
+
+
+
+
+
+ function open2(){
+
+    api.openFrame({
+            name: 'ctrl',
+            url: 'frm_ctrl.html',
+           
+            rect: {
+                x: 0,
+                y: 270,
+                w: api.winWidth,
+                h: 43
+            }
+           
+        })
+}  
+
+// function open3(){
+
+//     api.openFrame({
+//             name: 'ctrl3',
+//             url: 'frm_ctrl3.html',
+           
+//             rect: {
+//                 x: 0,
+//                 y: 0,
+//                 w: 320,
+//                 h: 100
+//             }
+//         })
+// }  
+
+var obj;
+// var path='http://k.youku.com/player/getFlvPath/sid/44615952601061223bdeb_02/st/flv/fileid/0300010A02551971353A380148B4416A498637-60F1-7AC3-D13A-5F3CD27445FB?K=7d8f119c38b1d939241295cc&hd=2&myp=0&ts=207&ypp=0&ymovie=1&ctype=12&ev=1&token=2134&oip=1707652975&ep=diaSG0yEU8wG5SLfjj8bZS%2BwICJdXP4J9h%2BFgNITALkhTem2nj%2FSwp7BTfdCF%2F0RACYCEe2Ar9nvbEMTYfZD32kQ2D%2FbOvqU%2F%2FOS5aglx%2BN0ZB4ydsihxlScQjP1';
+
+
+var time;
+function vfull(){
+  var mypo=parseInt(localStorage.getItem("potime"));
+  mypo=parseInt(mypo/1000);
+// alert(mypo);
+localStorage.setItem("seekTime",mypo);
+     // seekTime();
+   api.setScreenOrientation({
+            orientation: 'landscape_left'
+        });
+        api.setFullScreen({
+            fullScreen: true
+        });  
+
+
+  
+    obj.fullScreen();
+
+    api.setFrameAttr({
+    name: 'video',
+    rect: {
+        x: 0,
+        y: 0,
+        w: api.winHeight+20,
+        h: api.winWidth
+    },
+    bounces: true,
+    bgColor: '#000',
+    vScrollBarEnabled: true,
+    hScrollBarEnabled: true
+
+});
+ setTimeout(function(){
+ seekTimem();
+   // alert(mypo);
+
+ },500)  
+
+  localStorage.setItem("winfull","full"); 
+
+// alert(localStorage.getItem("winfull"));
+ 
+}
+
+function dfull(){
+
+ var mypo=parseInt(localStorage.getItem("potime"));
+  mypo=parseInt(mypo/1000);
+// alert(mypo);
+localStorage.setItem("seekTime",mypo);
+
+   obj.cancelFullScreen();
+ 
+
+   api.setScreenOrientation({
+        orientation: 'auto_portrait'
+        });
+   api.setFullScreen({
+            fullScreen: false
+        });
+ setTimeout(function(){
+  // alert(mypo);
+ seekTimem();
+  
+ },500)  
+// setTimeout(function(){
+//   // alert(time);
+//   api.toast({msg:"跳转到上次播放地址"+time,location:"center;"});
+//    obj.forward({
+//     seconds:time
+// });
+// },1500) 
+   localStorage.setItem("winfull","unfull");
+
+}
+
+function seek(){
+
+   obj.seekTo({
+     seconds:150
+});
+}
+function forward(){
+    
+obj.forward({
+    seconds:5
+});
+}
+function playvm(){
+    
+obj.start();
+
+obj.getCurrentPosition(function(ret,err){
+  if(vindex==0){
+    localStorage.setItem("seekTime",ret.currentPosition/1000);
+  }else{
+    localStorage.setItem("seekTime",ret.currentPosition/1000+playtsArr[vindex-1]);
+  }      
+      
+    })
+
+
+
+}
+function pausevm(){
+    
+obj.pause();
+obj.getCurrentPosition(function(ret,err){
+  if(vindex==0){
+    localStorage.setItem("seekTime",ret.currentPosition/1000);
+  }else{
+    localStorage.setItem("seekTime",ret.currentPosition/1000+playtsArr[vindex-1]);
+  }      
+      
+    })
+}
+
+function getpom(){
+  // goOld();
+  obj.getCurrentPosition(function(ret,err){
+    // alert("in position");
+  
+        if(ret.currentPosition!=undefined){
+          // alert(ret.currentPosition);
+         localStorage.setItem("potime", ret.currentPosition);
+         return  ret.currentPosition;
+        }
+    }
+)
+}
+  function getdurationm(){
+   
+  obj.getDuration(function(ret,err){
+         localStorage.setItem("duration", ret.duration);
+    }
+)
+ }  
+
+
+
+ function goOld(){
+  // obj.pause();
+   if(localStorage.getItem("potime")){
+ var po=parseInt(localStorage.getItem("potime"));
+po=parseInt(po/1000);
+// alert(po);
+
+obj.forward({
+    seconds:po
+});
+
+ } 
+}
+
+function seekTimem(){
+
+  if(localStorage.getItem("seekTime")){
+var po=parseInt(localStorage.getItem("seekTime"));
+po=parseInt(po);
+
+setTimeout(function(){
+obj.seekTo({
+    seconds:0
+});
+
+},100)
+
+
+setTimeout(function(){
+obj.forward({
+    seconds:po
+});
+// alert("seekTimem:"+po)
+},200)
+  }
+}
+
+function switchVideom(){
+  if(localStorage.getItem("seekTime")){
+var po=parseInt(localStorage.getItem("seekTime"));
+  for(var i=0;i<playtsArr.length;i++){
+    if(po<=playtsArr[i]){
+      vindex=i;
+      break;
+    }
+  }
+      // alert( vindex);
+
+      localStorage.setItem("vindex",vindex);
+     
+      obj.setPath({ path:playlist[vindex]});
+setTimeout(function(){
+obj.seekTo({
+    seconds:0
+});
+
+},150)//time out ed
+
+// alert(po);
+setTimeout(function(){
+  if(vindex==0){
+    setTimeout(function(){
+      obj.forward({
+    seconds:po
+});
+obj.getCurrentPosition(function(ret,err){
+
+     var cupo=(parseInt(ret.CurrentPosition)/1000)||0;
+
+       // alert(cupo+":"+po);
+         localStorage.setItem("seekTime",cupo);
+    })
+    },1000)
+
+}else{
+ obj.forward({
+    seconds:po-playtsArr[vindex-1]
+});
+ obj.getCurrentPosition(function(ret,err){
+      localStorage.setItem("seekTime",ret.currentPosition/1000+playtsArr[vindex]);
+       // alert((ret.currentPosition/1000+playtsArr[vindex])+":"+po);
+    })
+
+}
+// if(ret!=undefined){
+//  localStorage.setItem("seekTime",ret.duration/1000+playtsArr[vindex]);
+// }
+
+},200)//time out ed
+
+    
+   
+    
+  // }//for;
+}
+}
+
+
+function nextvm(){
+vindex=parseInt(localStorage.getItem("vindex"));
+// alert(localStorage.getItem("seekTime"))
+ vindex++;
+ if(vindex>=playlist.length){vindex=0;}
+// alert(vindex);
+ obj.setPath({ path:playlist[vindex]});
+setTimeout(function(){
+obj.seekTo({
+    seconds:0
+});
+
+},100)
+setTimeout(function(){
+obj.forward({
+    seconds:200
+});
+obj.getCurrentPosition(function(ret,err){
+        // alert(ret.currentPosition);
+        // alert(playtsArr[vindex-1]);
+        localStorage.setItem("seekTime",playtsArr[vindex-1])
+    });
+/*obj.getCurrentPosition(function(ret,err){
+      localStorage.setItem("seekTime",ret.getCurrentPosition/1000+playtsArr[vindex]+200);
+     alert(parseInt(ret.getCurrentPosition)/1000);
+     alert(playtsArr[vindex-1]);
+
+       alert(ret.getCurrentPosition/1000+playtsArr[vindex-1]+200);
+       // api.execScript({
+       //             frameName: 'fm_video',
+       //              script:'changeZhixing()'
+       //          });
+    })*/
+// localStorage.setItem("seekTime",playtsArr[vindex]+200)
+
+},200);
+
+localStorage.setItem("vindex",vindex);
+setTimeout(function(){
+
+  api.execScript({
+                  frameName: 'ctrl',
+                    script:'changeZhixing()'
+               });
+},5000);
+}
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>Hello APP</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" href="../css/swiper.min.css">
+	
+		<script type="text/javascript" src="../script/chapterJS.js"></script>
+			<script type="text/javascript" src="../script/shCore.js"></script>
+	<script type="text/javascript" src="../script/shBrushJScript.js"></script>
+	<link type="text/css" rel="stylesheet" href="../css/shCoreDefault.css"/>
+		<style type="text/css">
+			*{ margin: 0; padding: 0;-webkit-box-sizing:border-box; box-sizing:border-box;}
+			    html,body{
+			        height: 100%;
+			        background-color: #f5f5f5;
+			
+			    }
+			    body{ padding-top: 48px;}
+			    #wrap{
+			        height: 100%;
+			       /* display: -webkit-box;
+			        display: -webkit-flex;
+			        display: flex;
+			        -webkit-box-orient: vertical;
+			        -webkit-flex-flow: column;
+			               flex-flow: column;*/
+			    }
+			    #header{
+			        text-align: center; 
+			        color: #999;
+			        width: 100%;
+			        height: 48px; border-bottom: 1px solid #e0e0e0;
+			         display: -webkit-box;
+			        display: -webkit-flex;
+			        display: flex;
+			        font-size: small;
+			        position: fixed;
+			        left:0;
+			        top:0;
+			         -webkit-transition:bottom 1s ease;
+			        transition:bottom 1s ease;
+			         background-color: #f5f5f5;
+			         z-index: 15;
+			    }
+			    #header .back{ height: 48px; width: 48px; 
+			        background: url(../image/btn_back_normal.png) no-repeat center center; background-size: 65%;}
+			    .skin{height: 48px; width: 48px;}
+			
+			    .btn_dati_beiti_wrap{ /* border:;*/  -webkit-box-flex: 1; 
+			        -webkit-flex: 1;
+			        flex: 1;}
+			    .btn_dati_beiti{
+			        height: 29px; width:150px; height: 26px;
+			        margin-top: 10px;
+			        border:1px  solid #999;
+			        border-radius: 6px;
+			        -webkit-border-radius:6px;
+			        margin-left: auto;
+			        margin-right: auto;
+			        overflow: hidden;
+			    }
+			    .btn_dati,.btn_bei{ width: 50%;   display: block; float: left;height:27px; line-height: 27px;}
+			    
+			    .btn_dati.select,.btn_bei.select{ background-color: #999; 
+			        color: #fff;}
+			     .btn_bei.select{ background-color: #999; color: #fff;}
+			    h1{
+			        font-size: 20px; height: 44px; line-height: 44px; margin: 0em; color: #fff;
+			    }
+			  /*  #main{
+			        -webkit-box-flex: 1; 
+			        -webkit-flex: 1;
+			        flex: 1;
+			    }*/
+			    #footer{
+			            border-top: 1px solid #dedede;
+			    background-color: #fff;
+			    width: 100%;
+			    position: fixed;
+			    bottom: -460px;
+			    left: 0;
+			    z-index: 20;
+			     -webkit-transition:bottom 1s ease;
+			        transition:bottom 1s ease;
+			
+			   
+			   
+			}
+			   
+			    .f_head{ height: 45px;  width: 100%; line-height: 45px;  padding-left: 15px;
+			    padding-right: 15px; border-bottom: 1px solid #dedede;
+			    background-color: #fff; }
+			    .collection,.delete{ height: 45px; line-height:45px;float: left; padding-left:24px; background:url(../image/collection_n.png) no-repeat left center; background-size: 35%; color: #787878; font-size: small;}
+			    .delete{ background-image: url(../image/delete_n.png)}
+			    .collection.active{ background-image: url(../image/collection_a.png);}
+			    #counter{ float: right; height: 45px; line-height: 45px; color: #333333; font-size: small; /*padding-right: 4px;*/ position: static; width: auto;}
+			    .swiper-pagination-current{font-weight: bold; margin-right: -3px;}
+			    .swiper-pagination-total{ margin-left: -3px;}
+			    .q_list_btn{ float: right; height: 45px; width:45px;line-height: 45px; background:url(../image/q_list_btn_n.png) no-repeat center center; background-size: 40%; margin-right: 10px; font-size: small; }
+			    .f_wrong{ float: right; height: 45px; line-height: 45px; padding-left: 22px; font-size: small;
+			     background:url(../image/f_rong_d.png) no-repeat left center; background-size: 15px auto; color: #f25e5e;
+			        margin-right: 15px;}
+			      .f_right{ float: right; font-size: small;  margin-right: 25px; height: 45px; line-height: 45px; padding-left: 22px;
+			     background:url(../image/f_right_d.png) no-repeat left center; background-size: 15px auto; color: #18b4ed;}
+			    .f_body{width: 100%; height:460px; overflow: hidden; }
+			.swiper-container {
+			        width: 100%;
+			        height: 100%;
+			    }
+			
+			     .q_li_btn ul{ width: 100%; /* padding-left: 15px;
+			    padding-right: 15px;*/ display: -webkit-box;
+			        display: -webkit-flex;
+			        display: flex; 
+			        -webkit-box-pack:start;
+			        justify-content:flex-start;
+			        -webkit-box-lines:multiple;
+			        flex-wrap:wrap;
+			        -webkit-box-align:start;
+			        align-content:flex-start;
+			        
+			
+			        }
+			    .f_body h4{ height: 40px; line-height: 40px; clear:both; background-color: #f5f5f5; color: #787878; font-weight: normal;  padding-left: 15px;
+			    padding-right: 15px; width: 100%;}
+			     .q_li_btn li{ height: 45px; width: 45px; line-height: 45px; border-radius: 50%; -webkit-border-radius: 50%; border:1px solid #f4f4f5; text-align: center;margin-right: 10px;margin-left: 10px; margin-top: 10px;margin-bottom: 10px; color: #999;}   
+			   
+			    .q_li_btn li.right{ color:#18b4ed; background-color: #e7f7fd; border:1px solid #21b7ee;}
+			    .q_li_btn li.wrong{ color:#f25e5e; background-color: #fce8e8; border:1px solid #f25e5e;}
+			      .swiper-container1 {
+			        width: 100%;
+			        height: 100%;
+			    }
+			   .swiper-container1 .swiper-slide {
+			       
+			        height: auto;
+			        -webkit-box-sizing: border-box;
+			        box-sizing: border-box;
+			        
+			    }
+			.swiper-container {
+			        width: 100%;
+			        height: auto;
+			        background-color: transparent;
+			        margin: 0px auto;
+			    }
+			    .swiper-slide {
+			      
+			      
+			       
+			       
+			        height: 100%;
+			        min-height: 480px;
+			        border-left: 1px solid #e0e0e0;
+			    }
+			
+			    #main{  width: 100%;  margin-top: 0px; margin-bottom: 45px; background-color: #f5f5f5; position: relative;z-index: 10;}
+			.block-shiti{ padding:15px; color: #333;}
+			.timu-content{ margin-bottom: 15px;}
+			.que-type{ padding: 1px; border:1px solid #18b4ed; color: #18b4ed; font-size: small; line-height: 18px; height: 18px;}
+			.que-c{ line-height: 1.7em; display: inline;}
+			.ans-option,.ans-option2{ min-height: 30px; line-height: 30px; margin-top: 15px;}
+			.ans-option2{ margin-bottom: 70px; width: 70%; margin-left: 50px;margin-top: 45px;}
+			.xu{ height: 30px; width:30px; font-style: normal; line-height: 28px; border-radius: 30px;-webkit-border-radius: 30px; background-color: #fff; text-align: center; border:1px solid #d0d0d0; display: block; margin-right: 4px; float: left; font-weight: bold;}
+			.ti{font-style: normal;}
+			.btn-st-sub,.btn-show-answer{ height: 35px; line-height: 35px; width: 70%; margin-left: auto; margin-right: auto;-webkit-border-radius:4px; border-radius: 4px; background-color: #18b4ed; color: #fff; float: none; display: block; margin-top: 15px; }
+			.answer-content{ margin-top: 55px; line-height: 1.7em;}
+			.line-fege{ border-bottom:1px solid #b5b5b5; margin-bottom: 20px;}
+			.line-fege span{ width: 6rem; text-align: center; display: block; background-color: #f5f5f5; margin-left: auto; margin-right: auto; position: relative; top:0.45em;}
+			.a-title{ border-left:4px solid #18b4ed ; padding-left: 7px; margin-top: 35px; margin-bottom: 15px;}
+			.tongji-content h4,.tongji-content p{ padding-left: 11px;}
+			.tongji-content p{ color: #999;}
+			.t-all{ color: #666;}
+			.t-wrong{color:#f25e5e;}
+			.t-right{color:#18b4ed;}
+			
+			.seeAnswer .select .xu{ background-color: #f25e5e; border-color: #f25e5e; text-indent:-9999em; position: relative; display: inline-block; text-indent: -999999px;}
+			.seeAnswer .select .xu:before{ content:"×"; text-indent: 0;
+			    color: #fff;
+                position: absolute;
+			    display: block; height: 28px; line-height: 28px; width: 28px; text-align: center; font-size: larger;  border:none; transform:none;-webkit-transform:none; left:0; top:0;}
+            .seeAnswer .select.dui .xu,.select .xu{ background-color: #b5bdc2; color: #fff;}
+            .seeAnswer .dui .xu{ background-color: #18b4ed; border-color: #18b4ed; color: #fff;}
+
+			/*.seeAnswer .dui .xu{ background-color: #18b4ed; border-color: #18b4ed; text-indent:-9999em; position: relative;}*/
+            .seeAnswer .dui.select .xu{ background-color: #7FED18; border-color: #7FED18; text-indent:-9999em; position: relative;}
+            .seeAnswer .dui.select .xu:before{content:""; text-indent: 0;
+                color: #fff;
+                display: block; width: 12px; height: 6px; border-left: 2px solid #fff; border-bottom: 2px solid #fff;  transform:rotate(-45deg) translate(-0%,-100%); -webkit-transform:rotate(-45deg) translate(-0%,-100%);position: absolute; left:50%; top:50%; }
+
+			/* .seeAnswer .dui .xu:before,.select .xu:before{content:""; text-indent: 0;
+                color: #fff;
+                display: block; width: 12px; height: 6px; border-left: 2px solid #fff; border-bottom: 2px solid #fff;  transform:rotate(-45deg) translate(-0%,-100%); -webkit-transform:rotate(-45deg) translate(-0%,-100%);position: absolute; left:50%; top:50%; } */
+                .tiankong{margin-bottom: 50px; height: 35px; line-height: 35px; margin-left: 15px; border-bottom: 2px solid #18b4ed;  outline: none;}
+			.select .xm{  background-color: #18b4ed; color: #fff; }
+			.explain-p textarea{ width: 90%; height: 50px; outline: none;}
+			.explain-p blockquote{ padding: 3px; border-left:3px solid #CE3131;}
+			.ans-option4{ display: none;}
+			.explain-p{ overflow: auto; width: 100%;}
+		    pre{overflow:auto  !important; display:block;  width: 100% !important; white-space:pre-wrap !important; word-break: break-all; }
+			.explain-p pre{overflow:auto  !important; display:block; }
+			.ans-option4>div{ overflow:auto  !important; display:block; width: 100% !important;white-space:pre-wrap !important;}
+			.ans-option4 img ,.explain-p img{ max-width: 100% !important; }
+			.syntaxhighlighter table td.code{overflow:auto  !important;}
+			.ans-option4 {white-space:normal !important;}
+			.ans-option4 h1,.ans-option4 h2,.ans-option4 h3,.ans-option4 h4,.ans-option4 h5,.ans-option4 h6{ padding-left: 0 !important; text-indent: 0 !important;  white-space:normal !important; margin-bottom: 0em; margin-top: 1.2em; }
+			.ans-option4 p{ white-space:normal !important; }
+			.explain-p h1,.explain-p h2,.explain-p h3,.explain-p h4,.explain-p h5,.explain-p h6{ padding-left: 0; text-indent: 0; padding-left: 0 !important; text-indent: 0 !important;  white-space:normal !important; margin-bottom: 0em; margin-top: 1.2em;}
+			pre{ background-color: #eaeaea; padding: 0.5em; overflow: auto}
+			p>code,h3>code,h4>code,h5>code {
+    color: #c7254e;
+    background-color: #f9f2f4;
+}
+.pl-c1, .pl-s .pl-v {
+    color: #0086b3;
+}
+
+		
+		</style>
+		
+	
+	<script type="text/javascript">
+		
+
+
+	
+
+	</script>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="header">
+				<span class="back"></span>
+				<div class="btn_dati_beiti_wrap">
+					<div class="btn_dati_beiti">
+						<span class="btn_dati select">答题模式</span>
+
+						<span class="btn_bei ">背题模式</span>
+					</div>
+				</div>
+				<div class="skin"></div>
+			</div>
+			<div id="main">
+				<div class="swiper-container  seeAnswer">
+					<div class="swiper-wrapper ">
+						<!--<div class="swiper-slide">
+							<div class="block-shiti">
+								<p class="timu-content">
+									<span class="que-type">多选题</span>
+									<span class="que-c">林某驾车以110公里/小时的速度在城市道路行驶，与一辆机动车追尾后弃车逃离被群众拦下。经鉴定，事发时林某血液中的酒精浓度为135.8毫克/百毫升。林某的主要违法行为是什么？</span>
+								</p>
+								<div class="media-container"></div>
+								<div class="answer-container " data-item="answer-container">
+									<ul>
+										<li class="ans-option " data-answer="16"><i class="xu">A</i><i class="ti">疲劳驾驶</i></li>
+										<li class="ans-option dui" data-answer="32"><i class="xu">B</i><i class="ti">醉酒驾驶</i></li>
+										<li class="ans-option dui" data-answer="64"><i class="xu">C</i><i class="ti">肇事逃逸</i></li>
+										<li class="ans-option dui" data-answer="128"><i class="xu">D</i><i class="ti">超速驾驶</i></li>
+									</ul>
+
+									<button type="button" class="btn-st-sub">确认答案</button>
+								</div>
+								<div class="answer-content">
+									<div class="line-fege"><span>试题详解</span></div>
+									<h3 class="a-title">考点</h3>
+									<div class="explain-p">
+										<p>行为一“以110公里/小时的速度在城市道路行驶”属于超速驾驶；二：“与一辆机动车追尾后弃车逃离”属于肇事逃逸；三：“血液中的酒精浓度为135.8毫克/百毫升”是醉酒驾驶。</p>
+									</div>
+									<h3 class="a-title">统计</h3>
+									<div class="tongji-content">
+										<h4>我的错误率</h4>
+										<p>共做过<span class="t-all">8</span>次,做错<span class="t-wrong">2</span>次,做对<span class="t-right">6</span>次</p>
+									</div>
+								</div>
+							</div>
+
+						</div>-->
+
+					</div>
+					<!-- Add Pagination -->
+					<!--   <div class=""></div> -->
+					<!-- Add Arrows -->
+					<!--  <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
+				</div>
+			</div>
+			<div id="footer">
+				<div class="f_head">
+					<span class="collection">收藏</span>
+					<span class="delete">删除</span>
+					<span class="counter swiper-pagination" id="counter"></span>
+					<span class="q_list_btn"></span>
+					<div class="f_wrong">0</div>
+					<div class="f_right">0</div>
+				</div>
+				<div class="f_body">
+					<div class="swiper-container1">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+
+								<div class="q_li_btn">
+
+									<ul class="clearfix">
+
+									</ul>
+								</div>
+								<!-- q_li_btned -->
+
+							</div>
+							<!-- slide ed -->
+						</div>
+						<!-- wrapper ed -->
+
+						<div class="swiper-scrollbar"></div>
+					</div>
+					<!-- container ed -->
+
+					<!-- f_body ed -->
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+		<script src="../script/swiper.min.js"></script>
+	<script src="../script/test.js"></script>
+<script src="../script/zepto.min.js">
+
+	</script>
+	
+
+	
+	
+	<script>
+
+apiready = function(){
+
+	var header = $api.byId('header');
+
+ 
+	if(api.systemType=="ios"){
+ $api.css(header,'margin-top:20px');
+   
+	}
+	if(api.pageParam==""||api.pageParam==undefined||api.pageParam==null){
+			setTimeout(function(){
+				alert( "还没有内容先去做题吧！");
+			api.closeWin({
+				    name: api.winName
+				});
+
+			},200)
+	
+	}else if(api.pageParam.type==undefined||api.pageParam==null){
+
+
+
+		new Test(api.pageParam);
+	api.hideProgress();
+	
+SyntaxHighlighter.defaults['gutter'] = false;
+ SyntaxHighlighter.highlight();
+
+	}else{		
+api.showProgress({
+    style: 'default',
+    animationType: 'fade',
+    title: '努力加载中...',
+    text: '先喝杯茶...',
+    modal: false
+});
+
+api.ajax({
+    url:'http://www.qingkt.com/wap3.php?type='+api.pageParam.type,
+    method:'get',
+
+},function(ret, err){
+ /* if (ret) {
+         api.alert({msg:JSON.stringify(ret)});
+    } else {
+         api.alert({msg:JSON.stringify(err)});
+    }*/
+    if(ret.data==""||ret.data==undefined||ret.data==null){
+			setTimeout(function(){
+				alert( "还没有这个科目的题目，稍后更新");
+			api.closeWin({
+				    name: api.winName
+				});
+
+			},200)
+	
+	}
+    ret.data.sort(down);
+
+	new Test(ret.data);
+	api.hideProgress();
+	
+SyntaxHighlighter.defaults['gutter'] = false;
+ SyntaxHighlighter.highlight();
+
+		
+	
+   
+})//ajax
+ }//else
+$(function(){
+	 if(api.winName=="wrong"||api.winName=="favorite"){
+	 	// alert("删除favorate");
+ 	$(".collection").hide();
+ 
+ }else{
+ 		// alert("删除delete");
+ 	$(".delete").hide();
+ 	
+ }
+
+
+})
+
+
+}//api red ed
+		 
+		
+//end;
+//getCollection ed
+
+
+/*function getCollection(){
+    var favorite=JSON.parse(localStorage.getItem("favorite"));
+    var collection=[];  
+
+    for(var k in favorite){
+        var qId=favorite[k];
+        
+        for(var j in question.data){
+            
+            if(favorite[k]==question.data[j].questionId){
+            collection.push(question.data[j]);  
+            }
+        }
+        console.log(collection)
+        
+    }
+    return collection;
+  
+
+}*/
+
+ function down(x, y) {
+            return (x.typeid < y.typeid) ? -1 : 1
+ 
+        }
+
+
+	</script>
+<script>
+	
+
+ 	
+
+
+
+
+
+   
+
+    
+
+</script>
+
+</html>

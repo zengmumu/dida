@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="A6904077932987" version="0.0.1">
+    <name>前端面试宝典</name>
+    <description>前端面试宝典-曾庆林html5制作-js面试题,html面试题,前端面试题,css面试题,jquery面试题,angular面试题,html5教程,css3教程,javascript教程,angular视频教程,ionic教程,jquery视频教程,bootstrap教程</description>
+    <author email="" href="http://www.qingkt.com">曾庆林</author>
+    <content src="http://www.qingkt.com/learn/index.html"/>
+    <preference name="debug" value="false"/>
+    <preference name="pageBounce" value="false"/>
+    <preference name="windowBackground" value="transparent"/>
+    <preference name="hScrollBarEnabled" value="true"/>
+    <preference name="vScrollBarEnabled" value="true"/>
+    <preference name="autoLaunch" value="true"/>
+    <preference name="fullScreen" value="false"/>
+    <preference name="smartUpdate" value="true"/> 
+    <preference name="iOS7StatusBarAppearance" value="true"/>
+    <permission name="readPhoneState"/>
+    <permission name="call"/>
+    <permission name="camera"/>
+    <permission name="record"/>
+    <permission name="location"/>
+    <permission name="fileSystem"/>
+    <permission name="internet"/>
+    <permission name="bootCompleted"/>
+    <permission name="hardware"/>
+    <access origin="*"/>
+</widget>

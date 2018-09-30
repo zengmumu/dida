@@ -99,13 +99,6 @@ function lib_channelartlist(&$ctag,&$refObj)
         $GLOBALS['itemindex']++;
         $pv = new PartView($typeids[$i]['id']);
         $pv->Fields['typeurl'] = GetOneTypeUrlA($typeids[$i]);
-        if($typeids[$i]['id'] == $refObj->TypeLink->TypeInfos['id'] || $typeids[$i]['id'] == $refObj->TypeLink->TypeInfos['topid'] ){ 
-            $pv->Fields['currentstyle'] = $currentstyle ? $currentstyle : 'current'; 
-        } 
-        else{ 
-            $pv->Fields['currentstyle'] = ''; 
-        } 
-
         $pv->SetTemplet($innertext,'string');
         $artlist .= $pv->GetResult();
         $GLOBALS['itemparity'] = ($GLOBALS['itemparity']==1 ? 2 : 1);

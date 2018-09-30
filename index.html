@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>轻课堂_IT入门培训_免费代码学习</title>
+<meta name="description" content="河南轻课堂是一个免费IT入门培训平台。汇集了多家郑州IT培训机构， 提供专业培训指导，靠谱的网络培训学习挑选平台。" />
+<meta name="keywords" content="java入门培训,H5入门培训,UI入门培训,python入门培训,unity入门培训,前端面试题,怎么样,C++教程,PHP学习,Swift的api文档,Ruby培训机构,JavaScript,曾庆林,photoshop视频教程" />
+<link href="/templets/default/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+<style>
+	
+.news{ width: 100%; height: 170px;}
+.news .title{ height: 35px; font-size: 18px; color: #333;}
+	
+.news .dis{ font-size: 12px; color: #777; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-height: 1.3em;
+    -webkit-line-clamp: 2;
+    max-height: 2.6em;
+    margin-bottom: 10px;
+}
+.news.hast .picwrap{ background-color: #f5faff; height: 160px; margin-top: 0px;}
+.picwrap img{vertical-align: middle; }
+#uc_digg  ul{background: url(/templets/default/images/number-range.gif) 5px 15px no-repeat; padding-right: 0;}
+#uc_digg  ul a{ clear: both; font-size: 13px; display: block; overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap}
+#uc_digg  li{ background-color: transparent; height: 46px; line-height: 16px;}
+#uc_digg  li span{ font-size: 12px; color: #bbb;}
+.list-group-item{ border:none; border-bottom:1px solid #f6f6f6; margin-bottom: 0;}
+.list-group-item a{ color: #777;}
+h3 a{ color: #333; font-size: 18px;}
+h3 .more{ color: #999; font-size: 12px; float: right;}
+.block{ box-shadow: 0 3px 5px rgba(213, 235, 255); border-radius: 6px; overflow: hidden; margin-bottom: 30px;  height: 394px;}
+.padding20{ padding: 20px;}
+.f1 li a{ color: #777; font-size: 12px; }
+.f1 li{ height: 38px;}
+@media only screen and (max-width: 768px) {
+	.news{ width: 100%; height: 120px;}
+	
+	.news.hast .picwrap{ background-color: #f5faff; height: 110px; margin-top: 0px; display: table-cell;}
+	.news .dis{ font-size: 12px; color: #777; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-height: 1.3em;
+    -webkit-line-clamp: 2;
+    max-height: 2.6em;
+    margin-bottom: 10px;
+	}
+
+	.block{ height: auto;}
+}
+
+.form-group .col-md-3,.form-group .col-md-9{ padding-left: 5px; padding-right: 5px; font-size: 12px;}
+.form-group .col-md-9{ padding-right: 15px;}
+#uc_member .form-control{ height: 24px;}
+ #uc_member .row{ margin-bottom: 10px;}
+.vad{ width: 40%; display:inline-block;}
+.index .userinfo .welcome{ width: auto;}
+.it-block{color:#666; text-align: center; padding: 1.5rem; padding-top: 3rem; height: 34rem; display: block; }
+.it-block:hover{ color:#333;box-shadow:0 4px 6px rgba(40, 157, 239, 0.4); text-decoration: none; cursor:pointer}
+.it-block p{ font-size: 1.2rem; text-align: left;}
+.it-block img{ border-radius: 50%;}
+.button-blue{
+	position:relative;
+    background-color: #387ef5;
+    background-image: linear-gradient(90deg, #4e8cfd 0%, #2ac3fc 80%, #38b9fd 100%);
+    border-radius: 50px;
+    color:#fff;
+    box-shadow: 0 2px 10px rgba(40, 157, 239, 0.7);
+    
+		
+	}
+.button-blue:hover{
+	top:1px;
+	 box-shadow: 0 2px 10px rgba(40, 157, 239, 1);
+}
+.it-block .button-blue{ display: inline-block; line-height: 3rem;padding:0 3rem; margin-top: 1rem;}
+</style>
+</head>
+<body class="index">
+
+<script>
+	var reMethod = "POST",pwdmin = 4;
+</script>
+<div class="header_top  ">
+
+	<div class="center container index">
+		<span id="time" class="time hidden-xs">轻课堂qingkt 免费IT入门培训学习平台</span>
+		<div class="toplinks">
+			<span id="_login">
+				<a class="" data-toggle="modal" data-target="#myModal">登陆</a>
+				<a class="" data-toggle="modal" data-target="#myModal2">注册</a>
+			</span>
+			</div>
+	</div>
+</div>
+
+<div class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav" aria-expanded="false">
+	       
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+			<a class="navbar-brand visible-xs" href='/'><span>轻课堂</span></a>
+		</div>
+		<div class="collapse navbar-collapse" id="nav">
+			<ul class="nav navbar-nav">
+				<li >
+					<a href="/">首页</a>
+				</li>
+				<li class='hover'> <a href='/a/Course/'  rel='dropmenu7'><span>教程</span></a> </li>
+				<li>
+					<a href='/a/interview/'  rel='dropmenu138'><span>前端面试题</span></a>
+					
+				</li>
+				
+				
+				<li>
+					<a href='/a/Unitymianshiti/'  rel='dropmenu177'><span>Unity面试题</span></a>
+					
+				</li>
+				
+				
+				<li>
+					<a href='/a/uijiaocheng/'  rel='dropmenu223'><span>ui教程</span></a>
+					
+				</li>
+				
+				
+			</ul>
+			<form class="navbar-form navbar-right" action="/plus/search.php">
+
+				<div class="form-group">
+					<input type="hidden" name="kwtype" value="0" />
+					<input type="text" class="form-control" placeholder="在这里搜索" class="search-keyword" name="q" id="search-keyword">
+					<select name="searchtype" class="form-control hidden" id="search-option">
+						<option value="title">搜索标题</option>
+						<option value="titlekeyword"  selected='1'>智能模糊</option>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-default btn-outline">搜索</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- /header -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<div class="row padding20">
+				<div class="col-md-4 ">
+					<a class=" block it-block" href="/it">
+						<img width="35%" src="/templets/default/images/python.png" alt="python" />
+						<h3>Python 3 教程</h3>
+						<p>Python，是当今最流行的编程语言之一，免费学习！通过简短的课程和有趣的小测验进行学习冲浪，展示你的技能。</p>
+						<p>还等t什么！沉下心来,开始你的python编程之旅</p>
+						<span class="button button-blue">开始学习</span>
+					</a>
+				</div>
+			
+				<div class="col-md-4 ">
+					<a class="block it-block" href="javascript:alert('客观您别急，课程赶制中')">
+						<img width="35%" src="/templets/default/images/js.png" alt="js" />
+						<h3>Javascript 教程</h3>
+						<p>本教程涵盖了JavaScript编程的所有基本语法，使网站更具交互性、网站内容动态更改、表单验证、创建Cookie等方法。</p>
+						<p>一讲一练,引导你创建属于自己的JavaScript代码。</p>
+						<span class="button button-blue">前端学习</span>
+					</a>
+				</div>
+				
+				<div class="col-md-4">
+					<a class=" block it-block" href="javascript:alert('稍后推出')">
+						<img width="35%" src="/templets/default/images/css.png" alt="python" />
+						<h3>CSS 教程</h3>
+						<p>我们的CSS教程是一个学习游戏，通过精心挑选的内容，进行互动测验,教会你如何设置和控制网站的风格和布局。</p>
+						<p>新手，还是江湖老鸟，开始吧！获取项新技能</p>
+						<span class="button button-blue">开始学习</span>
+					</a>
+				</div>
+			</div>
+		
+		
+			<div class="row padding20">
+				<div class="col-md-6 block">
+					<h3>	<a href="/plus/list.php?tid=138">前端面试题 </a>  <a class="more" href="/plus/list.php?tid=138">查看更多 &raquo;</a></h3>					
+				   
+					<ul class="list-group"><li class="list-group-item"> <a href="/plus/view.php?aid=6365" class="am-list-item-hd">CHE.COM</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=6369" class="am-list-item-hd">中信泰富工程技术（上海）有限公司 面试题</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=6367" class="am-list-item-hd">中科软科技股份有限公司面试</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=4610" class="am-list-item-hd">HTTP和HTTPS</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=6359" class="am-list-item-hd">上海海希工业通讯股份有限公司</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=4611" class="am-list-item-hd">为什么HTTPS安全</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=6360" class="am-list-item-hd">宏微软件</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=6368" class="am-list-item-hd">中软国际</a></li>
+
+					</ul>
+					
+				</div><div class="col-md-6 block">
+					<h3>	<a href="/plus/list.php?tid=177">Unity面试题 </a>  <a class="more" href="/plus/list.php?tid=177">查看更多 &raquo;</a></h3>					
+				   
+					<ul class="list-group"><li class="list-group-item"> <a href="/plus/view.php?aid=4821" class="am-list-item-hd">四元组是什么?</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=4724" class="am-list-item-hd">某个GameObject有一个名为MyScript的脚本，该脚本中</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=4723" class="am-list-item-hd">关于MonoBehavior.LateUpdate函数描述错误的是：</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=4759" class="am-list-item-hd">请写一个函数，用于返回n!（阶乘）结果末尾连续</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=4768" class="am-list-item-hd">关于Vector3 的API，以下说法正确的是</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=4720" class="am-list-item-hd">Unity3d中resources目录一般用来放些什么，打包的时</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=4767" class="am-list-item-hd">什么是导航网格（ NavMesh）？</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=4765" class="am-list-item-hd">请简述如何在不同分辨率下保持 UI 的一致性</a></li>
+
+					</ul>
+					
+				</div><div class="col-md-6 block">
+					<h3>	<a href="/plus/list.php?tid=8">python教程 </a>  <a class="more" href="/plus/list.php?tid=8">查看更多 &raquo;</a></h3>					
+				   
+					<ul class="list-group"><li class="list-group-item"> <a href="/plus/view.php?aid=2" class="am-list-item-hd">欢迎您来到python的世界</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=57" class="am-list-item-hd">字符串快速运算符</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=53" class="am-list-item-hd">未定义变量与变量赋值</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=51" class="am-list-item-hd">变量命名</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=47" class="am-list-item-hd">变量</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=45" class="am-list-item-hd">输入类型转换</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=41" class="am-list-item-hd">字符串操作</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=39" class="am-list-item-hd">字符串与其它类型连接</a></li>
+
+					</ul>
+					
+				</div><div class="col-md-6 block">
+					<h3>	<a href="/plus/list.php?tid=223">ui教程 </a>  <a class="more" href="/plus/list.php?tid=223">查看更多 &raquo;</a></h3>					
+				   
+					<ul class="list-group"><li class="list-group-item"> <a href="/plus/view.php?aid=6278" class="am-list-item-hd">《U1》03 - 恋爱设计论</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=6284" class="am-list-item-hd">UI新手如何自学</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=6280" class="am-list-item-hd">《U1》05 - 三年入职大公司</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=6322" class="am-list-item-hd">如何高效利用色彩配色表</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=6256" class="am-list-item-hd">为儿童设计移动应用界面的技巧</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=6327" class="am-list-item-hd">扁平插画配色宝典</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=6276" class="am-list-item-hd">《U1》01 - 不要再傻傻分不清楚</a></li>
+<li class="list-group-item"> <a href="/plus/view.php?aid=6265" class="am-list-item-hd">会说话的颜色</a></li>
+
+					</ul>
+					
+				</div>
+			</div>
+		
+			
+   		 </div>
+		   	
+		
+		 <!-- /pleft -->
+ <div class="col-md-3">
+ 	
+ 	<div class="panel panel-default">
+  <div class="panel-heading">互动中心     <a href="#" _for="uc_digg">踩踩</a>& <a href="#" _for="uc_comment">评论</a> </span> </div>
+  <div class="panel-body">
+     <!--<div id="loading"> 正在载入,请稍候... </div>-->
+     <div id="uc_digg" class="">
+     	<ul class="list-group-item">
+      
+     </ul>
+     </div>
+     <div id="uc_comment">
+     	<ul class=" list-group">
+      <li class="list-group-item"> <small><a href="#" class="username">游客</a> 评论 <a href="/plus/feedback.php?aid=2" class="title">欢迎您来到python的</a></small>
+       <p>python学习好地方</p>
+      </li><li class="list-group-item"> <small><a href="#" class="username">游客</a> 评论 <a href="/plus/feedback.php?aid=6284" class="title">UI新手如何自学</a></small>
+       <p>想自学Ui 但是零基础望大</p>
+      </li><li class="list-group-item"> <small><a href="#" class="username">游客</a> 评论 <a href="/plus/feedback.php?aid=6365" class="title">CHE.COM</a></small>
+       <p>啥</p>
+      </li><li class="list-group-item"> <small><a href="#" class="username">游客</a> 评论 <a href="/plus/feedback.php?aid=6284" class="title">UI新手如何自学</a></small>
+       <p>零基础，想学习这方面，</p>
+      </li><li class="list-group-item"> <small><a href="#" class="username">游客</a> 评论 <a href="/plus/feedback.php?aid=6284" class="title">UI新手如何自学</a></small>
+       <p>想学习，求指导，求加微</p>
+      </li>
+     </ul>
+     </div>
+  
+   
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">推荐内容</div>
+  <div class="panel-body">
+    <ul class="list-group list-group-item">
+          <div id='dedecms'>
+<li class='dotline'><a href="/plus/view.php?aid=6324">读书笔记：重命名你的色彩——蓝</a></li>
+<li class='dotline'><a href="/plus/view.php?aid=6294">有一种配色，叫做别人家的扁平化</a></li>
+<li class='dotline'><a href="/plus/view.php?aid=6276">《U1》01 - 不要再傻傻分不清楚</a></li>
+<li class='dotline'><a href="/plus/view.php?aid=6282">200+值得收藏的设计师资源站</a></li>
+<li class='dotline'><a href="/plus/view.php?aid=6266">极简主义</a></li>
+<li class='dotline'><a href="/plus/view.php?aid=6256">为儿童设计移动应用界面的技巧</a></li>
+<li class='dotline'><a href="/plus/view.php?aid=6255">无边框按钮的优缺点</a></li>
+<li class='dotline'><a href="/plus/view.php?aid=6250">终结拟物化与扁平化之争！多研究</a></li>
+    </div>
+
+     </ul>
+  </div>
+</div>
+ 	
+ 	
+<div class="panel panel-default">
+  <div class="panel-heading">本月热点</div>
+  <div class="panel-body">
+     <ul class=" list-group">
+      
+     </ul>
+     
+     
+  </div>
+</div>
+ 
+ </div>
+ <!-- /pleft -->
+	</div>
+</div>
+
+
+<script src="/m/assets/js/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+	$(function(){
+		CheckLogin();
+		var imgs = document.querySelectorAll(".picwrap img");
+		for(var i=0;i<imgs.length;i++){
+			console.log(imgs[i].naturalHeight,imgs[i].href)
+			if(imgs[i].naturalWidth/imgs[i].naturalHeight>1&&imgs[i].naturalWidth/imgs[i].naturalHeight<2.5){
+				imgs[i].style.width="auto";
+				imgs[i].style.height="100%"
+			}else{
+				imgs[i].style.width="100%";
+				imgs[i].style.height="auto"
+			}
+		}
+	})
+</script>
+
+<!-- //底部模板 -->
+<div class="footer  container  mt1 clear">
+	
+    <div class="footer_left"></div>
+    <div class="footer_body">
+	<p class="powered">    
+		Powered by www.qingkt.com  | <a href="http://www.miibeian.gov.cn/">备案号：豫ICP备14023958号-2</a>
+<!-- /powered -->
+   </div>
+   <div class="footer_right"></div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" >
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="myModalLabel">登陆</h4>
+      </div>
+      <div class="modal-body">
+      	 <form name="userlogin" action="/member/index_do.php" method="POST">
+      		<input type="hidden" name="fmdo" value="login" />
+        <input type="hidden" name="dopost" value="login" />
+        <input type="hidden" name="keeptime" value="604800" />
+        <div class="form-group">
+        	<div class="input-group">
+        		<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+        		 <input type="text" name="userid" placeholder="用户名" size="20" class="ipt-txt form-control" />
+        	</div>
+        </div>
+        <div class="form-group">
+        	<div class="input-group">
+        		<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+        		 	<input type="password" placeholder="密码" name="pwd" size="20" class="ipt-txt form-control" />
+        	</div>
+        </div>
+         <div class="form-group">
+        	<div class="input-group">
+        		<span class="input-group-addon"><i class="fa fa-minus-square fa-fw"></i></span>
+        		 	 <input type="text" name="vdcode" placeholder="验证码" size="6" style="width: 150px;" class="ipt-txt  form-control vad"  />
+        		 	
+	        		   <img id="vdimgck" align="middle" onClick="this.src=this.src+'?'" style="cursor:pointer;margin-left:0px;text-transform:uppercase;" alt="看不清？点击更换" src="/include/vdimgck.php"/>
+	        		    </div>
+        	
+        </div>
+        
+       
+        
+         <button type="submit" class="btn btn-success btn-block btn-sm">登录</button>
+        
+       </form>
+      </div>
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!--20000-->
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" >
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">登录</h4>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="/member/reg_new.php" id="regUser" name="form2">
+      <input type="hidden" value="regbase" name="dopost"/>
+      <input type="hidden" value="1" name="step"/>
+      <input type="hidden" value="个人" name="mtype"/>
+      <p style="text-align: right;" class="mB10"/>
+     
+       
+        
+        <div class="form-group">
+        	<!--<label >用户名：</label>-->     	
+        	<div class="input-group">
+        		<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+          	<input type="text" class="form-control" placeholder="用户名" id="txtUsername" name="userid"/>
+          	</div>
+        	<em id="_userid"></em> 
+        	
+       </div>
+        <div class="form-group">
+        	<!--<label >登陆密码：</label>-->  
+        	<div class="input-group">
+        		  <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+            <input type="password"  onkeyup="setPasswordLevel(this, document.getElementById('passwordLevel'));" style="font-family: verdana;" class="form-control" id="txtPassword" name="userpwd" placeholder="密码"/>
+            </div>
+        <input id="passwordLevel" class="rank r0" disabled="disabled" name="Input"/> 
+        </div>
+     
+        <div class=" form-group"><!--<label >确认密码：</label>-->   
+        	<div class="input-group">
+        		  <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+          		<input type="password" class="form-control" placeholder="确认密码" size="20" value="" id="userpwdok" name="userpwdok"/>
+          </div>
+         <em id="_userpwdok"><font color="red"><b></b></font></em> </div>
+         
+          <div class=" form-group">
+          	<!--<label >电子邮箱：</label>-->
+          	<div class="input-group">
+        		  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+            <input type="text" class="form-control" placeholder="邮箱" id="email" name="email"/>
+            </div>
+           <em id="_email"> </em> 
+           
+          </div>
+          
+         
+          <?php
+            if(preg_match("/1/",$safe_gdopen)){
+          ?>
+          <div class="form-group">
+          	<div class="input-group">
+        		  <span class="input-group-addon"><i class="fa fa-minus-square"></i></span>
+            <input type="text" class="form-control vad" placeholder="验证码" style="width: 150px; text-transform: uppercase;" id="vdcode" name="vdcode"/><img id="vdimgck" align="absmiddle" onclick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>
+           </div>
+            <!--<a href="javascript:void(0)" onclick="changeAuthCode();">点击更换</a></li>-->
+           <?php }?>
+         </div>
+      
+       
+    
+          <button type="submit" id="btnSignCheck" class="btn btn-sm btn-success btn-block">注册</button>
+      
+    </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<style>
+	/*header2*/
+	a{ color: #666;}
+	a:hover{ color: #333;}
+.navbar-default .container {
+		background-color: #0E90D2 !important;
+		border: none;
+		color: #fff;
+	}
+	
+	.navbar-default {
+		background-color: transparent !important;
+		border: none !important;
+	}
+	
+	#navMenu {
+		height: auto;
+	}
+	
+	.search h4 {
+		margin: 0;
+		font-weight: 400;
+		font-size: 14px;
+		color: #bbb;
+		padding-right: 15px;
+		padding-top: 3px;
+	}
+	
+	.tags li {
+		float: left;
+		padding: 3px 10px;
+	}
+	
+	.place {
+		border: none;
+		background: none;
+		color: #ddd;
+	}
+	
+	.place a {
+		color: #999;
+	}
+	
+	.place strong {
+		color: #bbb;
+	}
+	
+	.navbar {
+		margin-bottom: 0;
+		border-radius: 0;
+	}
+	
+	.navbar-default .navbar-nav>li>a {
+		color: #fff;
+	}
+	
+	.navbar-nav li.hover {
+		background-color: #097fbb;
+	}
+	
+	.navbar-form .form-control {
+		background-color: #097fbb;
+		border: none;
+		color: #fff;
+		/*border-radius: 0;*/
+		margin-left: -5px;
+	}
+	
+	.navbar-form .form-control::-webkit-input-placeholder {
+		color: #70cefd;
+	}
+	.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+		color: #fff;
+		background-color: #0b78af;
+	}
+
+	#search-option {
+		color: #5ab7e6;
+		padding-left: 3px;
+		padding-right: 3px;
+	}
+	
+
+	
+	.btn-outline {
+		color: #097fbb;
+		background-color: #70cefd;
+		border-color: #097fbb;
+	}
+	
+	.container .navbar-default .navbar-brand {
+		color: #70cefd;
+		font-weight: 400;
+		font-size: 14px;
+	}
+	
+	.container .navbar-default .navbar-toggle .icon-bar {
+		background-color: #5ab7e6;
+	}
+	
+	.navbar-default .navbar-toggle {
+		border: none;
+	}
+	
+	.navbar-nav {
+		margin: 0;
+	}
+	.rank { border:none; background:url("/templets/default/images/rank.gif") no-repeat; width:145px; height:22px; vertical-align:middle; cursor:default; margin:0 0 0 5px;}
+.r0 { background-position:0 2; }
+.r1 { background-position:0 -19px; }
+.r2 { background-position:0 -40px; }
+.r3 { background-position:0 -61px; }
+.r4 { background-position:0 -82px; }
+.r5 { background-position:0 -103px; }
+.r6 { background-position:0 -124px; }
+.r7 { background-position:0 -145px; }
+.form-group{ margin-bottom: 10px;}
+.form-group em{ margin-bottom: -5px;}
+.form-group em,.form-group b{ font-weight: 100; font-size: 12px;}
+.index .userinfo .welcome{ margin: 0; display: inline-block; border: none;}
+.uclink{ display: inline-block}
+.userinfo .uclink  a { color: transparent; display: none;  }
+.index  .uclink a:last-of-type{ content:"退出" ; display: inline; color: #aaa; }
+.index .userinfo .uclink{ overflow: inherit; color: transparent; }
+/*.uclick a:last-of-type{ display: inline;}*/
+.userface{ display: none;}
+.mylink{ display: none;}
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+#_login{display: inline-block;}
+.index .userinfo .welcome{ padding: 0;}
+.dcmp-stand{ margin-top: -3px; font-size: 12px;height: 20px; line-height: 20px; font-weight: normal;}
+.dcmp-post .dcmp-userinfo{margin: 0;}
+ .dcmp-post .dcmp-userinfo input{width: auto;}
+ .p0{ padding: 0 !important;}
+.on,.on a{ color: #0E90D2 ;}
+.panel-body a {
+    line-height: 2rem;
+}
+.c-bg {
+    background-color: #fff;
+    -webkit-box-shadow: 0px 1px 2px #bbb;
+    -moz-box-shadow: 0px 1px 2px #bbb;
+    box-shadow: 0px 1px 2px #bbb;
+}
+.e2 span.info{ color: #aaa;}
+.gray a{ color: #aaa!important; font-weight: 100;}
+.listbox .title{ display: block; clear: both; padding-left: 15px;}
+	@media only screen and (max-width:768px) {
+		.navbar-nav {
+			margin-left: -15px;
+			margin-right: -15px
+		}
+		.navbar-form {
+			display: flex;
+		}
+		.navbar-form .form-group {
+			flex: 1;
+		}
+		.navbar-form button {
+			width: 60px;
+		}
+		.navbar .container {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		#search-keyword {
+			width: 100%;
+		}
+		.navbar-default .navbar-form {
+			border: none;
+		}
+	}
+/*header2*/
+</style>
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+<script src="/templets/default/js/CheckPassStrength.js"></script>
+<script src="/templets/default/js/reg_new.js"></script>
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css" />
+<script>
+
+	
+	function CheckLogin(){
+	  var taget_obj = document.getElementById('_login');	  
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/member/ajax_loginsta2.php");
+	  DedeXHTTP = null;
+	}
+
+ CheckLogin()
+</script>
+</body>
+</html>

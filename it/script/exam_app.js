@@ -458,7 +458,6 @@
 					 }
 					
 					 question.currentAnswer=userAnswer.toString();
-					 console.log( question.currentAnswer," question.currentAnswer");
 //					 var sy=new SyntaxHighlighter();
 //					 sy.config.tagName="span";
 //					 sy.highlight();

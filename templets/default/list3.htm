@@ -1,0 +1,194 @@
+  <!DOCTYPE html>
+  <html lang="zh-CN">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    <title>{dede:field.seotitle /}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/css/bootstrap.css" rel="stylesheet">
+<link href="{dede:global.cfg_templets_skin/}/css/style.css" rel="stylesheet">
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+      <style>
+.bigimg{ width:100%; height:320px; overflow:hidden; display:none;}
+.g_content .course-one a .bigtitle{ padding:10px; font-size:14px; display:block; height:150px; margin-top:0; transition:transform 0.5s; background-color:#b9cdcd; }
+.g_content .course-one a:hover .bigtitle{ transform:scale(1.05,1.05);}
+.g_content .course-one a .g_one_header{ color:#fff; font-size:20px; font-weight:600; margin-bottom:8px; display:block; margin-top:8px;text-shadow:1px 1px 1px rgba(0,0,0,.3);}
+.g_content .course-one a  .des{ color:#fff; font-size:12px; text-shadow:1px 1px 0px rgba(0,0,0,.2);}
+      </style>
+
+      
+      <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <style>
+
+ </style>
+  </head>
+  <body>
+ {dede:include filename="qkt_header.htm"/}
+  
+<div class="list-menu" id="list-menu">
+  <div class="container">
+    <div class="course-nav-box">
+      <div class="course-nav-hd">
+       <span>入门系列教程</span>
+        
+      </div>
+     
+    
+     
+    </div>
+
+
+    <!--工具条-->
+    <div class="course-tool-bar clearfix">
+            
+                <div class="l">
+                    <span class="tool-item" style="display: none;">
+                        <a class="follow-learn tool-chk" href="javascript:void();">跟我学</a>
+                    </span>
+                </div>
+                <div class="tool-right r">
+                          
+                    <span class="tool-item total-num">
+                        共<b>330</b>个课程
+                    </span>
+                    <span class="tool-item tool-pager">
+                    
+                    {dede:pagelist listitem="pre,next,option,small"  listsize="16"/}
+                                               
+                                               
+                                
+                    </span>
+                </div>
+            </div>
+<!--工具条-->
+
+  </div>
+</div>
+<!--导航-->
+
+
+<div class="q-course">
+  <div class="container">
+
+   
+  <div class="course-list qkt-course-list g_content">
+    <ul class="clearfix">
+       
+                                            
+                            
+{dede:list infolen='52'  addfields='softsize'  pagesize='16'}    
+<li class="course-one">
+    <a href="[field:arcurl/]">
+        <div class="course-list-img">
+        	<img width="240" height="135" alt="[field:title/]" src="[field:litpic/]">
+        </div>
+    	<h5><span class="s_header">[field:title/]</span> </h5>
+        <div class="tips">
+            <p class="text-ellipsis" style="color:#777;">[field:shorttitle/]</p>
+           
+            <p class="l text-ellipsis text_small">[field:click/]人学习</p>
+        </div>
+       
+     <!--   <b class="follow-label">跟我学</b>-->
+</a>
+</li>
+{/dede:list}
+                                  
+                                           
+          
+        </ul>
+      
+    
+  </div>
+  
+   
+  
+  <!--page-->
+  
+  <div class="page">{dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="16"/}</div>
+    <!--page-->
+</div>
+</div>
+
+
+  <!--课程-->
+
+ {dede:include filename="qkt_footer.htm"/}
+
+   
+ <script src="{dede:global.cfg_templets_skin/}/js/jquery.min.js"></script> 
+<script src="{dede:global.cfg_templets_skin/}/js/bootstrap.min.js"></script> 
+
+<script type="text/javascript">
+(function($){
+$.getUrlParam = function(name)
+{
+var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+var r = window.location.search.substr(1).match(reg);
+if (r!=null) return unescape(r[2]); return null;
+}
+})(jQuery);
+$(function(){
+var easy=$.getUrlParam('iseasy');
+$(".level .course-nav-item").removeClass("on");
+
+if(easy===null){
+	$(".level .levelall").addClass("on");
+	}else if(easy=="0"){
+			$(".level .level0").addClass("on");
+		}
+	else if(easy=="1"){
+			$(".level .level1").addClass("on");
+		}
+	else if(easy=="2"){
+			$(".level .level2").addClass("on");
+		}
+	else if(easy=="3"){
+			$(".level .level3").addClass("on");
+		}	
+
+
+$(".course-one").each(function(index, element) {
+    var picname=$(this).find("img").attr("src");
+	if(picname=="/images/defaultpic.gif"){
+		var title=$(this).find(".s_header").text();
+		var len=title.length;
+		var des=$(this).find(".text-ellipsis");
+		var imgwrap=$(this).find(".course-list-img");
+		imgwrap.empty();
+		imgwrap.html('<span class="bigtitle"><em class="g_one_header">'+title+'</em> <span class="des"> '+des.html()+'</span></span>');
+		
+			var num_color=16746496+len*400<< len/2;
+		var color16=num_color.toString(16);
+		color16=color16.substring(0,6);
+		if(color16[0]=="-"){
+		color16="A"+color16.substring(1,6);
+	
+			}
+	
+		if(color16.length<6){
+			color16="AA"+color16.substring(1,5);
+			}
+		
+		if(color16.length<5){
+			color16="ff8800";
+			}			
+		if(color16=="1ff326"||color16=="3fe714"){
+			color16="86d90a";
+			}
+			switch(len){case 8 :color16="37A5B3";break;case 9: color16="716F84";break;case 10 :color16="706D3C";break;case 11:color16="E65527";break;case 12:color16="37A5B3";break;case 13:color16="363948";break;case 14:color16="716F84";break;case 15:color16="5EA07F";break;case 16:color16="86B3BB";break;case 17:color16="37A5B3";break;}
+		$(this).find(".bigtitle").css("background-color","#"+color16);
+		}
+});
+})
+
+</script>
+
+  </body>
+</html>

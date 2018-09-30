@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>前端面试宝典</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+   
+    <style type="text/css">
+   
+
+    *{ margin: 0; padding: 0;-webkit-box-sizing:border-box; box-sizing:border-box;}
+    html,body{
+                    height: 100%;
+                    background-color: #f5f5f5;
+            
+                }
+    .practice{ height: 360px; background:#fff url(image/practices.png) no-repeat left top; background-size: 24px auto;}
+    .practice li{ width: 33%; float: left; border-right:1px solid  #f5f5f5; border-bottom:1px solid  #f5f5f5; height: 120px; text-align: center;}
+    .practice li:active{ background-color: #f0f0f0;}
+    .b_title{  font-size: small;}
+    .color_b{ width: 50%; height: 6px; margin: 0px auto; margin-right: auto; background-color: #40bcff; }
+    .counter{ margin-top: 10px;}
+    .banner{ height: 150px; background: url(image/banner2.jpg) no-repeat center center; background-size: 100% auto ; color:#fff; text-align: center; text-shadow:0,3px,4px #333;-webkit-text-shadow:0,4px,2px #333; overflow: hidden;}
+    .banner h1{ margin-top: 1.2em; color: #fff; color: #fff;}
+    .banner .small{ font-size: small;  color: #fff;}
+    .text-primary{ color:#40bcff; margin-top: 5px; margin-bottom: 5px; }
+    .gray{ color: #ccc;}
+.practice li i{ display: block;width:50px; height: 50px; margin:8px auto; background:url(image/icon_sc.png) no-repeat center top; background-size: 100% auto; margin-top: 15px}
+.practice .mst i{ background-image: url(image/icon_mst.png);}
+.practice .ct i{ background-image: url(image/icon_ct2.png);}
+.practice .kc i{ background-image: url(image/icon_kc2.png);}
+.practice .xin i{ background-image: url(image/icon_xin.png);}
+.practice .js i{ background-image: url(image/icon_js2.png);}
+.practice .h5 i{ background-image: url(image/icon_html5.png); border-radius: 50%; overflow: hidden;}
+.practice .real i{ background-image: url(image/real.png);}
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+    <h1>前 端 技 术</h1>
+    <p class="text-primary">前端面试宝典</p>
+    <p class="small">HTML<span class="gray"> & </span>CSS<span class="gray"> & </span>JS</p>
+    </div>
+   <div class="block practice">
+       <ul>
+        <li onclick="exercise()" class="mst"><i class="icon"></i><p class="b_title">前端面试题</p>
+           
+            </li>
+
+            <li onclick="favorite()" class="sc"><i class="icon"></i><p class="b_title">我的收藏</p></li>
+           
+            </li>
+          <li onclick="myerr()" class="ct"><i class="icon"></i><p class="b_title">我的错题</p> </li>
+           <li onclick="myclass()" class="kc"><i class="icon"></i><p class="b_title">前端课程</p> </li>
+            <!-- <li onclick="alert('稍后开放')" class="xin"><i class="icon"></i><p class="b_title">新手入门</p></li> -->
+           
+              <li onclick="mychapter()" class="js"><i class="icon"></i><p class="b_title">js专项训练</p></li>
+              <li onclick="mychapterh5()" class="h5"><i class="icon"></i><p class="b_title">H5专项训练</p></li>
+              <li class="real"  onclick="real()"><i class="icon"></i><span class="b_title">上海面试真题</span></li>
+           
+       </ul>
+   </div> 
+  
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+    <script src="script/zepto.min.js">
+    </script>
+<script type="text/javascript">
+// localStorage.clear();
+var question={};
+ 
+ 
+    apiready = function(){
+        api.ajax({
+         url:'http://www.qingkt.com/wap3.php?type=140',
+         method:'get',
+            },
+            function(ret, err){            
+             question.data=ret.data;   
+             question.data.sort(down);
+            }
+        )
+	
+    if(api.connectionType=="none"){     
+      }else{   
+        // window.location.href="http://www.qingkt.com/learn/index.html";
+      }
+       
+    }
+function exercise(){
+            openw('exercise','html/exercise.html') 
+}
+
+function js(){
+     openw('jstest','html/course.html',question.data)     
+}
+function real(){
+     if(api.connectionType=="none"){ 
+        alert("没有网了");
+        return;    
+      }
+    window.location.href="http://www.qingkt.com/plus/list.php?tid=232"
+}
+
+function favorite(){
+       var fa=JSON.parse(window.localStorage.getItem("favorite")||"[]");
+       if(fa.length<=0){
+        alert("没有收藏");
+        return;
+       }else{
+        data=fa.favorite;
+         openw('favorite','html/course.html',data)
+       }
+
+}
+       function myerr(){
+        var wro=JSON.parse(window.localStorage.getItem("wrong")||"[]");
+        if(wro.length<=0){
+           alert("没有错题，先做题吧");
+           return; 
+        }else{
+            data=wro.wrong;
+            openw('wrong','html/course.html',data)
+        }
+//     alert(data.length);
+    
+     
+     }
+     function mychapter(){
+         openw('javascript','html/chapter2.html',{"type":"140"})
+
+     }
+      function mychapterh5(){
+         openw('html5','html/chapter2.html',{"type":"147"})
+
+     }
+       function myclass(){
+        alert("稍后开放");
+        return
+         openw('classs','html/class.html',{})
+
+     }
+   
+     function openw(name,url,param){
+        if(api.connectionType=="none"){ 
+        alert("没有网了");
+        return;    
+      }
+             api.openWin({
+            name: name,
+            url: url,         
+            rect: {
+                x: 0,
+                y: 0,
+                w: api.winWidth,
+                h: api.winHeight
+            },
+            pageParam:param
+
+        })
+    }
+
+    $(function(){
+if(localStorage.getItem("f_right")){
+
+    var r=parseInt(localStorage.getItem("f_right")||"[]");
+    var w=parseInt(localStorage.getItem("f_wrong")||"[]");
+  
+$(".css .counter").html(r+w);
+}
+
+    });
+function getCollection(name){
+    var obj=JSON.parse(localStorage.getItem(name)||"[]");
+    // alert(name);
+    // alert(JSON.stringify(obj));
+   var collection=[];  
+
+    for(var k in obj){
+        var qId=obj[k];
+        
+        for(var j in question.data){
+            // alert(question.data[j].id);
+
+
+            if(obj[k]==question.data[j].id){
+
+            collection.push(question.data[j]);  
+            }
+        }
+       
+        
+    }
+    // return collection;
+//  alert(collection);
+   /* var collection={};
+        collection.data=obj;*/
+    return collection
+
+}
+
+
+
+ function down(x, y) {
+            return (x.typeid < y.typeid) ? -1 : 1
+ 
+        }
+var storage={
+    setItem:function(name,k,val){
+        if(localStorage.getItem(name)){
+            var winStorage=JSON.parse(localStorage.getItem(name));
+             winStorage[k]=val;
+        }else{
+            var winStorage={};
+            winStorage[k]=val;
+        }
+        winStorage=JSON.stringify(winStorage);
+         window.localStorage.setItem(name,winStorage);
+         // 
+ 
+    },//set
+    getItem:function(name,k){
+        if(localStorage.getItem(name)){
+            var winStorage=JSON.parse(localStorage.getItem(name));
+            if(winStorage[k]){
+                
+                return winStorage[k];
+
+
+            }
+        }
+    }//get
+    ,
+    pushItem:function(name,obj){
+        if(localStorage.getItem(name)){
+                var winStorage=JSON.parse(localStorage.getItem(name));               
+
+        }else{
+                var winStorage=[];
+        }
+           winStorage.push(obj);
+             winStorage=JSON.stringify(winStorage);
+              window.localStorage.setItem(name,winStorage);
+              alert(winStorage);
+
+    }
+}//storage
+       
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?87df5307a789af37c71ef8632050fd04";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</html>
+

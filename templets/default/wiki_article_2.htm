@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />   
+   <link href="{dede:global.cfg_templets_skin/}/wiki/style/wiki_bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="{dede:global.cfg_templets_skin/}/wiki/style/mark.css" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ 
+
+    </head>
+    <body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+	    <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">郑州html5</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+	          <a class="navbar-brand" href="">前端视频教程</a>
+	    </div>
+	    <div id="navbar" class="collapse navbar-collapse">
+	        <ul class="nav navbar-nav navbar-right">
+	        	<!-- <li ><a href="http://www.520mg.com" target="_blank">首页</a></li>
+	        	<li ><a href="http://www.520mg.com/wiki/jquery/index.html" target="_blank">jquery教程</a></li>
+	        	<li ><a href="http://www.qingkt.com" target="_blank">UI视频教程</a></li>
+	        	<li ><a href="http://qingkt.com/a/course/" target="_blank">前端教程</a></li> -->
+	        	
+	      	</ul>
+	    </div>
+    <!--/.nav-collapse --> 
+    </div>
+</nav>
+<div class="page">
+  <div class="container">
+  	
+		<div class="row">
+			<div class="col-md-3  hidden-xs">
+				<div class="sider-bar">
+					<div class="acc">
+						{dede:channelartlist typeid="239"  currentstyle='navOn'}
+						<h3 class="{dede:field.currentstyle/}"> {dede:field name='typename'/}</h3>
+						<div class="acc_content">
+							<div class="list-group">
+									{dede:arclist titlelen='60'  addfields='officialurl,officialdemo,softlinks'  channelid='3' orderway='asc' currentstyle='on'}
+			
+								  <a href="[field:arcurl /] " class="list-group-item  [field:currentstyle /]">
+								   [field:title /] 
+								  </a>
+								{/dede:arclist} 
+								  
+							</div>
+						</div>
+						{/dede:channelartlist}
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9 ">
+				<div class="sub">
+					<h3 class="text-right"><button class="btn btn-default btn-play">播放视频教程 <i class="glyphicon glyphicon-play-circle"></i> </button> <a href="{dede:field.officialdemo/}" class="btn btn-default btn-gray demo" target="_blank">案例演示</a></h3>
+					<div class="video_content">
+							<video src="{dede:field.officialurl/}" width="100%" height="300"  controls="controls"  ></video>
+					</div>	
+					<!-- <p> 视频 :[field:officialurl /]</p>
+					<p> [field:officialdemo /]</p> -->
+				</div>
+					<div>
+						{dede:field.introduce/}
+					</div>
+					<ul class="list-unstyled">
+     					<li>{dede:prenext get='pre'/}</li>
+    					<li>{dede:prenext get='next'/}</li>
+    				</ul>
+			</div>
+		</div>
+	</div>
+</div>  
+<!--page ed-->
+
+
+
+<script src="{dede:global.cfg_templets_skin/}/js/jquery.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/bootstrap.min.js"></script>
+
+<style>
+	
+	.markdown-body p{ color: #333;}
+	
+/*body{ padding-top:70px;}*/
+</style>
+<script>
+
+			$(function(){
+				$(".navbar-toggle").click(function (){
+					$(".mask").show();
+					$(".side-nav").html($(".sider-bar").html()).show();
+					$(".navbar-collapse").hide();
+					
+				})
+				$(".mask").click(function(){
+					$(".side-nav").hide();
+					$(".mask").hide();
+//					$(".navbar-collapse").show();
+				})
+				
+				$(".sub h3").bind("click",showIt)
+				function showIt(){
+					$(".sub .video_content").slideToggle();
+				}
+				
+				$(".acc h3").click(function(){
+					$(this).next(".acc_content").slideToggle();
+				})
+				// setTimeout(function(){
+				// 	$(".video_content").slideDown();
+				// },2500)
+			if($(".video_content video").attr("src").length<8){
+				
+				$(".video_content").hide().html("<code>暂无视频</code>");
+				$(".sub h3").unbind("click",showIt);
+				$(".sub>h3").css("border-bottom","none")
+				$(".btn-play").hide();
+			}
+			if($(".demo").attr("href").length<8){
+				$(".sub>h3").remove();
+			}
+
+				
+			})
+			
+
+// SyntaxHighlighter.highlight();			
+</script>
+<div class="side-nav">
+
+</div>
+<div class="mask"></div>
+<div style="display:none">
+	
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4f0b15b8cc3b883e21cb0e10303d167c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title></title>
+   
+    <style>
+  *{ background-color: transparent; margin: 0; padding: 0;}
+  
+ .zd-video-controls {
+  width: 100%;
+  height: 44px;
+  position: absolute;
+  /*bottom: 20px;*/
+  background-color: #242426;
+  left: 0px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.75);
+  /*visibility: hidden;*/
+  /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";*/
+  /*filter: alpha(opacity=0);*/
+  /*opacity: 0;*/
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transtion: all 0.3s ease;
+}
+.zd-video-progress {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  background-color: #666666;
+}
+
+.zd-video-progress-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 5px;
+  width: 0;
+  background-color: #18A8EA;
+}
+
+.zd-video-control {
+  display: inline-block;
+  vertical-align: top;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.zd-video-play {
+  width: 11px;
+  height: 14px;
+  background-image: url("../media/play.svg");
+  
+}
+
+.zd-video-pause {
+  width: 12px;
+  height: 14px;
+  background-image: url("../media/pause.svg");
+  display: none;
+}
+
+.zd-video-fullscreen {
+  width: 14px;
+  height: 14px;
+  background-image: url("../media/fullscreen.svg");
+}
+
+.zd-video-unfullscreen {
+  width: 14px;
+  height: 14px;
+  background-image: url("../media/unfullscreen.svg");
+}
+.zd-controls-body {
+  padding: 15px 20px;
+  line-height: 14px;
+ 
+}
+.zd-controls-left { float: left; }
+
+.zd-controls-right { float: right; }
+
+.zd-video-time {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.8);
+  padding-left: 30px;
+}
+html{background-color: green;}
+    </style>
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+</head>
+<body>
+<div class="zd-video-controls show" >
+  <div class="zd-video-progress">
+    <div class="zd-video-progress-bar"></div>
+  </div>
+  <div class="zd-controls-body">
+    <div class="zd-controls-left">
+      <span class="zd-video-play zd-video-control"></span>
+      <span class="zd-video-pause zd-video-control"></span>
+      <span class="zd-video-time">00:00</span>
+    </div>
+    <div class="zd-controls-right">   
+     
+      <span class="zd-video-control zd-video-fullscreen"></span>
+    </div>
+  </div>
+</div>
+<!-- <h1  onclick="full()">this is h1</h1>
+<h1  onclick="dfull()">取消全屏</h1>
+<h1  onclick="seek()">seek</h1>
+ <h1 onclick="forward()">快进</h1>   -->
+
+<script>
+
+
+
+
+
+
+function full(){
+// alert("full in full")
+ 
+        api.execScript({
+                   frameName: 'video',
+                    script:'vfull()'
+                });
+        
+    }
+function dfull(){
+
+ 
+        api.execScript({
+                   frameName: 'video',
+                    script:'dfull()'
+                });
+        
+    }
+function seek(){
+
+
+        api.execScript({
+                   frameName: 'video',
+                    script:'seek()'
+                });
+        
+    }
+function forward(){
+
+
+        api.execScript({
+                   frameName: 'video',
+                    script:'forward()'
+                });
+        
+    }
+function playvv(){
+   api.execScript({
+                   frameName: 'video',
+                    script:'playvm()'
+                });
+}
+function pausevv(){
+  api.execScript({
+                   frameName: 'video',
+                    script:'pausevm()'
+                });
+  
+}
+function swithVideovv(){
+  // alert("执行");
+  api.execScript({
+                   frameName: 'video',
+                    script:'switchVideom()'
+                });
+  
+}
+var zhixing=true;
+function nextvv(){
+if(zhixing){
+  api.execScript({
+                   frameName: 'video',
+                    script:'nextvm()'
+                });
+    // alert("执行 一次");
+    zhixing=false;
+  }
+}
+  
+
+function changeZhixing(){
+  // alert("反过来了");
+  zhixing=true;
+}
+function setctrls(){
+   $(".zd-video-controls").css('width', api.frameWidth);
+     api.setFrameAttr({
+    name: 'ctrl',
+    rect: {
+        x: 0,
+        y:270,
+        w: api.winWidth,
+        h:43
+    }
+});
+       localStorage.setItem("winfull","unfull"); 
+                   fullIt=true;
+}
+function getpo(){
+api.execScript({
+                   frameName: 'video',
+                    script:'getpom()'
+                });
+var potime=parseInt(localStorage.getItem("potime"))||0;
+// alert(potime);
+
+// alert("goo-"+potime)
+return potime;
+
+}
+
+
+
+function getduration(){
+api.execScript({
+                   frameName: 'video',
+                    script:'getdurationm()'
+                });
+return parseInt(localStorage.getItem("duration"));
+
+}
+
+</script>
+<script src="../script/jquery-1.11.3.min.js"></script>
+
+  <script>
+//   function seekTime(){
+//     // alert("seekTime lm");
+// api.execScript({
+//                    frameName: 'video',
+//                     script:'seekTimem()'
+//                 });
+
+// }
+
+
+   var fullIt=true;
+    $(function(){
+     
+     
+      
+localStorage.setItem("vindex",0);
+  localStorage.setItem("potime",0);
+  localStorage.setItem("seekTime",0);
+   localStorage.setItem("duration", 0);
+     localStorage.setItem("playts",null);
+
+  var obj = {};
+    // obj.video = this.container.find('video')[0];
+     obj.video={};
+    
+
+    obj.controls = $('.zd-video-controls');
+
+    
+    obj.bigPlayBtn =obj.controls.find('.zd-video-big-play');
+    obj.playBtn =  obj.controls.find('.zd-video-play');
+    obj.pauseBtn = obj.controls.find('.zd-video-pause');
+    obj.progressBar = obj.controls.find('.zd-video-progress-bar');
+     obj.controls.find('.zd-video-progress-bar').css("width",0);
+    obj.volumeCon = obj.controls.find('.zd-video-volume');
+    obj.volumeBar = obj.controls.find('.zd-video-volume-bar');
+    obj.fullScreenBtn = obj.controls.find('.zd-video-fullscreen');
+    obj.videoTime = obj.controls.find('.zd-video-time');
+    //play
+    
+    var playHandle = function(e) {
+ localStorage.setItem("seekTime",obj.percent/100*obj.allmins );
+     playvv();
+       a
+     // seekTime();
+     // swithVideovv();
+      // obj.playBtn.addClass('hide');
+      // obj.pauseBtn.removeClass('hide');
+      obj.playBtn.css("display","none");
+      obj.pauseBtn.css("display","inline-block");
+ 
+    }
+    obj.playBtn.on('click', playHandle);
+   
+    obj.bigPlayBtn.on('click', playHandle);
+    //pause
+    obj.pauseBtn.on('click', function(e) {
+      // obj.video.pause();
+     localStorage.setItem("seekTime",obj.percent/100*obj.allmins );
+       pausevv();
+       // swithVideovv();
+     obj.playBtn.css("display","inline-block");
+      obj.pauseBtn.css("display","none");
+      obj.bigPlayBtn.css("display","inline-block !important");
+    });
+
+     obj.fullScreenBtn.on('click', function(e) {
+
+
+      if(fullIt){
+         // alert("click full");
+      
+        // alert(api.winHeight+":"+api.winWidth);
+        // alert(api.winWidth+":"+api.winHeight);
+        //  alert(api.frameWidth+":"+api.frameHeight);
+           full();
+             $(".zd-video-controls").css('width', api.winHeight);
+          api.setFrameAttr({
+    name: 'ctrl',
+    rect: {
+        x: 0,
+        y:  api.winWidth-43,
+        w:  api.winHeight,
+        h: 43
+    }
+});
+  fullIt=false;
+         
+      
+      }else{
+        dfull();
+       
+         // alert(api.winHeight+":"+api.winWidth);
+        
+            $(".zd-video-controls").css('width', api.frameWidth);
+          
+                 api.setFrameAttr({
+    name: 'ctrl',
+    rect: {
+        x: 0,
+        y:270,
+        w: api.winWidth,
+        h:43
+    }
+});
+                   fullIt=true;
+      }
+    
+    });
+
+
+     var myid=setInterval( function() {
+      //time change
+
+      obj.video.currentTime=parseInt(getpo()/1000)||0;
+
+      obj.video.allTime=parseInt(localStorage.getItem("playts"));
+      // alert(obj.video.allTime);
+
+      obj.video.duration=parseInt(getduration()/1000)||0;
+      // alert(localStorage.getItem("seekTime"));
+    
+ var seekTime=parseInt(localStorage.getItem("seekTime"))||0;
+
+      }else{
+ var seekTime=0;
+       }
+    // alert(seekTime);  
+     
+     
+      obj.mins=parseInt((obj.video.currentTime+seekTime)/60);
+     // alert(obj.video.currentTime+":"+seekTime);
+      obj.secs=(obj.video.currentTime+seekTime)%60;
+      obj.allmins=parseInt(obj.video.allTime/60);
+
+      // alert(obj.allmins);
+      obj.allsecs=obj.video.allTime%60;
+
+       obj.secs = ('0' + obj.secs).slice(-2);
+      obj.mins = ('0' + obj.mins).slice(-2);
+       obj.allsecs = ('0' + obj.allsecs).slice(-2);
+      obj.allmins = ('0' + obj.allmins).slice(-2);
+       obj.videoTime.text(obj.mins+ ':' + obj.secs+ '/'+ obj.allmins+ ':' + obj.allsecs);
+obj.percent = (100 / obj.video.allTime) * (obj.video.currentTime+seekTime);
+if (obj.percent > 0) {
+        obj.progressBar.width(obj.percent + '%');
+      }
+      if( obj.video.currentTime>= obj.video.duration){
+        // alert(obj.video.currentTime+":"+obj.video.duration);
+        // alert("播放完毕");
+       localStorage.setItem("seekTime",seekTime+obj.video.currentTime);  
+        
+        // clearInterval(myid);
+         nextvv();
+         // obj.video.currentTime=0;
+      }
+    }, 1000);
+
+
+
+
+////---drag
+var timeDrag = false; /* check for drag event */
+/*  $('.zd-video-progress-bar').on('mousedown', function(e) {
+    timeDrag = true;
+    updat
+    ebar(e.pageX);
+  });*/
+    $('.zd-video-progress').on('click', function(e) {
+    timeDrag = true;
+    updatebar(e.pageX);
+  });
+ $(document).on('mouseup', function(e) {
+    if(timeDrag) {
+      // alert("up");
+      timeDrag = false;
+      // console.log(e.pageX);
+      // updatebar(e.pageX);
+    }
+  });
+  // $(document).on('mousemove', function(e) {
+  //   if(timeDrag) {
+  //     updatebar(e.pageX);
+
+  //   }
+  // });
+  var updatebar = function(x) {
+    var progress = $('.zd-video-progress');
+    
+    //calculate drag position
+    //and update video currenttime
+    //as well as progress bar
+    var maxduration = obj.video.allTime;
+    // var position = x - progress.offset().left;
+    var position=x;
+   
+    var percentage = 100 * position / progress.width();
+
+    if(percentage > 100) {
+      percentage = 100;
+    }
+    if(percentage < 0) {
+      percentage = 0;
+    }
+    // alert(percentage+"---"+obj.video.duration);
+     // localStorage.setItem("potime", percentage*obj.video.duration);
+     // localStorage.setItem("seekTime", percentage*obj.video.duration/100);
+     localStorage.setItem("seekTime", percentage*obj.video.allTime/100);
+     // seekTime();
+     swithVideovv();
+    $('.zd-video-progress-bar').css('width',percentage+'%');  
+
+    // video[0].currentTime = maxduration * percentage / 100;
+  };
+
+///----drag
+
+
+
+
+
+
+
+      
+    })
+
+  </script>
+</body>
+</html>

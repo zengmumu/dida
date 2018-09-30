@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"/>
+    <link rel="stylesheet" href="css/ionic.min.css"/>
+    <style>
+        .item .item-des{ white-space: normal;}
+        .item .item-foot{ color: #999; font-size: 8px;}
+    </style>
+    <script src="js/ionic.bundle.min.js"></script>
+</head>
+<body ng-app="jokeApp" ng-controller="jokeCtrl">
+<ion-header-bar class="bar-positive">
+    <h3 class="title">爱段子</h3>
+    <button class="button button-icon ion-android-delete" ng-click="deleteData()"></button>
+</ion-header-bar>
+<ion-panel>
+    <ion-content>
+        <ion-refresher pulling-text="下拉刷新"  on-refresh="pullJoke(1)"></ion-refresher>
+        <ion-list>
+            <ion-item ng-repeat="j in jokes">
+                <p class="item-des" ng-bind="j.summary" ng-show="j.summary"></p>
+                <p class="item-foot" ng-bind="j.source"></p>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll  on-infinite="pullJoke(0)" distance="1%" ></ion-infinite-scroll>
+    </ion-content>
+</ion-panel>
+<script>
+   var app=angular.module("jokeApp",["ionic"])
+
+           .controller("jokeCtrl",function($scope,$http){
+                $scope.jokes=[];
+		//如果存过page 取出来 ，没有page=0
+			if(localStorage.getItem("page")){
+				 $scope.page=parseInt(localStorage.getItem("page"));
+			}else{
+				 $scope.page=0;
+			}
+               $scope.getjokes=function(type,page){
+                   $http.get("data.php?page="+page)
+                   .success(function(res){
+                               if(type){
+                               	//取本地的数据
+                               	var localitem=localStorage.getItem("itemsJoke");
+                               	localitem=JSON.parse(localitem);
+                                $scope.jokes= res.result.concat(localitem);
+                                 
+                                   var item=JSON.stringify($scope.jokes);
+window.localStorage.setItem("itemsJoke",item);      
+                               	
+                                                       
+                               }else{
+                                   $scope.jokes= $scope.jokes.concat(res.result) ;
+//                                 console.log( $scope.jokes);
+                               }
+
+                           }).finally(function(){
+                               $scope.$broadcast("scroll.refreshComplete");
+                               $scope.$broadcast("scroll.infiniteScrollComplete");
+                           })
+
+               }
+               $scope.pullJoke=function(type){
+                   $scope.page++;
+                   console.log($scope.page);
+                 localStorage.setItem("page",$scope.page);
+//                 $scope.getjokes(type,$scope.page);
+               }
+				if(localStorage.getItem("page")){
+					  $scope.getjokes(1, $scope.page);
+				}
+             
+               $scope.deleteData=function(){
+               	localStorage.clear();
+               }
+           })
+</script>
+</body>
+</html>

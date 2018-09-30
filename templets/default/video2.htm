@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+     <title>{dede:field.shorttitle/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+
+     <link href="{dede:global.cfg_templets_skin/}/css/bootstrap.css" rel="stylesheet">
+<link href="{dede:global.cfg_templets_skin/}/css/style.css" rel="stylesheet">
+
+      
+      <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+<style>
+.course-list-relation a {
+color: #60686b;
+display: block;
+height: 35px;
+line-height: 35px;
+overflow: hidden;
+padding: 0 0 0 0px;
+word-break: break-all;
+}</style>
+  </head>
+
+  <body>
+   {dede:include filename="qkt_header.htm"/}
+    <!--导航ed-->
+  <div class="text-muted position hidden-xs" id="video-position">
+  
+			 {dede:field name='position'/}
+	
+        </div><!-- /place -->
+<!--video-->
+<div class="video-wrap clearfix">
+
+ <aside class="left_side" style="left: 0px;">
+   <a href="javascript:;" class="btn_slide btn_left_slide hidden-xs"></a>
+   <div class="l_title hidden-xs">课程目录</div>
+   <div class="l_zy_list nano has-scrollbar learnchapter hidden-xs" id="divClassList" style="height: 456px; overflow: auto;">
+     <div class="nano-content video" tabindex="0" style="right: -17px;">     
+     
+     {dede:channelartlist  cl='1' re='1' }          
+       <div class="l_zj">{dede:field name='typename'/}</div>
+       <ul style="display:block;">   
+       {dede:arclist titlelen='42' row='200' orderby='id'}      
+         <li cid="112852" class="">
+           <a onClick="" href="[field:arcurl/]" class="chac" >
+            [field:title /]        
+           </a>
+         </li>  
+          {/dede:arclist}       
+   </ul>
+   {/dede:channelartlist}
+      </div>
+     
+   </div>
+ </aside>
+
+
+ <div class="main_content" style="">
+            <div class="mc_wrap study_wrap">
+                              
+                    <div class="clearfix">
+                                 
+                        <div class="video_name" id="SectionTitle">{dede:field.title /}</div>
+                        <div class="r nextpre">
+                        {dede:prenext get='pre'/}
+                         {dede:prenext get='next'/}
+                         
+                        </div>
+                    </div>
+                    <div id="J_Box" class="course-video-box">                   
+                      <script type="text/javascript">
+        
+		  var links="{dede:field.introduce/}";
+		var alink=links.split(",");
+		console.log(alink);
+		var v2="";
+		for(var i=0;i<alink.length;i++){
+			v2+='<item><source>'+alink[i]+'</source><title>第'+(i+1)+'小节</title></item>';
+			}
+		var v1='<param name="FlashVars" value="xml=<vcastr>+<channel>';
+		var v3='</channel></vcastr>"/>';
+		var vca=v1+v2+v3;
+	
+        </script>
+		<object type="application/x-shockwave-flash" data="{dede:global.cfg_templets_skin/}/js/vcastr3.swf" width="1200" height="500" id="vcastr3">
+			<param name="movie" value="{dede:global.cfg_templets_skin/}/vcastr3.swf"/> 
+			<param name="allowFullScreen" value="true" />
+			<script type="text/javascript">document.write(vca)</script>
+		</object>     
+                                   
+                    </div>
+
+       
+                    </div>
+</div>
+
+
+<!--video-->
+</div>
+
+
+<div class="course">
+  <div class="container">
+<!--coursemain-->
+<div class="coursemain clearfix">
+  <div class="course-content c-bg">
+    <nav class="course-tabs" >
+                    <ul id="tab_switch">
+					
+                      <li tab="dirBrief">课程目录</li>
+                      <li tab="brief" class="c_jj curr">评论</li>
+                      
+                      
+                    </ul>
+  </nav>
+
+<div class="course_chapter_list">
+    <div class="course_chapter_list">
+
+
+    {dede:channelartlist   re='1' }
+    <div class="learnchapter  learnchapter-active ">
+        <h3> <span>-</span> <strong><i class="hasOpenOn"></i> {dede:field name='typename'/}</strong> </h3>
+        
+        <ul class="video">
+			 {dede:arclist titlelen='42' row='200' orderby='id' } 
+            <li> <a target="_blank" href="[field:arcurl/]" class="studyvideo"> [field:title /] <i></i> </a> </li>
+            {/dede:arclist}
+          </ul>
+    </div>
+    {/dede:channelartlist}
+   
+</div>
+ 
+</div>
+<div class="course">
+<div class="coment">
+ 	<div id="course_note">
+        <ul class="commentcon">
+         {dede:include file='ajaxfeedback3.htm' /} 
+             
+      </ul>
+      </div>
+      
+ </div>
+</div>
+  <!--课程列表-->
+
+  </div>
+  <!--coursemain-->
+  <div class="sidebar ">
+  {dede:memberinfos }
+    <div class="teacher-block c-bg">
+      <h3>授课老师</h3>
+
+      <p class="t-name"><a href="#" class="t-pic"><img src="[field:face/]" width="80"></a><a href="#">[field:uname/]</a></p>
+      <div class="t-discrip">[field:lovemsg/]</div>
+    </div><!--blocked-->
+     {/dede:memberinfos}
+    <div class="teacher-block  c-bg">
+      <h3>资料下载</h3>
+      
+           <ul class="downlist">
+               
+      {dede:field name='softlinks'/}
+   
+                
+            </ul>
+                
+            
+    </div><!--bocked-->
+   
+     <div class="teacher-block c-bg">
+      <h3>相关课程</h3>
+      <ul>
+      
+      {dede:arclist flag='c' titlelen=42 row=6}  
+      
+<li class="clearfix course-list-relation">
+        <a href="[field:arcurl/]" class="course-cover">
+        <span class="course-name">[field:title/]</span></a>
+      </li> 
+      {/dede:arclist}  
+     </ul>     
+    </div><!--bocked-->
+
+     
+
+    
+    
+  </div><!---siderbar ed--->
+</div>
+
+    </div>
+</div>
+<!--课程-->
+
+
+  <!--课程-->
+    {dede:include filename="qkt_footer.htm"/}
+
+   
+
+    <script>
+	
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:field name='phpurl'/}/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "{dede:global.cfg_phpurl/}/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:global.cfg_phpurl/}/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+
+//	$(".course-content>div:gt(0)").hide();
+	
+    $(function(){
+		$("#tab_switch>li").each(function(index, element) {
+            var i=index;
+			$(this).click(function(){
+				$("#tab_switch .active").removeClass("active");
+				$(this).addClass("active");
+				$(".course-content>div:visible").hide();
+				$(".course-content>div:eq("+i+")").show();
+				})
+        });
+	$(".learnchapter>h3").click(function(){
+		$(this).next(".video").slideToggle();
+		if($(this).find("span").html()=="+"){
+		$(this).find("span").html("-");
+		}else{
+			$(this).find("span").html("+");
+			}
+		})
+		})
+    </script>
+  
+   
+<script>  
+$(function(){
+var tflag=true;
+$(".btn_left_slide").click(function(){
+	$(this).css("z-index",10000);
+if(tflag){
+$(".left_side").animate({"left":"-=300"},200);
+$(".video-wrap").animate({"padding-left":"20"},200);
+tflag=false;
+}else{
+
+ $(".left_side").animate({"left":"+=300"},200); 
+ $(".video-wrap").animate({"padding-left":"320"},200);
+
+ tflag=true;  
+}
+
+})
+
+
+  
+
+
+
+// $(".btn_left_slide").toggle(
+
+// 	function(){
+// 		$(".left_side").animate({"left":"+=300"},1500);
+// 		},
+// 	function(){
+// 		$(".left_side").animate({"left":"-=300"},1500);
+// 		}
+// 	)
+	      
+   
+	
+	
+	 
+	  
+    });  
+</script>  
+  
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="<?php echo $cfg_soft_lang; ?>" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+      <loc>http://www.qingkt.com/a/video/v_web/v_javascript/JavaScriptshenruqianchu/2015/0619/127.html</loc> 
+        <lastmod>1434693488</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+  <title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<!--
+<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+-->
+<style> .dcmp-post{ height: auto;}
+dl,dt,dd{ margin:0; padding:0;}
+.dcmp-post .dcmp-userinfo input{ height: 35px;}
+
+   .m-nav{ display: none;}
+@media (max-width: 767px){
+ body{ padding-top: 38px!important;}
+#header{ display: none;}
+ .m-nav{ display: block;}
+.course textarea {
+    width: 100%;
+    visibility: visible !important;
+    display: block !important;
+  
+
+}
+#cke_msg{ display: none!important;}
+
+.c-header{ height: 43px; line-height: 43px; text-align: center; position: fixed; left: 0; top:0; border-bottom: 1px solid #f0f0f0; width: 100%; background-color: #fff; font-size: larger;}
+  .c-header .c-back{ position: absolute; left: 0; top:0; width: 43px; height: 43px;padding:5px; padding-left: 0;}
+  #gback{ fill:#aaa;}
+  .tbox dt{ height:38px; line-height:38px;}
+.dcmp-stand input{ margin-left:25px;}
+.dcmp-stand{ height:38px; height:38px; line-height:38px;}
+.dcmp-userinfo{ margin-top:10px;}
+.mt1{ margin-top:35px; border-top:1px solid #f0f0f0;}
+}
+.mt1 a{color:#aaa; font-size:12px;}
+.mt1 .more{ float:right;}
+.mt1 .fr{ float:right;}
+.newcomment_act span{padding-left:15px; color:#888;}
+.comment_act span.fl{ color:#bbb;padding-left:15px; font-size:12px;}
+
+.comment_act+div{ font-size:16px; color:#222; padding-top:15px; padding-bottom:15px;}
+.plpic{float:left;}
+#commetcontent .decmt-box2 .title{    float: left;
+    width: 80%;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 15px;
+    border: none;}
+    .text-small a:first-of-type{display:none;}
+    .text-small *:first-letter{ display:none;}
+  .text-small{    color: #f0f0f0 !important;
+    padding-bottom: 0.5em !important;}
+  
+}
+
+
+
+</style>
+     
+     <link href="{dede:global.cfg_templets_skin/}/css/bootstrap.css" rel="stylesheet">
+<link href="{dede:global.cfg_templets_skin/}/css/style.css" rel="stylesheet">
+
+
+     
+
+      
+      <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+ <script src="http://www.qingkt.com/templets/default/js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax3.js"></script>
+
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin(){
+	  var taget_obj = document.getElementById('_ajax_feedback');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("{dede:global.cfg_cmsurl/}/member/ajax_feedback.php");
+	  DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:field name='phpurl'/}/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "{dede:global.cfg_phpurl/}/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("{dede:global.cfg_phpurl/}/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+  </head>
+  <body class="tutor">
+   {dede:include filename="qkt_header.htm"/}
+    <div class="m-nav">
+    	 <div class="c-header">
+      <span class="c-back" onclick="history.back();">
+      <svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="24px" height="24px" viewBox="0 0 100 100" enable-background="new 0 0 24 24" xml:space="preserve">
+<path id="gback" d="M28.724,50c0-1.338,0.511-2.676,1.53-3.696l32.1-32.099c2.042-2.042,5.352-2.042,7.393,0c2.041,2.041,2.041,5.351,0,7.393
+  L41.344,50l28.402,28.402c2.041,2.041,2.041,5.352,0,7.393c-2.041,2.042-5.351,2.042-7.393,0l-32.1-32.099
+  C29.234,52.676,28.724,51.338,28.724,50z"/>
+</svg></span>
+      Unity3D面试宝典
+    </div> 
+
+    </div>
+  
+<!--课程-->
+<div class="course">
+  <div class="container">
+	<div class="text-small position" style="margin:0; padding-left:2em; padding-top:1em; font-size:0.5em;">{dede:field name='position'/}
+    </div><!-- /place -->
+<!--coursemain-->
+	<div class="coursemain container clearfix">
+  		<div class="course-content c-bg">
+			<div  class="tutorial">  
+ 				<div class="date">{dede:field.pubdate function="GetDateMk('@me')"/} | <span class="qkt-click" ><script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script></span></div>
+ 				<h1>{dede:field.title/}</h1> 
+  				{dede:field.explans/}
+ 			</div> 
+ 			<!-- tutorial ed -->
+			<div class="plus text-center">
+				 <ul class="prenext clearfix">
+				     <li class="pre">{dede:prenext get='pre'/}</li>
+				     <li class="next">{dede:prenext get='next'/}</li>
+				 </ul>
+			</div>
+		</div><!--内容列表-->
+ 	</div><!--左边主体内容-->
+
+   <div class="coment c-bg"> 
+ 	<div id="course_note">
+        <div class="commentcon">
+         {dede:include file='ajaxfeedback4.htm' /}              
+         </div>
+    </div>  
+  </div>  <!--评论列表-->
+ 
+
+  <div class="sidebar ">
+  </div> <!--侧边栏目-->
+
+    </div><!--container ed-->
+</div>
+<!--courseed-->
+  </body>
+</html>

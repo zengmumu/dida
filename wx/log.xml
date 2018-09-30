@@ -1,0 +1,14 @@
+02:17:31 R <xml><ToUserName><![CDATA[gh_d7ac10635d10]]></ToUserName>
+<FromUserName><![CDATA[oBr4Mwyw0TVt7M1qfERAEDMDRjIg]]></FromUserName>
+<CreateTime>1538187455</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[unsubscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+02:17:31 T <xml>
+<ToUserName><![CDATA[oBr4Mwyw0TVt7M1qfERAEDMDRjIg]]></ToUserName>
+<FromUserName><![CDATA[gh_d7ac10635d10]]></FromUserName>
+<CreateTime>1538187451</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[取消关注]]></Content>
+</xml>

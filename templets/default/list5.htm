@@ -1,0 +1,238 @@
+  <!DOCTYPE html>  
+  <html lang="zh-CN">
+  <head>
+  	<meta charset="utf-8">  
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  	<meta name="viewport" content="width=device-width, initial-scale=1">  
+
+  	<title>{dede:field.typename /}_{dede:field.seotitle /}_{dede:global.cfg_webname/}</title> 
+  	<meta name="keywords" content="{dede:field name='keywords'/}" />  
+  	<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />  
+  	<!-- <link href="{dede:global.cfg_templets_skin/}/css/bootstrap.css" rel="stylesheet">  
+  	<link href="{dede:global.cfg_templets_skin/}/css/style.css" rel="stylesheet"> --> 
+  
+  	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  	<link href="http://www.qingkt.com/templets/default/css/bootstrap.css" rel="stylesheet">  
+   <link href="http://www.qingkt.com/templets/default/css/style.css" rel="stylesheet">  
+
+  	<style>
+    .m-nav{ display: none;}
+    @media (max-width: 767px) {
+      body{ padding-top: 0;}
+#header{ display: none;}
+ .m-nav{ display: block;}
+}
+ .bigimg{ width:100%; height:320px; overflow:hidden; display:none;}
+.course-one a .bigtitle{ padding:10px; font-size:14px; display:block; height:150px; margin-top:0; transition:transform 0.5s; background-color:#b9cdcd; }
+.course-one a:hover .bigtitle{ transform:scale(1.05,1.05);}
+ .course-one a .g_one_header{ color:#fff; font-size:20px; font-weight:600; margin-bottom:8px; display:block; margin-top:8px;text-shadow:1px 1px 1px rgba(0,0,0,.3);}
+.course-one a  .des{ color:#fff; font-size:12px; text-shadow:1px 1px 0px rgba(0,0,0,.2);}
+.inter-item{ background-color: #fff; margin-bottom: 15px;}
+.p10{ padding: 10px;}
+.i-title{ border-bottom: 1px solid #f0f0f0;   padding: 10px; font-size: 14px; font-weight: bold; padding-top: 15px; padding-bottom: 15px;}
+.i-explain{ padding: 10px; line-height: 1.7em; display: none;}
+.i-explain>p{ margin-bottom: 0.7em;}
+.i-footer{ padding: 10px;border-top: 1px solid #f0f0f0; }
+.q,.d{ display:inline-block; vertical-align: middle; width: 25px; height: 25px; line-height: 25px; text-align: center; font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif; border:1px solid #f80;  font-weight: bold; color: #f80; font-size: 18px;}
+  #wrapper,#wrapper2{ height: 38px; line-height: 38px; width: 100%;  overflow: hidden; background-color: #f0f0f0;}
+    #scroller,#scroller2{ width: 300%;}
+    #scroller li, #scroller2 li{ width: auto; float:left; text-align: center;}
+  #scroller li.active,#scroller2 li.active{ color: #A01D1D; font-weight: bold;}
+  .course-nav-item,.course-nav-item a{ height: 38px; line-height: 38px; }
+  .plus-menu{ height: 38px; width: 38px; color: #f80; line-height: 38px; position: absolute; right: 0; top:0; background-color: #fff; text-align: center; font-size: 24px; box-shadow: -0px 0px 1px #777; z-index: 1000;}
+  .scroll-nav{ position: relative;}
+  .m-nav{ height: 38px; line-height: 38px; background-color: #fff; position: relative; box-shadow: 0 1px 1px #999; }
+  .menu-icon{ height: 38px; line-height: 38px; width: 38px; position: absolute; top:0; right:10px;}
+  .menu-icon #menu{  fill:#f80;}
+  .course-nav-item{ margin-left: 3px; margin-right: 3px;}
+ .btn_dati_beiti_wrap{ /* border:;*/  -webkit-box-flex: 1; 
+              -webkit-flex: 1;
+              overflow: hidden;
+              flex: 1;}
+          .btn_dati_beiti{
+              height: 29px; width:150px; 
+              margin-top: 5px;
+              border:1px  solid #999;
+              border-radius: 6px;
+              -webkit-border-radius:6px;
+              margin-left: auto;
+              margin-right: auto;
+              overflow: hidden;
+          }
+          .btn_dati,.btn_bei{ width: 50%;   display: block; float: left;height:27px; line-height: 27px;
+            text-align: center;}
+          
+          .btn_dati.select,.btn_bei.select{ background-color: #999; 
+              color: #fff;}
+           .btn_bei.select{ background-color: #999; color: #fff;}
+           .menu-ctrl{ height: 100%; width: 100%; overflow: scroll; position: absolute; left:0;top:0; background-color: #fff; padding-top: 43px; width: 100%;z-index: 1001; transition:transform 0.7s ease;-webkit-transition:transform 0.7s ease; transform:translate(100%,0);-webkit-transform:translate(100%,0);}
+           .menu-ctrl.show{transform:translate(0,0);}
+  .menu-ctrl .c-header{ height: 43px; line-height: 43px; text-align: center; position: fixed; left: 0; top:0; border-bottom: 1px solid #f0f0f0; width: 100%; background-color: #fff; font-size: larger;}
+  .c-header .c-back{ position: absolute; left: 0; top:0; width: 43px; height: 43px;padding:5px; padding-left: 0;}
+  #gback{ fill:#aaa;}
+.c-main{ height: 43px; background-color: #f6f6f6;}
+.c-main li{ float: left; padding-left:5px; padding-right: 5px;  height: 38px; line-height: 38px; }
+.c-main li a{ display: block; font-size: larger; padding-left: 5px; padding-right: 5px; color: #484848;}
+.c-list h4{ height: 38px; line-height: 38px; font-size: small; clear: both; margin: 0;}
+.c-list h4 a{ border-left:3px solid #f80; color: #999; padding-left: 20px; font-weight: normal;}
+.c-list .sub li{ float: left; margin:3px 6px;}
+.c-list .sub li a{ display: block; padding: 8px 12px; border-radius: 38px; border:1px solid #f0f0f0; color: #333;}
+.c-list .sub li a:hover{ background-color: #f0f0f0; color: #666;}
+ul:empty{ display: none;}
+      </style>
+
+
+  	<!--[if lt IE 9]>  
+  	<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  	<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  	<![endif]-->  
+  
+  </head>
+  <body>
+  	{dede:include filename="qkt_header.htm"/}
+ 
+  <!--导航-->  
+
+    <div class="m-nav">
+  <div class="btn_dati_beiti_wrap">
+          <div class="btn_dati_beiti">
+            <span class="btn_dati select">答题模式</span>
+
+            <span class="btn_bei ">背题模式</span>
+          </div>
+        </div>
+   <div class="menu-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="pointer-events: none; display: block;"><g id="menu"><path d="M3,18h18v-2H3V18z M3,13h18v-2H3V13z M3,6v2h18V6H3z"></path></g></svg></div></div> 
+  
+  {dede:sonchannel}
+<a href='[field:typeurl/]'>[field:typename/]</a>
+{/dede:sonchannel}
+  <div class="q-course">
+  	<div class="container scroll-nav">
+
+  				
+  		
+  		<div class="inter row">
+  		{dede:list infolen='52'  addfields='explans'  pagesize='16'}
+  			<div class="inter-item col-xs-12">
+
+  				<div class="i-title">
+  					<span class="q">?</span>
+  					<a href="[field:arcurl/]" style="color:#484848;">[field:title/]</a>
+  				</div>
+  				<div class="i-explain">
+  					<span class="d">答</span>
+  					[field:explans/]
+  				</div>
+  				<div class="i-footer clearfix">
+  					<div class="pull-left">学习次数：<script src="http://www.qingkt.com/plus/count.php?view=no&aid=[field:id/]&mid=[field:mid/]"
+type='text/javascript' language="javascript"></script></div>
+  						<div class="pull-left">&nbsp;&nbsp;&nbsp;&nbsp;<a href="[field:arcurl/]" style="color:#999;">查看面试题</a></div>
+  					<div class="pull-right">
+  						<button class="btn  btn-warning show-answer">查看答案</button>
+  					</div>
+  				</div>
+
+  			</div>
+  			{/dede:list}
+  		</div>
+
+  		<!--page-->  
+
+  		<div class="page">
+  			{dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="16"/}
+  		</div>
+  		<!--page--> </div>
+  </div>
+
+  <!--课程-->  
+  {dede:include filename="qkt_footer_u3d.htm"/}
+  <script src="http://www.qingkt.com/templets/default/js/jquery.js"></script>
+ 
+
+
+     
+  <script type="text/javascript">
+
+$(function(){
+	
+
+
+
+
+	$(".show-answer").click(function(){
+		console.log("click");
+		if($(this).text()=="查看答案"){
+			$(this).text("隐藏答案");
+			$(this).parent().parent().parent().find(".i-explain").slideDown();
+		}else{
+			$(this).text("查看答案");
+			$(this).parent().parent().parent().find(".i-explain").slideUp();
+		}
+	})
+	
+	})
+
+</script>
+<style>
+  
+</style>
+  <div class="menu-ctrl">
+    <div class="c-header">
+      <span class="c-back">
+      <svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="24px" height="24px" viewBox="0 0 100 100" enable-background="new 0 0 24 24" xml:space="preserve">
+<path id="gback" d="M28.724,50c0-1.338,0.511-2.676,1.53-3.696l32.1-32.099c2.042-2.042,5.352-2.042,7.393,0c2.041,2.041,2.041,5.351,0,7.393
+  L41.344,50l28.402,28.402c2.041,2.041,2.041,5.352,0,7.393c-2.041,2.042-5.351,2.042-7.393,0l-32.1-32.099
+  C29.234,52.676,28.724,51.338,28.724,50z"/>
+</svg></span>
+     <a href="http://www.qingkt.com/a/Unitymianshiti/" style="color:#999"> Unity3D面试宝典</a>
+    </div> 
+    
+   <!--导航-->  
+<ul class="c-list">
+  
+  <li>
+   <h4><a href="http://www.qingkt.com/a/Unitymianshiti/"> Unity3D面试宝典</a></h4>
+    <ul class="sub">
+      {dede:channel type='son' noself='yes'}
+      <li>
+        <a href="[field:typelink/]">[field:typename/]</a>
+      </li>
+      {/dede:channel}
+    </ul>
+  </li>
+ 
+</ul>
+
+  </div>
+
+  <!-- menu-ctrl -->
+  <script>
+$(function(){
+  $(".btn_dati").click(
+    function(){
+    $(this).addClass("select");
+   
+    $(".btn_bei").removeClass("select");
+    $(".i-explain").slideUp("fast");
+
+  })
+   $(".btn_bei").click(function(){
+    $(this).addClass("select");
+    $(".btn_dati").removeClass("select");
+    $(".i-explain").slideDown("fast");
+
+  })
+
+$(".menu-icon,.plus-menu").click(function(){
+
+  $(".menu-ctrl").addClass("show");
+})
+$(".c-back").click(function(){
+   $(".menu-ctrl").removeClass("show");
+})
+
+})
+  </script>
+</body>
+  </html>

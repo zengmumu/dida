@@ -1,0 +1,31 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>test</title>
+	</head>
+	<body>
+		<div>
+			this page should be test on server(http://www.aaa.com, or http://localhost), not on local files system. because the test movie <b>http://vcastr.ruochi.com/video/happy_feet.flv</b> on the server，not on the local.
+			<br/>
+			本页必须在服务器(http://www.aaa.com,或者http://localhost)上测试,不能再本地文件系统测试, 因为测试文件<b>http://vcastr.ruochi.com/video/happy_feet.flv</b>是在服务器端，不再本地
+		</div>
+        <script type="text/javascript">
+        
+		  var links="http://42.236.62.22/youku/676CCF67F93282E64C2D54001/030001060055139C577D430148B44138A5506C-9913-9F2C-0B01-780885D4104C.flv,http://42.236.62.44/youku/697133718C54383E7D4ACC5970/030001060155139C577D430148B44138A5506C-9913-9F2C-0B01-780885D4104C.flv,http://42.236.62.112/youku/677111485F93783320BFE74078/030001060255139C577D430148B44138A5506C-9913-9F2C-0B01-780885D4104C.flv,http://42.236.62.103/youku/697177C356A4E848E793AD26AD/030001060355139C577D430148B44138A5506C-9913-9F2C-0B01-780885D4104C.flv,http://42.236.62.133/youku/657111488094B8461075594229/030001060455139C577D430148B44138A5506C-9913-9F2C-0B01-780885D4104C.flv,http://42.236.62.106/youku/677177C36EC4C84702CFE33D29/030001060555139C577D430148B44138A5506C-9913-9F2C-0B01-780885D4104C.flv";
+		var alink=links.split(",");
+		console.log(alink);
+		var v2="";
+		for(var i=0;i<alink.length;i++){
+			v2+='<item><source>'+alink[i]+'</source><title>第'+(i+1)+'小节</title></item>';
+			}
+		var v1='<param name="FlashVars" value="xml=<vcastr>+<channel>';
+		var v3='</channel></vcastr>"/>';
+		var vca=v1+v2+v3;
+	
+        </script>
+		<object type="application/x-shockwave-flash" data="vcastr3.swf" width="650" height="500" id="vcastr3">
+			<param name="movie" value="vcastr3.swf"/> 
+			<param name="allowFullScreen" value="true" />
+			<script type="text/javascript">document.write(vca)</script>
+		</object>
+	</body>
+</html>

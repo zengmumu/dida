@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+ 
+     <script src="script/zepto.min.js"></script>
+   <style type="text/css">
+            *{ margin: 0; padding: 0;-webkit-box-sizing:border-box; box-sizing:border-box;}
+                html,body{
+                    height: 100%;
+                    background-color: #f5f5f5;
+            
+                }
+                body{ padding-top: 48px;}
+                #wrap{
+                    height: 100%;
+                   /* display: -webkit-box;
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-flex-flow: column;
+                           flex-flow: column;*/
+                }
+                #header{
+                    text-align: center; 
+                    color: #999;
+                    width: 100%;
+                    height: 48px; line-height: 48px; border-bottom: 1px solid #e0e0e0;
+                     display: -webkit-box;
+                    display: -webkit-flex;
+                    display: flex;
+                    font-size: small;
+                    position: fixed;
+                    left:0;
+                    top:0;
+                     -webkit-transition:bottom 1s ease;
+                    transition:bottom 1s ease;
+                     background-color: #FFF;
+                     z-index: 15;
+                     font-size: larger;  color: #333;
+                }
+                #header .back{ height: 48px; width: 48px; 
+                    background: url(image/btn_back_normal.png) no-repeat center center; background-size: 65%;}
+                .skin{height: 48px; width: 48px;}
+            
+                .btn_dati_beiti_wrap{ /* border:;*/  -webkit-box-flex: 1; 
+                    -webkit-flex: 1;
+                    flex: 1;}
+                .btn_dati_beiti{
+                    height: 29px; width:150px; height: 26px;
+                    margin-top: 10px;
+                    border:1px  solid #999;
+                    border-radius: 6px;
+                    -webkit-border-radius:6px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    overflow: hidden;
+                }
+                .btn_dati,.btn_bei{ width: 50%;   display: block; float: left;height:27px; line-height: 27px;}
+                
+                .btn_dati.select,.btn_bei.select{ background-color: #999; 
+                    color: #fff;}
+                 .btn_bei.select{ background-color: #999; color: #fff;}
+                h1{
+                    font-size: 20px; height: 44px; line-height: 44px; margin: 0em; color: #fff;
+                }
+              /*  #main{
+                    -webkit-box-flex: 1; 
+                    -webkit-flex: 1;
+                    flex: 1;
+                }*/
+                #footer{
+                        border-top: 1px solid #dedede;
+                background-color: #fff;
+                width: 100%;
+                position: fixed;
+                bottom: -460px;
+                left: 0;
+                z-index: 20;
+                 -webkit-transition:bottom 1s ease;
+                    transition:bottom 1s ease;
+            
+               
+               
+            }
+            .cha_lis{ margin-top: 25px;}
+            .cha_lis li{ height: 43px; line-height: 43px; border-bottom: 1px solid #f5f5f5; background-color: #fff; padding-left: 15px; transition:all 0.7s;}
+            .cha_lis li i{ display: inline-block; height: 25px; line-height: 25px; width: 25px; border-radius: 3px; -webkit-border-radius: 3px; background-color:  #18b4ed; font-style: normal; text-align: center; color: #fff; font-size: small; margin-right: 15px;}
+            .cha_lis li .num{ display: inline-block; margin-left: 15px; color: #999; font-size: small;}
+            .cha_lis li:active{ background-color:#f0f0f0}  
+             .cha_lis li:before{ content: ""; display: inline-block; height: 43px; width: 43px;background-image: url(image/play.png); background-size:20px auto; background-position: center center; vertical-align: top; background-repeat: no-repeat;}
+
+                
+        </style>
+    </head>
+
+    <body>
+        <div id="wrap">
+            <div id="header">
+                <span class="back"></span>
+                <div class="btn_dati_beiti_wrap">
+                    <div class="h_titile">
+                       
+                        
+                    </div>
+                </div>
+                <div class="skin"></div>
+            </div>
+            <div id="main">
+            <ul class="cha_lis">
+             
+            </ul>
+           
+                    <!-- f_body ed -->
+                </div>
+
+            </div>
+    </body>
+    <script type="text/javascript" src="script/api.js"></script>
+
+    </script>
+    <script src="script/zepto.min.js"></script>
+
+ 
+
+
+
+    <script>
+
+// localStorage.clear();
+apiready=function(){ 
+    //data=getData();
+  
+  /* $(function(){
+    $(".h_titile").html(api.pageParam.title);
+    api.ajax({
+    url: 'http://www.qingkt.com/datapp/class.php?id='+api.pageParam.id,
+    method: 'get',
+   
+},function(ret, err){
+    if (ret) {
+        // alert(JSON.stringify(ret));
+
+ var s="";
+        
+    for(var k in ret){
+        s+='<li onclick="openPage(\''+ret[k].url+'\')">'+ret[k].name+'</li>';
+    }
+    $(".cha_lis").html(s);
+
+
+
+      }else{}
+  })
+   })
+*/
+
+// alert(api.pageParam.urls);
+api.pageParam.urls=api.pageParam.urls.split(",");
+// alert(api.pageParam.urls);
+for(var i=0;i<api.pageParam.urls.length;i++){
+    // alert(api.pageParam.urls[i]);
+ api.ajax({
+    url: "http://www.qingkt.com/getvlist.php?url="+api.pageParam.urls[i],
+    method: 'get',
+    dataType:'text'
+   
+   
+},function(ret, err){
+    // alert(ret);
+   // alert(JSON.stringify(ret));
+   //  alert(JSON.stringify(err));
+// $(".cha_lis").html($(ret));
+$(".cha_lis").append($(ret));
+})
+}
+$(".h_titile").html(api.pageParam.title+"视频教程")
+
+}
+
+
+ function openPage(str){
+  
+    api.openWin({
+            name: 'videoMain',
+            url: 'html/win_video.html',
+            // bounces:false,
+            rect: {
+                x: 0,
+                y: 0,
+                w: api.winWidth,
+                h: 320
+            },
+            pageParam:{vurl:str},
+        })
+
+    
+}  
+
+$(function(){
+        $(".back").click(function(){
+
+    api.closeWin({
+        name: api.winName
+    });
+})
+})
+
+</script>
+</body>
+</html>

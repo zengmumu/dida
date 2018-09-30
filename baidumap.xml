@@ -1,0 +1,1804 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/tutorial/HTML5_CSS3/305.html]]></url>
+<title>2015年的网页设计趋势</title>
+<date>2017-09-01</date>
+<content>1. 响应式在继续在过去的几年里，响应设计快速巩固了自己作为网页设计的新标准。当然，也有争论，但是没人说，...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/tutorial/HTML5_CSS3/306.html]]></url>
+<title>如何挑选适合的前端框架</title>
+<date>2016-10-03</date>
+<content>前端框架不断推新，众多IT企业都面临着“如何选择框架”，“是否需要再造轮子”的抉择。去哪儿网前端架构师司徒正美分...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/htmlcss/4618.html]]></url>
+<title>Expires和Cache-Control</title>
+<date>2016-08-07</date>
+<content>Expires 要求客户端和服务端的时钟严格同步。 HTTP1.1 引入 Cache-Control 来克服Expires头的限制。如果max-age和Expires同时出现，则...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4759.html]]></url>
+<title>请写一个函数，用于返回</title>
+<date>2016-08-07</date>
+<content>请写一个函数，用于返回n!（阶乘）结果末尾连续0的个数，如GetZeroCount（5）返回1,因为5！ = 120，末尾连续1个0 static void Main...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4758.html]]></url>
+<title>假设当前市场价一只鸡1</title>
+<date>2016-08-07</date>
+<content>假设当前市场价一只鸡10元，一只鸭12元5角。请写一个函数ShowPrice，输入参数分别为鸡和鸭的个数（非负整型），功能为显示...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4757.html]]></url>
+<title>打印杨辉三角形</title>
+<date>2016-08-07</date>
+<content>{ int [][]a= new int[7][] ; a[0] = new int[1]; //a[0][0]=1; a[1] = new int[2] ; for (int i = 0; i 7; i++) { a[i] = new int[i+1] ; a[i][0] =1; a[i][i]=1; if(i1)//求...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4756.html]]></url>
+<title>找出200以内的素数。</title>
+<date>2016-08-07</date>
+<content>static void Main(string[] args) { int count = 0; for (int i = 1; i 200; i++) //外层循环：要判断的数 { for (int j = 2; j =i; j++) { if (i % j == 0 i!=j)...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4755.html]]></url>
+<title>有一排开关，第一个人把</title>
+<date>2016-08-07</date>
+<content>有一排开关，第一个人把所有的开关打开，第二个人按2的倍数的开关，第三个人按3的倍数的开关，以此类推，现在又n个开关...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4754.html]]></url>
+<title>7.你拥有A块钱，一瓶水B块</title>
+<date>2016-08-07</date>
+<content>7.你拥有A块钱，一瓶水B块钱，每瓶水可以得到一个瓶盖，每C个瓶盖可以换一瓶水 请写出函数求解上面题目，上面题目ABC为参...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4753.html]]></url>
+<title>GameObject a=new GameObject(</title>
+<date>2016-08-07</date>
+<content>GameObject a=new GameObject() GameObject b=a 实例化出来了A，将A赋给B，现在将B删除，问A还存在吗？ 存在，b删除只是将它在栈中的内...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4752.html]]></url>
+<title>Foreach循环迭代时，若把其</title>
+<date>2016-08-07</date>
+<content>Foreach循环迭代时，若把其中的某个元素删除，程序报错，怎么找到那个元素？以及具体怎么处理这种情况？(注：Try.....Catc...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4751.html]]></url>
+<title>给定一个存放参数的数组</title>
+<date>2016-08-07</date>
+<content>void SortArray(Array arr){Array.Sort(arr);}...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4750.html]]></url>
+<title>JIT 和AOT区别</title>
+<date>2016-08-07</date>
+<content>Just-In-Time - 实时编译 执行慢 安装快 占空间小一点 Ahead-Of-Time - 预先编译 执行快 安装慢 占内存占外存大...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4749.html]]></url>
+<title>当需要频繁创建使用某个</title>
+<date>2016-08-07</date>
+<content>设计单例模式进行创建对象或者使用对象池...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4748.html]]></url>
+<title>函数中多次使用string的+</title>
+<date>2016-08-07</date>
+<content>通过StringBuilder那进行append，这样可以减少内存垃圾...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4747.html]]></url>
+<title>For，foreach，Enumerator.Move</title>
+<date>2016-08-07</date>
+<content>for 循环可以通过索引依次进行遍历，foreach和Enumerator.MoveNext通过迭代的方式进行遍历。 内存消耗上本质上并没有太大的区别...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4746.html]]></url>
+<title>C#中ref和out关键字有什么区</title>
+<date>2016-08-07</date>
+<content>ref修饰参数，表示进行引用传递，out修饰参数也表示进行引用传递，但传递的引用只为带回返回值 ref又进又出 out不进只出...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4745.html]]></url>
+<title>C#中unsafe关键字是用来做什</title>
+<date>2016-08-07</date>
+<content>非托管代码才需要这个关键字 一般用在带指针操作的场合...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4744.html]]></url>
+<title>C#中委托和接口有什么区别</title>
+<date>2016-08-07</date>
+<content>接口（interface）是约束类应该具备的功能集合，约束了类应该具备的功能，使类从千变万化的具体逻辑中解脱出来，便于类的...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4743.html]]></url>
+<title>有哪些常见的数值类？</title>
+<date>2016-08-07</date>
+<content>简单值类型--包括 整数类型 、字符类型、实数类型、布尔类型 复合值类型--包括 结构类型 、枚举类型...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4742.html]]></url>
+<title>C#中常规容器和泛型容器有</title>
+<date>2016-08-07</date>
+<content>不带泛型的容器需要装箱和拆箱操作 速度慢 所以泛型容器效率更高 数据类型更安全...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4741.html]]></url>
+<title>C#中有哪些常用的容器类，</title>
+<date>2016-08-07</date>
+<content>List,HashTable,Dictionary,Stack,Queue List：索引泛型容器 访问速度快 修改速度慢 HashTable/Dictionary：散列表格式 查询效率高 空间占用...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4740.html]]></url>
+<title>冒泡排序（手写代码）</title>
+<date>2016-08-07</date>
+<content>mei...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4739.html]]></url>
+<title>数列 1,1,2,3,5,8,13...第 n 位</title>
+<date>2016-08-07</date>
+<content>...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4738.html]]></url>
+<title>C# 函数 Func(string a, string</title>
+<date>2016-08-07</date>
+<content>(a,b) = {};...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4737.html]]></url>
+<title>C# String 类型比 stringBuild</title>
+<date>2016-08-07</date>
+<content>如果是处理字符串的话，用 string 中的方法每次都需要创建一个新的字符串对象并且分配新的内存地址，而 stringBuilder 是在原...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4736.html]]></url>
+<title>在类的构造函数前加上 </title>
+<date>2016-08-07</date>
+<content>构造函数格式为 public+类名如果加上 static 会报错（静态构造函数不能有访问修饰符） 原因：静态构造函数不允许访问修饰符...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4735.html]]></url>
+<title>.Net 与 Mono 的关系？</title>
+<date>2016-08-07</date>
+<content>.Net是一个语言平台 Mono为.Net提供集成开发环境，集成并实现了.NET的编译器、CLR 和基础类库，使得.Net既可以运行在windows也可...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4734.html]]></url>
+<title>反射的实现原理？</title>
+<date>2016-08-07</date>
+<content>可以在加载程序运行时，动态获取和加载程序集，并且可以获取到程序集的信息 反射即在运行期动态获取类、对象、方法、...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4733.html]]></url>
+<title>请简述关键字 Sealed 用在类</title>
+<date>2016-08-07</date>
+<content>类声明时可防止其他类继承此类，在方法中声明则可防止派生类重写此方法。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4732.html]]></url>
+<title>下列代码在运行中会产生</title>
+<date>2016-08-07</date>
+<content>string a = new string(abc); a =(a.ToUpper()+123).Substring(0,2); 其实在 C#中第一行是会出错的（Java 中倒是可行）。应该这样初始化： str...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4731.html]]></url>
+<title>请描述 Interface 与抽象类之</title>
+<date>2016-08-07</date>
+<content>1.接口不是类 不能实例化 抽象类可以间接实例化 2.接口是完全抽象 抽象类为部分抽象 3.接口可以多继承 抽象类是单继承...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4730.html]]></url>
+<title>请简述 GC（垃圾回收）产</title>
+<date>2016-08-07</date>
+<content>GC 为了避免内存溢出而产生的回收机制 避免：1）减少 new 产生对象的次数 2）使用公用的对象（静态成员） 3）将 String 换为...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4729.html]]></url>
+<title>请简述 ArrayList 和 List&lt</title>
+<date>2016-08-07</date>
+<content>ArrayList 不带泛型 数据类型丢失 ListT 带泛型 数据类型不丢失 ArrayList需要装箱拆箱 ListT不需要...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4728.html]]></url>
+<title>C#中所有引用类型的基类是</title>
+<date>2016-08-07</date>
+<content>引用类型的基类是 System.Object 值类型的基类是 System.ValueType 同时，值类型也隐式继承自 System.Object...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4727.html]]></url>
+<title>请简述private，public，pro</title>
+<date>2016-08-07</date>
+<content>public：对任何类和成员都公开，无限制访问 private：仅对该类公开 protected：对该类和其派生类公开 internal：只能在包含该类的...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4726.html]]></url>
+<title>简述值类型和引用类型有</title>
+<date>2016-08-07</date>
+<content>区别：1.值类型存储在内存栈中，引用类型数据存储在内存堆中，而内存单元中存放的 是堆中存放的地址。 2.值类型存取快，...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4725.html]]></url>
+<title>启用MipMaps对内存的影响是</title>
+<date>2016-07-31</date>
+<content>A．增加约33%的内存 B．减少约33%的内存 C．增加约25%的内存 D．减少约25%的内存 A...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4724.html]]></url>
+<title>某个GameObject有一个名为</title>
+<date>2016-07-31</date>
+<content>A．GetComponentMyScript().DoSomething() B．GetComponentScript(MyScript).DoSomething() C．GetComponent MyScript ().Call(DoSomething) D．GetComponentScript(MyS...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4723.html]]></url>
+<title>关于MonoBehavior.LateUpdate函数</title>
+<date>2016-07-31</date>
+<content>关于MonoBehavior.LateUpdate函数描述错误的是： A．当MonoBehavior类型应用后，每帧调用一次 B．常被用于处理RigidBody的更新 C．在所...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4722.html]]></url>
+<title>以下关于WWW.LoadFromCach</title>
+<date>2016-07-31</date>
+<content>A．可被用于将Text Assets自动缓存到本地磁盘 B．可被用于将Resource自动缓存到本地磁盘 C．可被用于将Assets Bundles自动缓存到本...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4721.html]]></url>
+<title>空间内一物体绕球面固定</title>
+<date>2016-07-31</date>
+<content>public float Speed = 1; void Update () { transform.RotateAround (new Vector3(0,1,2),Vector3.up,Speed); }...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4720.html]]></url>
+<title>Unity3d中resources目录一般用</title>
+<date>2016-07-31</date>
+<content>resource一般用来放置一些需要动态加载的资源，打包程序的时候会将Resource目录下的全部文件都加密压缩打进包内，这样再想...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4719.html]]></url>
+<title>unity3D从唤醒到销毁有一段</title>
+<date>2016-07-31</date>
+<content>Awake () OnEnable () Start() FixedUpdate() OnTriggerXXX(Collider other) OnCollisionXXX (Collision collisionInfo) Update() LateUpdate () OnGUI() OnDisable () OnDe...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4718.html]]></url>
+<title>去掉敏感字的程序（手写</title>
+<date>2016-07-31</date>
+<content>String s = 你是坏蛋; s.Replace(坏蛋,**);...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4717.html]]></url>
+<title>如何使子控件居中,如果使</title>
+<date>2016-07-31</date>
+<content>设置子控件锚点为中心...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4716.html]]></url>
+<title>NGUI:把子控件放在父控件里</title>
+<date>2016-07-31</date>
+<content>给子控件设置上下两个锚点为10...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4715.html]]></url>
+<title>以下哪个函数在游戏进入</title>
+<date>2016-07-31</date>
+<content>A：MonoBehaviour.OnSceneWasLoaded B：MonoBehaviour.OnSceneEnter C：MonoBehaviour.OnLevelWasLoaded D：MonoBehaviour.OnLevelEnter 答案：C...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4714.html]]></url>
+<title>U3D 中用于记录节点空间几</title>
+<date>2016-07-31</date>
+<content>Transform 父类是 Component...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4713.html]]></url>
+<title>itween 插件的作用是什么，</title>
+<date>2016-07-31</date>
+<content>iTween 是一个动画库，作者创建它的目的就是最小的投入实现最大的产出。让你做开 发更轻松，用它可以轻松实现各种动画，...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4712.html]]></url>
+<title>下哪个函数在游戏进入新</title>
+<date>2016-07-31</date>
+<content>MonoBehaviour.OnLevelWasLoaded...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4711.html]]></url>
+<title>Vector3.forward 与 Vector3（0</title>
+<date>2016-07-31</date>
+<content>对...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4710.html]]></url>
+<title>碰撞检测需要物体具备什</title>
+<date>2016-07-31</date>
+<content>能检测碰撞发生的方式有两种，一种是利用碰撞器，另一种则是利用触发器 【Physics.OverlapSphere 相交球检测碰撞，碰撞检测需...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4709.html]]></url>
+<title>当游戏中需要频繁创建一</title>
+<date>2016-07-31</date>
+<content>1、使用预制物体对象 Prefab 2、使用对象池技术，不使用时关闭，使用时打开...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4708.html]]></url>
+<title>&lt;愤怒的小鸟&gt;给予初速</title>
+<date>2016-07-31</date>
+<content>Vector3 v 代表初速度 v代表现在的速度， 假设小鸟是沿的 z 轴也就是 transform.forward 方向运动的质量为 1，那么 v=v-new Vector3(0,...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4707.html]]></url>
+<title>NGUI Button 怎样接受用户点</title>
+<date>2016-07-31</date>
+<content>1、主要是在UICamera脚本中用射线判断点击的物体并通过SendMessage调用OnClick() OnPress()等函数，可以说NGUI的按钮是通过发消息这...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4706.html]]></url>
+<title>用鼠标实现在场景中拖动</title>
+<date>2016-07-31</date>
+<content>在场景中添加一个Plan，Camera，Directional Light，Cube。添加两个脚本一个挂在Camera上，另一个挂在Cube上。 1.鼠标滚轮实现缩放：...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4705.html]]></url>
+<title>写出 Animation 的五个方法</title>
+<date>2016-07-31</date>
+<content>AddClip 添加剪辑、Blend 混合、Play 播放、Stop 停止、Sample 采 样...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4704.html]]></url>
+<title>写一个计时器工具，从整</title>
+<date>2016-07-31</date>
+<content>private float timer = 0f; private int h = 0; private int m = 0; private int s = 0; private string timeStr = string.Empty; void Update () { timer += Time.deltaTim...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4703.html]]></url>
+<title>含义 Mathf.Round Mathf.Clamp </title>
+<date>2016-07-31</date>
+<content>Mathf.Round 四舍五入 Mathf.Clamp 限制 Mathf.Lerp 插值...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4702.html]]></url>
+<title>localPosition 与 Position 的使</title>
+<date>2016-07-31</date>
+<content>localPosition：自身位置，相对于父级的变换的位置。 Position：在世界坐标 transform 的位置...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4701.html]]></url>
+<title>编辑器类存放路径是什么</title>
+<date>2016-07-31</date>
+<content>工程目录下的 Assets/Editor 文件夹下。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4700.html]]></url>
+<title>使用原生 GUI 创建一个可以</title>
+<date>2016-07-31</date>
+<content>GUI.DragWindow();...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4699.html]]></url>
+<title>调试记录到控制台的命令</title>
+<date>2016-07-31</date>
+<content>Debug.Log();...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4698.html]]></url>
+<title>Application.loadLevel 命令为：</title>
+<date>2016-07-31</date>
+<content>A.加载关卡 B.异步加载关卡 C.加载动作...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4697.html]]></url>
+<title>Animation.CrossFade 命令作用是</title>
+<date>2016-07-31</date>
+<content>C.动画的淡入为其他动画...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4696.html]]></url>
+<title>获取、增加、删除组件的</title>
+<date>2016-07-31</date>
+<content>获取：GetComponent 增加：AddComponent 删除：Destroy...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4695.html]]></url>
+<title>实现吊机吊物体的功能</title>
+<date>2016-07-31</date>
+<content>吊机吊物体需要节点挂接和坐标系转换...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4694.html]]></url>
+<title>反向旋转动画的方法是什</title>
+<date>2016-07-31</date>
+<content>反转动画，讲动画的速度调到-1，碰撞时，被碰撞物体与碰撞物体有 collider 组件， 碰撞物体有刚体组件， 或角色碰撞得包含...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4693.html]]></url>
+<title>什么是协同程序？</title>
+<date>2016-07-31</date>
+<content>在主线程运行时同时开启另一段逻辑处理，来协助当前程序的执行。换句话说，开启协程就 是开启一个线程。可以用来控制...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4692.html]]></url>
+<title>为什么 u3d 会出现组件上数</title>
+<date>2016-07-31</date>
+<content>一般是组件上绑定的物体对象被删除了...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4691.html]]></url>
+<title>移动相机动作在哪个函数</title>
+<date>2016-07-31</date>
+<content>LateUpdate,，是在所有 update 结束后才调，比较适合用于命令脚本的执行。官网上例子是 摄像机的跟随，都是在所有 update 操作...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4690.html]]></url>
+<title>物理更新一般在哪个系统</title>
+<date>2016-07-31</date>
+<content>FixedUpdate，每固定帧绘制时执行一次，和 update 不同的是 FixedUpdate 是渲染帧执行， 如果你的渲染效率低下的时候 FixedUpdate 调...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4689.html]]></url>
+<title>unity3d 从唤醒到销毁有一段</title>
+<date>2016-07-31</date>
+<content>Awake OnEnable Start Update FixedUpdate LateUpdate OnGUI Reset OnDisable OnDestroy...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4688.html]]></url>
+<title>u3d 提供了一个用于保存读</title>
+<date>2016-07-31</date>
+<content>PlayerPrefs.SetInt 与 PlayerPrefs.GetInt...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4687.html]]></url>
+<title>物体绕某点旋转使用函数</title>
+<date>2016-07-31</date>
+<content>transform.RotateAround...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4686.html]]></url>
+<title>物体自旋转使用的函数叫</title>
+<date>2016-07-31</date>
+<content>transform.Rotate...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4685.html]]></url>
+<title>u3d 中，几种施加力的方式</title>
+<date>2016-07-31</date>
+<content>rigidbody.AddForce/AddForceAtPosition，都是 rigidbody 的成员函数...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4684.html]]></url>
+<title>物体发生碰撞时，有几个</title>
+<date>2016-07-31</date>
+<content>三个阶段，OnCollisionEnter/Stay/Exit 函数...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4683.html]]></url>
+<title>Unity3D 如何获知场景中需要</title>
+<date>2016-07-31</date>
+<content>Resource.Load AssetBundle.Load...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4682.html]]></url>
+<title>请简述 OnBecameVisible 及 O</title>
+<date>2016-07-31</date>
+<content>当物体是否可见切换之时。可以用于只需要在物体可见时才进行的计算。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4681.html]]></url>
+<title>OnEnable、Awake、Start 运行时</title>
+<date>2016-07-31</date>
+<content>OnEnable、Awake、Start 运行时的发生顺序？哪些可能在同一个对象周期中反复的发 生？...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4680.html]]></url>
+<title>Unity3D 是否支持写成多线程</title>
+<date>2016-07-31</date>
+<content>仅能从主线程中访问 Unity3D 的组件，对象和 Unity3D 系统调用 支持：如果同时你要处理很多事情或者与 Unity 的对象互动小可以...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4679.html]]></url>
+<title>简述 Unity3D 支持的作为脚</title>
+<date>2016-07-31</date>
+<content>Unity 的脚本语言基于 Mono 的.Net 平台上运行，可以使用.NET 库，这也为 XML、数据 库、正则表达式等问题提供了很好的解决方案...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/logic/4678.html]]></url>
+<title>也许是因为我太善良，我</title>
+<date>2016-07-31</date>
+<content>A.非常同意 B.比较同意 C.比较不同意 D.非常不同意 答案D...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/graphic/4677.html]]></url>
+<title>简述四元数的作用，四元</title>
+<date>2016-07-31</date>
+<content>四元数用于表示旋转 A.四元数一般定义如下：q=w+xi+yj+zk 其中 w,x,y,z 是实数。同时， 有: i*i=-1 j*j=-1 k*k=-1 B.四元数也可以表示为...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/mode/4676.html]]></url>
+<title>用过哪些设计模式？  谈谈</title>
+<date>2016-07-31</date>
+<content>简单工厂模式解决的问题是如何去实例化一个合适的对象。 简单工厂模式的核心思想就是：有一个专门的类来负责创建实例...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/method/4675.html]]></url>
+<title>对数据结构了解吗？说说</title>
+<date>2016-07-31</date>
+<content>1、了解，数据结构是每个程序员都要会一点的。链表、列表、散列表最常用，队列和栈也经常使用。二叉树偶尔使用。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/database/4674.html]]></url>
+<title>Unity 连接数据库</title>
+<date>2016-07-31</date>
+<content>需要得到 Mono.Data.Sqlite.dll 文件与 System.Data.dll 文件...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_xlyh/4673.html]]></url>
+<title>lod 是什么，优缺点是什么</title>
+<date>2016-07-31</date>
+<content>LOD 技术即 Levels of Detail 的简称，意为多细节层次。LOD 技术指根据物体模型的节点在 显示环境中所处的位置和重要度，决定物...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_cbase/4672.html]]></url>
+<title>Unity3D中的协程（coroutine）</title>
+<date>2016-07-31</date>
+<content>线程程序同时运行多个线程 ，而在任一指定时刻只有一个协程在运行，并且这个正在运 行的协同程序只在必要时才被挂起。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/Unity_base/4671.html]]></url>
+<title>请描述游戏动画有几种，</title>
+<date>2016-07-31</date>
+<content>主要有关节动画、单一网格模型动画(关键帧动画)、骨骼动画。 关节动画把角色分成若干独立部分，一个部分对应一个网格模...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4670.html]]></url>
+<title>简述值类型和引用类型有</title>
+<date>2016-07-30</date>
+<content>区别：1.值类型存储在内存栈中，引用类型数据存储在内存堆中，而内存单元中存放的 是堆中存放的地址。 2.值类型存取快，...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4669.html]]></url>
+<title>面向对象的三大特点</title>
+<date>2016-07-30</date>
+<content>封装、继承、多态 1.继承： 提高代码重用度，增强软件可维护性的重要手段，符合开闭原则。 2.封装： 封装是将数据和行为...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/Unitymianshiti/C_yuyan/4668.html]]></url>
+<title>重载和重写的区别</title>
+<date>2016-07-30</date>
+<content>1.所处位置不同 重载在同类中 重写在父子类中 2.定义方式不同 重载方法名相同 参数列表不同 重写方法名和参数列表都相同...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4647.html]]></url>
+<title>你怎么看待加班？</title>
+<date>2016-06-28</date>
+<content>参考思路：如果工作需要我会加班。但同时我也会提高工作效率，减少不必要的加班。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4666.html]]></url>
+<title>有8瓶水，其中有一瓶有毒</title>
+<date>2016-06-28</date>
+<content>...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4665.html]]></url>
+<title>3点15的时针和分针的夹角</title>
+<date>2016-06-28</date>
+<content>...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4664.html]]></url>
+<title>你的三年规划是什么？</title>
+<date>2016-06-28</date>
+<content>...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4663.html]]></url>
+<title>为什么选择前端这个行业</title>
+<date>2016-06-28</date>
+<content>...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4662.html]]></url>
+<title>你有什么问题想问的？对</title>
+<date>2016-06-28</date>
+<content>参考思路：问面试那家公司的业务、项目、使用的技术等。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4661.html]]></url>
+<title>“你希望与什么样的上级</title>
+<date>2016-06-28</date>
+<content>思路：（1）、通过应聘者对上级的希望可以判断出应聘者对自我要求的意识，这既是一个陷阱，又是一次机会。 （2）、最好...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4660.html]]></url>
+<title>“你是应届毕业生，缺乏</title>
+<date>2016-06-28</date>
+<content>思路：（1）如果招聘单位对应届毕业生的应聘者提出这个问题，说明招聘单位并不真正在乎经验，关键看应聘者怎样回答。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4659.html]]></url>
+<title>“与上级意见不一是，你</title>
+<date>2016-06-28</date>
+<content>思路：（1）、一般可以这样回答我会给上级以必要的解释和提醒，在这种情况下，我会服从上级的意见。 （2）、如果面试你...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4658.html]]></url>
+<title>请谈谈你个人最大的特色</title>
+<date>2016-06-28</date>
+<content>参考思路：我的坚持度很高，事情没有做到一个令人满意的结果，不会停止，我会想法设法解决问题。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4657.html]]></url>
+<title>如果我录用你，你将怎样</title>
+<date>2016-06-28</date>
+<content>思路：（1）、如果应聘者对于应聘的职位缺乏足够的了解，最好不要直接说出自己开展工作的具体办法。 （2）、可以尝试采...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4656.html]]></url>
+<title>为什么我们应该录取你？</title>
+<date>2016-06-28</date>
+<content>思路：（1）、应聘者最好站在招聘单位的角度来回答。 （2）、招聘单位一般会录用这样的应聘者：基本符合条件、对这份工...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4655.html]]></url>
+<title>你找工作时，最重要的考</title>
+<date>2016-06-28</date>
+<content>参考思路：工作的性质是否能让我发挥所长，并不断成长。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4654.html]]></url>
+<title>你为什么想离开目前的职</title>
+<date>2016-06-28</date>
+<content>思路：（1）、最重要的是：应聘者要使找招聘单位相信，应聘者在过往的单位的离职原因在此家招聘单位里不存在。 （2）、...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4653.html]]></url>
+<title>你通常如何对待别人的批</title>
+<date>2016-06-28</date>
+<content>思路：自省，有则改之，无则加勉。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4652.html]]></url>
+<title>作为被面试者给我打一下</title>
+<date>2016-06-28</date>
+<content>思路：试着列出四个优点和一个非常非常非常小的缺点（可以抱怨一下设施，没有明确责任人的缺点是不会有人介意的）。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4651.html]]></url>
+<title>你的业余爱好是什么？</title>
+<date>2016-06-28</date>
+<content>思路： （1）、业余爱好能在一定程度上反映应聘者的性格、观念、心态，这是招聘单位问该问题的主要原因。 （2）、最好...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4650.html]]></url>
+<title>工作中如果你遇到自己无</title>
+<date>2016-06-28</date>
+<content>参考思路：主动跟项目经理或者同事们请教。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4649.html]]></url>
+<title>你认为你具备哪些品质？</title>
+<date>2016-06-28</date>
+<content>参考思路：适应能力强，对人真诚，有责任心和做事有始终...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4648.html]]></url>
+<title>谈谈你对跳槽的看法？</title>
+<date>2016-06-28</date>
+<content>参考思路：频繁的跳槽对单位和个人双方都不利； 但是如果某个岗位限制了自己的发展并无法突破时，这种正常的跳槽能促...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4646.html]]></url>
+<title>为什么选择我们公司？</title>
+<date>2016-06-28</date>
+<content>思路：（1）、面试官试图从中了解你求职的动机、愿望以及对此项工作的态度。 （2）、建议从行业、企业和岗位这三个角度...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4645.html]]></url>
+<title>你对于我们公司了解多少</title>
+<date>2016-06-28</date>
+<content>思路： 面试前先查公司简介以及网站。【他们希望求职者对所申请的工作有真正的了解】...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4644.html]]></url>
+<title>在同学，朋友眼里是个什</title>
+<date>2016-06-28</date>
+<content>参考思路：我的朋友都认为我是一个值得信赖、比较随和的人，与不同的人都可以友好相处。在与人 相处时，我总是能站在...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4643.html]]></url>
+<title>你觉得你个性上最大的优</title>
+<date>2016-06-28</date>
+<content>参考思路：对待工作和事情上沉着冷静、认真负责、适应能力学习能力强，生活上乐观积极向上、关心他人 。缺点是不懂得...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4642.html]]></url>
+<title>必问的问题：“请你自我</title>
+<date>2016-06-28</date>
+<content>思路： （1）、这是面试的必考题目。 （2）、介绍内容要与个人简历相一致。 （3）、表述方式上尽量口语化。 （4）、要切...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/ajax/4584.html]]></url>
+<title>如何解决跨域问题?</title>
+<date>2016-06-19</date>
+<content>jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页面...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/fun/4597.html]]></url>
+<title>闭包相关问题？</title>
+<date>2016-06-19</date>
+<content>闭包 （ closure ）是 Javascript 语言的一个难点，也是它的特色，很多高级应用都要依靠闭包实现。 闭包的特性 闭包有三个特性...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/h5/works/4502.html]]></url>
+<title>我们如何在JavaScript中创建</title>
+<date>2016-06-19</date>
+<content>创建一个worker线程，我们需要通过Javascript文件名创建worker对象 var worker = new Worker(MyHeavyProcess.js); 我们需要使用PostMessage发送信...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/http/4604.html]]></url>
+<title>TCP和UDP的区别</title>
+<date>2016-06-18</date>
+<content>TCP （Transmission Control Protocol，传输控制协议）是基于连接的协议，也就是说，在正式收发数据前，必须和对方建立可靠的连接...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/http/4536.html]]></url>
+<title>http状态码有那些？分别代</title>
+<date>2016-06-18</date>
+<content>100-199 用于指定客户端应相应的某些动作。 200-299 用于表示请求成功。 300-399 用于已经移动的文件并且常被包含在定位头信息...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/http/4641.html]]></url>
+<title>讲讲304缓存的原理</title>
+<date>2016-06-18</date>
+<content>服务器首先产生 ETag ，服务器可在稍后使用它来判断页面是否已经被修改。本质上，客户端通过将该记号传回服务器要求服务...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/node/4640.html]]></url>
+<title>说说mongoDB和MySQL的区别</title>
+<date>2016-06-18</date>
+<content>MySQL 是传统的关系型数据库， MongoDB 则是非关系型数据库 mongodb 以 BSON 结构（二进制）进行存储，对海量数据存储有着很明显...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4639.html]]></url>
+<title>attribute和property的区别是什</title>
+<date>2016-06-18</date>
+<content>attribute 是 dom 元素在文档中作为 html 标签拥有的属性； property 就是 dom 元素在 js 中作为对象拥有的属性。 所以： 对于 html...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4638.html]]></url>
+<title>说说你对MVC和MVVM的理解</title>
+<date>2016-06-18</date>
+<content>MVC View 传送指令到 Controller Controller 完成业务逻辑后，要求 Model 改变状态 Model 将新的数据发送到 View，用户得到反馈 所有通...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4637.html]]></url>
+<title>说说严格模式的限制</title>
+<date>2016-06-18</date>
+<content>严格模式主要有以下限制： 变量必须声明后再使用 函数的参数不能有同名属性，否则报错 不能使用with语句 不能对只读属性...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/arr/4636.html]]></url>
+<title>实现一个函数clone，可以对</title>
+<date>2016-06-18</date>
+<content>Object.prototype.clone = function(){ var o = this.constructor === Array ? [] : {}; for(var e in this){ o[e] = typeof this[e] === "object" ? this[e].clone() : thi...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4635.html]]></url>
+<title>说说你对前端架构师的理</title>
+<date>2016-06-18</date>
+<content>负责前端团队的管理及与其他团队的协调工作，提升团队成员能力和整体效率；带领团队完成研发工具及平台前端部分的设计...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4634.html]]></url>
+<title>谈谈你对重构的理解</title>
+<date>2016-06-18</date>
+<content>网站重构：在不改变外部行为的前提下，简化结构、添加可读性，而在网站前端保持一致的行为。也就是说是在不改变UI的情...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/ajax/4606.html]]></url>
+<title>创建ajax过程</title>
+<date>2016-06-18</date>
+<content>( 1 )创建 XMLHttpRequest 对象,也就是创建一个异步调用对象.( 2 )创建一个新的 HTTP 请求,并指定该 HTTP 请求的方法、 URL 及验证信...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/arr/4633.html]]></url>
+<title>javascript继承的6种方法</title>
+<date>2016-06-18</date>
+<content>1，原型链继承 2，借用构造函数继承 3，组合继承(原型+借用构造) 4，原型式继承 5，寄生式继承 6，寄生组合式继承 详情：...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/arr/4632.html]]></url>
+<title>javascript对象的几种创建方</title>
+<date>2016-06-18</date>
+<content>1，工厂模式 2，构造函数模式 3，原型模式 4，混合构造函数和原型模式 5，动态原型模式 6，寄生构造函数模式 7，稳妥构造...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4631.html]]></url>
+<title>一个页面从输入 URL 到页面</title>
+<date>2016-06-18</date>
+<content>分为4个步骤： （1），当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，浏览器都会开启一个线程...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4630.html]]></url>
+<title>对前端界面工程师这个职</title>
+<date>2016-06-18</date>
+<content>前端是最贴近用户的程序员，比后端、数据库、产品经理、运营、安全都近。 1、实现界面交互 2、提升用户体验 3、有了No...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/check/4629.html]]></url>
+<title>列举IE 与其他浏览器不一</title>
+<date>2016-06-18</date>
+<content>IE支持 currentStyle ，FIrefox使用 getComputStyle IE 使用 innerText ，Firefox使用 textContent 滤镜方面：IE: filter:alpha(opacity= num) ；Firefox：...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/js02/4628.html]]></url>
+<title>null和undefined的区别？</title>
+<date>2016-06-18</date>
+<content>null 是一个表示"无"的对象，转为数值时为0； undefined 是一个表示"无"的原始值，转为数值时为 NaN 。 当声明的变量还未被初始...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/h5/webStorage/4627.html]]></url>
+<title>cookie 和session 的区别：</title>
+<date>2016-06-18</date>
+<content>1、cookie数据存放在客户的浏览器上，session数据放在服务器上。 2、cookie不是很安全，别人可以分析存放在本地的COOKIE并进行...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/h5/webStorage/4626.html]]></url>
+<title>web storage和cookie的区别</title>
+<date>2016-06-18</date>
+<content>Web Storage 的概念和 cookie 相似，区别是它是为了更大容量存储设计的。 Cookie 的大小是受限的，并且每次你请求一个新的页面...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/h5/webStorage/4569.html]]></url>
+<title>HTML5的离线储存？</title>
+<date>2016-06-18</date>
+<content>localStorage 长期存储数据，浏览器关闭后数据不丢失；sessionStorage 数据在浏览器关闭后自动删除。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/ajax/4625.html]]></url>
+<title>请你谈谈Cookie的弊端</title>
+<date>2016-06-18</date>
+<content>cookie 虽然在持久保存客户端数据提供了方便，分担了服务器存储的负担，但还是有很多局限性的。 第一：每个特定的域名下...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4624.html]]></url>
+<title>用过哪些设计模式？</title>
+<date>2016-06-18</date>
+<content>工厂模式： 主要好处就是可以消除对象间的耦合，通过使用工程方法而不是new关键字。将所有实例化的代码集中在一个位置...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4623.html]]></url>
+<title>如何评价AngularJS和Backbon</title>
+<date>2016-06-18</date>
+<content>backbone 具有依赖性，依赖 underscore.js 。 Backbone + Underscore + jQuery(or Zepto) 就比一个 AngularJS 多出了2 次HTTP请求. Backbone 的 Model 没...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4622.html]]></url>
+<title>js继承方式及其优缺点</title>
+<date>2016-06-18</date>
+<content>原型链继承的缺点 一是字面量重写原型会中断关系，使用引用类型的原型，并且子类型还无法给超类型传递参数。 借用构造...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4621.html]]></url>
+<title>ES6的了解</title>
+<date>2016-06-18</date>
+<content>p>新增模板字符串（为JavaScript提供了简单的字符串插值功能）、箭头函数（操作符左边为输入的参数，而右边则是进行的操作...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/jquerymianshiti/4620.html]]></url>
+<title>你觉得jQuery或zepto源码有哪</title>
+<date>2016-06-18</date>
+<content>(答案仅供参考) jquery 源码封装在一个匿名函数的自执行环境中，有助于防止变量的全局污染，然后通过传入window对象参数，...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4619.html]]></url>
+<title>栈和堆的区别？</title>
+<date>2016-06-18</date>
+<content>栈的插入和删除操作都是在一端进行的，而队列的操作却是在两端进行的。 队列先进先出，栈先进后出。 栈只允许在表尾一...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/htmlcss/4617.html]]></url>
+<title>什么是Etag？</title>
+<date>2016-06-18</date>
+<content>当发送一个服务器请求时，浏览器首先会进行缓存过期判断。浏览器根据缓存过期时间判断缓存文件是否过期。 情景一：若...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4616.html]]></url>
+<title>移动端性能优化</title>
+<date>2016-06-18</date>
+<content>尽量使用css3动画，开启硬件加速。 适当使用 touch 事件代替 click 事件。 避免使用 css3 渐变阴影效果。 可以用 transform: trans...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4615.html]]></url>
+<title>谈谈性能优化问题</title>
+<date>2016-06-18</date>
+<content>代码层面：避免使用css表达式，避免使用高级选择器，通配选择器。 缓存利用：缓存Ajax，使用CDN，使用外部js和css文件以便...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4614.html]]></url>
+<title>你觉得前端工程的价值体</title>
+<date>2016-06-18</date>
+<content>为简化用户使用提供技术支持（交互部分） 为多个浏览器兼容性提供支持 为提高用户浏览速度（浏览器性能）提供支持 为跨...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4613.html]]></url>
+<title>Javascript垃圾回收方法</title>
+<date>2016-06-18</date>
+<content>标记清除（mark and sweep） 这是JavaScript最常见的垃圾回收方式，当变量进入执行环境的时候，比如函数中声明一个变量，垃圾...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4612.html]]></url>
+<title>对前端模块化的认识</title>
+<date>2016-06-18</date>
+<content>AMD 是 RequireJS 在推广过程中对模块定义的规范化产出。 CMD 是 SeaJS 在推广过程中对模块定义的规范化产出。 AMD 是提前执行，...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/htmlcss/4611.html]]></url>
+<title>为什么HTTPS安全</title>
+<date>2016-06-18</date>
+<content>因为网络请求需要中间有很多的服务器路由器的转发。中间的节点都可能篡改信息，而如果使用 HTTPS ，密钥在你和终点站才...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/htmlcss/4610.html]]></url>
+<title>HTTP和HTTPS</title>
+<date>2016-06-18</date>
+<content>HTTP 协议通常承载于TCP协议之上，在 HTTP 和 TCP 之间添加一个安全协议层（ SSL 或 TSL ），这个时候，就成了我们常说的HTTPS。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/h5/works/4609.html]]></url>
+<title>Web Worker 和webSocket</title>
+<date>2016-06-18</date>
+<content>worker主线程: 1. 通过 worker = new Worker ( url ) 加载一个 JS 文件来创建一个worker，同时返回一个worker实例。 2. 通过 worker . postMes...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4608.html]]></url>
+<title>常见web安全及防护原理</title>
+<date>2016-06-18</date>
+<content>sql注入原理 就是通过把SQL命令插入到Web表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/htmlcss/4607.html]]></url>
+<title>渐进增强和优雅降级</title>
+<date>2016-06-18</date>
+<content>渐进增强 ：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/fun/4605.html]]></url>
+<title>说说你对作用域链的理解</title>
+<date>2016-06-18</date>
+<content>作用域链的作用是保证执行环境里有权访问的变量和函数是有序的，作用域链的变量只能向上访问，变量访问到 window 对象即...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/http/4603.html]]></url>
+<title>说说TCP传输的三次握手四</title>
+<date>2016-06-18</date>
+<content>为了准确无误地把数据送达目标处， TCP 协议采用了三次握手策略。用TCP协议把数据包送出去后， TCP 不会对传送 后的情况置...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/ajax/4602.html]]></url>
+<title>XML和JSON的区别？</title>
+<date>2016-06-18</date>
+<content>(1).数据体积方面。JSON相对于XML来讲，数据的体积小，传递的速度更快些。(2).数据交互方面。JSON与JavaScript的交互更加方便，...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/htmlcss/4601.html]]></url>
+<title>GET和POST的区别，何时使用</title>
+<date>2016-06-18</date>
+<content>GET：一般用于信息获取，使用URL传递参数，对所发送信息的数量也有限制，一般在2000个字符POST：一般用于修改服务器上的资...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4600.html]]></url>
+<title>Javascript无阻塞加载具体方</title>
+<date>2016-06-18</date>
+<content>将脚本放在底部。 link还是放在head中，用以保证在js加载前，能加载出正常显示的页面。script标签放在/body前。 成组脚本 ：由...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4599.html]]></url>
+<title>哪些地方会出现css阻塞，</title>
+<date>2016-06-18</date>
+<content>js的阻塞特性： 所有浏览器在下载JS的时候，会阻止一切其他活动，比如其他资源的下载，内容的呈现等等。直到JS下载、解...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/event/4598.html]]></url>
+<title>js事件处理程序问题？</title>
+<date>2016-06-18</date>
+<content>这里，主要讨论一下js相关的事件—— 事件处理程序 在 DOM 中定义了一些事件， 而响应某个事件的函数就叫事件处理程序（...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/fun/4576.html]]></url>
+<title>谈谈This对象的理解。</title>
+<date>2016-06-18</date>
+<content>this是js的一个关键字，随着函数使用场合不同，this的值会发生变化。但是有一个总原则，那就是this指的是调用函数的那个对...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/fun/4575.html]]></url>
+<title>如何创建一个对象? （画出</title>
+<date>2016-06-18</date>
+<content>function Person(name, age) { this.name = name; this.age = age; this.sing = function() { alert(this.name) } }...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/arr/4596.html]]></url>
+<title>eval是做什么的？</title>
+<date>2016-06-18</date>
+<content>它的功能是把对应的字符串解析成JS代码并运行； 应该避免使用eval，不安全，非常耗性能（2次，一次解析成js语句，一次执...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/arr/4595.html]]></url>
+<title>JavaScript原型，原型链 ? 有</title>
+<date>2016-06-18</date>
+<content>* 原型对象也是普通的对象，是对象一个自带隐式的 __proto__ 属性，原型也有可能有自己的原型，如果一个原型对象的原型不...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/http/4594.html]]></url>
+<title>WEB应用从服务器主动推送</title>
+<date>2016-06-18</date>
+<content>html5 websoket WebSocket通过Flash XHR长时间连接 XHR Multipart Streaming 不可见的Iframe script标签的长时间连接(可跨域)...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/ajax/4582.html]]></url>
+<title>ajax 是什么?</title>
+<date>2016-06-18</date>
+<content>AJAX 是一种用于创建快速动态网页的技术。 AJAX即Asynchronous Javascript And XML（异步JavaScript和XML），是指一种创建交互式网页应用...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/arr/4593.html]]></url>
+<title>js对象的深度克隆</title>
+<date>2016-06-18</date>
+<content>function clone(Obj) { var buf; if (Obj instanceof Array) { buf = []; //创建一个空的数组 var i = Obj.length; while (i--) { buf[i] = clone(Obj[i]); } retur...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4592.html]]></url>
+<title>网站重构的理解？</title>
+<date>2016-06-18</date>
+<content>对于传统的网站来说重构通常是： 表格(table)布局改为DIV+CSS 使网站前端兼容于现代浏览器(针对于不合规范的CSS、如对IE6有效...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/check/4590.html]]></url>
+<title>如何获取UA？</title>
+<date>2016-06-18</date>
+<content>...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/arr/4591.html]]></url>
+<title>js数组去重复元素</title>
+<date>2016-06-18</date>
+<content>Array.prototype.unique1 = function () { var n = []; //一个新的临时数组 for (var i = 0; i...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/experience/4589.html]]></url>
+<title>你常用的开发工具是什么</title>
+<date>2016-06-17</date>
+<content>sublime dreamweaver Hbuilder webstrom ecllipse myecllipse Editpuls txt...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/domE/4588.html]]></url>
+<title>documen.write和 innerHTML的区别</title>
+<date>2016-06-17</date>
+<content>document.write只能重绘整个页面 innerHTML可以重绘页面的一部分...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/ajax/4587.html]]></url>
+<title>异步加载的方式有哪些？</title>
+<date>2016-06-17</date>
+<content>(1) defer，只支持IE(2) async：(3) 创建script，插入到DOM中，加载完毕后callBack...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4586.html]]></url>
+<title>AMD（Modules/Asynchronous-Defi</title>
+<date>2016-06-17</date>
+<content>AMD 规范在这里： https:// github.com/amdjs/amdjs- api/wiki/AMD CMD 规范在这里： https:// github.com/seajs/seajs/ issues/242 AMD 是 RequireJS 在推广...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4585.html]]></url>
+<title>模块化怎么做？</title>
+<date>2016-06-17</date>
+<content>立即执行函数 ,不暴露私有成员 var module1 = (function(){ var _count = 0;var m1 = function(){ //... };var m2 = function(){ //... };return { m1 : m1, m...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/ajax/4583.html]]></url>
+<title>同步和异步的区别?</title>
+<date>2016-06-17</date>
+<content>xmlHttp.open(method, url,async); async:布尔值，用来说明请求是否为异步模式。async是很重要的，因为它是用来控制 JavaScript 如何执行...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4581.html]]></url>
+<title>js延迟加载的方式有哪些？</title>
+<date>2016-06-17</date>
+<content>defer和async、动态创建DOM方式（用得最多）、按需异步载入js...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/ajax/4580.html]]></url>
+<title>JSON 的了解？</title>
+<date>2016-06-17</date>
+<content>JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/arr/4579.html]]></url>
+<title>new操作符具体干了什么呢</title>
+<date>2016-06-17</date>
+<content>1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。 2、属性和方法被加入到 this 引用的对象中。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/youhuaguifan/4578.html]]></url>
+<title>＂use strict＂;是什么意思</title>
+<date>2016-06-17</date>
+<content>标记 严格模式后 其一：如果在语法检测时发现语法问题，则整个代码块失效，并导致一个语法异常。 其二：如果在运行期出...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/event/4577.html]]></url>
+<title>事件是？IE与火狐的事件机</title>
+<date>2016-06-17</date>
+<content>1. 我们在网页中的某个操作（有的操作对应多个事件）。例如：当我们点击一个按钮就会产生一个事件。是可以被 JavaScript...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/js/fun/4574.html]]></url>
+<title>Javascript如何实现继承？</title>
+<date>2016-06-17</date>
+<content>通过原型和构造器...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/node/4573.html]]></url>
+<title>Node.js的适用场景？</title>
+<date>2016-06-17</date>
+<content>高并发、聊天、实时消息推送...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/css3/4572.html]]></url>
+<title>列出display的值，说明他们</title>
+<date>2016-06-17</date>
+<content>1. block 象块类型元素一样显示。 none 缺省值。象行内元素类型一样显示。 inline-block 象行内元素一样显示，但其内容象块类型...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/h5/webStorage/4571.html]]></url>
+<title>请描述一下 cookies，sessi</title>
+<date>2016-06-17</date>
+<content>cookie在浏览器和服务器间来回传递。 sessionStorage和localStorage不会sessionStorage和localStorage的存储空间更大；sessionStorage和localSt...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/h5/works/4570.html]]></url>
+<title>iframe有那些缺点？</title>
+<date>2016-06-17</date>
+<content>*iframe会阻塞主页面的Onload事件；*iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/h5/what new/4568.html]]></url>
+<title>语义化的理解？</title>
+<date>2016-06-17</date>
+<content>用正确的标签做正确的事情！html语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；在没有样式CCS情况下也以...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/h5/what new/4567.html]]></url>
+<title>html5有哪些新特性、移除了</title>
+<date>2016-06-17</date>
+<content>* HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。* 绘画 canvas 用于媒介回放的 video 和...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/htmlcss/4566.html]]></url>
+<title>常见兼容性问题？</title>
+<date>2016-06-17</date>
+<content>* png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8.* 浏览器默认的margin和padding不同。解决方案是加一个全局的*{mar...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/htmlcss/4565.html]]></url>
+<title>浏览器的内核分别是什么</title>
+<date>2016-06-17</date>
+<content>* IE浏览器的内核Trident、Mozilla的Gecko、Chrome的Blink（WebKit的分支）、Opera内核原为Presto，现为Blink；...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/htmlcss/4564.html]]></url>
+<title>CSS 选择符有哪些？哪些属</title>
+<date>2016-06-17</date>
+<content>* 1.id选择器（ # myid） 2.类选择器（.myclassname） 3.标签选择器（div, h1, p） 4.相邻选择器（h1 + p） 5.子选择器（ul li） 6.后代选...</content>
+</display>
+</item>
+<item>
+<key></key> 
+<display>
+<url><![CDATA[/a/interview/htmlcss/4563.html]]></url>
+<title>如何居中div？如何居中一</title>
+<date>2016-06-17</date>
+<content>给div设置一个宽度，然后添加margin:0 auto属性 div{ width:200px; margin:0 auto; } 居中一个浮动元素 确定容器的宽高 宽500 高 300 的层...</content>
+</display>
+</item>
+
+</document>

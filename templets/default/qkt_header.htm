@@ -1,0 +1,27 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" id="header">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">轻客</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="{dede:global.cfg_basehost/}">轻课堂</a> </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+       	{dede:channel  row='10' le="50" currentstyle="<li class='on'><a href='~typelink~' ~rel~>~typename~</a></li>"}
+      	<li><a href='[field:typeurl/]' [field:rel/]><span>[field:typename/]</span></a></li>
+      	{/dede:channel}
+         
+       <li><a href="/a/NoviceEntry/uirumen/2015/0904/137.html"><span>UI新手入门</span></a></li> 
+      </ul>
+         
+        <!---登录--> 
+      	<ul id="_userlogin" class="nav navbar-nav navbar-right" >
+        <li><a href=""   data-toggle="modal" data-target=".signin">登录</a></li>
+        <li><a href="" class="link-register"  data-toggle="modal" data-target=".signin">注册</a></li>
+        </ul>
+     
+    </div>
+    <!--/.nav-collapse --> 
+  </div>
+</nav>
+
+
+

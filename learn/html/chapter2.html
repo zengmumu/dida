@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>Hello APP</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css" />
+		<link rel="stylesheet" href="../css/swiper.min.css">
+		
+	
+		<style type="text/css">
+			*{ margin: 0; padding: 0;-webkit-box-sizing:border-box; box-sizing:border-box;}
+			    html,body{
+			        height: 100%;
+			        background-color: #f5f5f5;
+			
+			    }
+			    body{ padding-top: 48px;}
+			    .clearfix:after{ content: ""; display: block; clear:both; height: 0;}
+			     #wrap{
+			        height: 100%;
+			       /* display: -webkit-box;
+			        display: -webkit-flex;
+			        display: flex;
+			        -webkit-box-orient: vertical;
+			        -webkit-flex-flow: column;
+			               flex-flow: column;*/
+			    }
+			    #header{
+			        text-align: center; 
+			        color: #999;
+			        width: 100%;
+			        height: 48px; line-height: 48px; border-bottom: 1px solid #e0e0e0;
+			         display: -webkit-box;
+			        display: -webkit-flex;
+			        display: flex;
+			        font-size: small;
+			        position: fixed;
+			        left:0;
+			        top:0;
+			         -webkit-transition:bottom 1s ease;
+			        transition:bottom 1s ease;
+			         background-color: #FFF;
+			         z-index: 15;
+			         font-size: larger;  color: #333;
+			    }
+			    #header .back{ height: 48px; width: 48px; 
+			        background: url(../image/btn_back_normal.png) no-repeat center center; background-size: 65%;}
+			    .skin{height: 48px; width: 48px;}
+			
+			    .btn_dati_beiti_wrap{ /* border:;*/  -webkit-box-flex: 1; 
+			        -webkit-flex: 1;
+			        flex: 1;}
+			    .btn_dati_beiti{
+			        height: 29px; width:150px; height: 26px;
+			        margin-top: 10px;
+			        border:1px  solid #999;
+			        border-radius: 6px;
+			        -webkit-border-radius:6px;
+			        margin-left: auto;
+			        margin-right: auto;
+			        overflow: hidden;
+			    }
+			    .btn_dati,.btn_bei{ width: 50%;   display: block; float: left;height:27px; line-height: 27px;}
+			    
+			    .btn_dati.select,.btn_bei.select{ background-color: #999; 
+			        color: #fff;}
+			     .btn_bei.select{ background-color: #999; color: #fff;}
+			    h1{
+			        font-size: 20px; height: 44px; line-height: 44px; margin: 0em; color: #fff;
+			    }
+			  /*  #main{
+			        -webkit-box-flex: 1; 
+			        -webkit-flex: 1;
+			        flex: 1;
+			    }*/
+			    #footer{
+			            border-top: 1px solid #dedede;
+			    background-color: #fff;
+			    width: 100%;
+			    position: fixed;
+			    bottom: -460px;
+			    left: 0;
+			    z-index: 20;
+			     -webkit-transition:bottom 1s ease;
+			        transition:bottom 1s ease;
+			
+			   
+			   
+			}
+			.cha_lis,.cha_lis0{ margin-top: 25px;}
+			.cha_lis{ clear: both;}
+			.cha_lis li,.cha_lis0 li{ height: 43px; line-height: 43px; border-bottom: 1px solid #f5f5f5; background-color: #fff; padding-left: 15px; transition:all 0.7s;}
+			.cha_lis0 li{width:50%; float: left;}
+			.cha_lis0 li i{ width: 12px; height: 12px; display: inline-block; border-radius: 12px; background-color: #F79306; margin-right: 15px;}
+			.cha_lis li i{ display: inline-block; height: 25px; line-height: 25px; width: 25px; border-radius: 3px; -webkit-border-radius: 3px; background-color:  #18b4ed; font-style: normal; text-align: center; color: #fff; font-size: small; margin-right: 15px;}
+			.cha_lis li .num,.cha_lis0 li .num{ display: inline-block; margin-left: 15px; color: #999; font-size: small;}
+			   .cha_lis li:active, .cha_lis li:active{ background-color:#f0f0f0}  
+			    
+		</style>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="header">
+				<span class="back"></span>
+				<div class="btn_dati_beiti_wrap">
+					<div>
+						章节练习
+
+						
+					</div>
+				</div>
+				<div class="skin"></div>
+			</div>
+			<div id="main">
+			
+			<ul class="cha_lis0 clearfix">
+			
+				
+			</ul>
+
+
+
+			<ul class="cha_lis">
+				
+			</ul>
+
+					<!-- f_body ed -->
+				</div>
+
+			</div>
+	</body>
+	<script type="text/javascript" src="../script/api.js"></script>
+
+	
+	<script src="../script/zepto.min.js">
+
+	</script>
+	
+	<script>
+
+
+ var question={};
+ var jsCha={};
+ 
+  apiready = function(){
+    	api.showProgress({
+    style: 'default',
+    animationType: 'fade',
+    title: '努力加载中...',   
+    modal: false
+});
+    	
+  api.ajax({
+         url:'http://www.qingkt.com/getChapter.php?type='+api.pageParam.type,
+         method:'get',
+
+            },function(ret, err){
+            		jsCha=ret;
+            		
+            	
+            })
+
+
+
+        api.ajax({
+         url:'http://www.qingkt.com/wap3.php?type='+api.pageParam.type,
+         method:'get',
+
+            },function(ret, err){
+            	api.hideProgress();
+            	// alert(ret.data);
+             question.data=ret.data;
+   
+            question.data.sort(down);
+           
+$(function(){
+
+ $(".btn_dati_beiti_wrap div").text(api.winName+"章节练习");
+
+
+	var str='';
+	var i=0;
+	for(var k in jsCha){
+		var myid=jsCha[k].id;
+		i++;
+		str+='<li class="cha_li" onclick=openw('+k+',"../html/course.html",getData('+myid+'))><i>'+i+'</i>'+jsCha[k].typename+'<span class="num">'+getData(myid).length+'</span></li>';
+	};
+	$(".cha_lis").html(str);
+	//类型
+	var type=[{"key":"optiontype","val":0,"name":"判断题"},{"key":"optiontype","val":1,"name":"单选题"},{"key":"optiontype","val":2,"name":"多选题"},{"key":"optiontype","val":3,"name":"填空"},{"key":"optiontype","val":4,"name":"问答"},{"key":"difficulty","val":1,"name":"入门级"},{"key":"difficulty","val":2,"name":"中级"},{"key":"difficulty","val":3,"name":"高级"},{"key":"difficulty","val":3,"name":"学霸级"}]
+	var str0=""
+	for(var i=0;i<type.length;i++){
+		str0+='<li class="cha_li" onclick=openw("option'+api.winName+type[i].name+'","../html/course.html",getDatatype('+JSON.stringify(type[i])+'))><i></i>'+type[i].name+'<span class="num">'+getDatatype(type[i]).length+'</span></li>';
+	
+		
+
+	}
+	$(".cha_lis0").html(str0);
+	
+	$(".cha_lis0 li").each(function(){
+		
+		if($(this).find(".num").text()=="0"){
+			$(this).hide();
+		}
+	})
+
+	$(".back").click(function(){
+
+    api.closeWin({
+	    name: api.winName
+	});
+})
+	
+})//jqed
+}//succ 回调用
+)//ajaxed
+    $(".btn_dati_beiti_wrap div").text(api.winName+"章节练习")
+    }//api
+
+
+function getData(name){
+	
+  var name=parseInt(name);
+ 
+  var collection=[];
+        
+        for(var j in question.data){
+            console.log(question.data[j])
+            if(question.data[j].typeid==name){
+            collection.push(question.data[j]);  
+            }
+        }
+
+		
+    return collection;
+
+
+}
+function getDatatype(opt){
+	
+ 
+ 
+  var collection=[];
+        
+        for(var j in question.data){
+          
+            if(question.data[j][opt.key]==opt.val){
+            collection.push(question.data[j]); 
+          
+            }
+        }
+      
+    return collection;
+
+}
+
+   function openw(name,url,param){
+
+             api.openWin({
+            name: name,
+            url: url,         
+            rect: {
+                x: 0,
+                y: 0,
+                w: api.winWidth,
+                h: api.winHeight
+            },
+            pageParam:param
+
+        })
+            }
+           function down(x, y) {
+            return (x.typeid < y.typeid) ? -1 : 1
+ 
+        }
+
+$(function(){
+
+// 	$(".back").click(function(){
+
+//     api.closeWin({
+// 	    name: api.winName
+// 	});
+// })
+	// $(".btn_dati_beiti_wrap div").text(api.winName+"章节练习");
+
+
+})
+	</script>
+
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title></title>
+    
+    <style>
+*{ background-color: #fff;}
+
+
+
+    </style>
+</head>
+<body>
+
+
+<script>
+  apiready = function(){
+    if(api.connectionType!="wifi"){
+
+      api.confirm({
+    title: '联网提示',
+    msg: '您当前在非wifi环境下,您真的观看视频吗？',
+    buttons: ['确定', '取消']
+}, function(ret, err){
+    if( ret ){
+        if(ret.buttonIndex==2){
+          api.closeWin();
+        }
+    }else{
+         // alert( JSON.stringify( err ) );
+    }
+});
+       
+      }
+   var urlv=api.pageParam;
+  
+   openPage(urlv); 
+
+   api.addEventListener({
+    name:'keyback'
+},function(ret,err){
+
+if(localStorage.getItem("winfull")!="full"){
+  // alert(localStorage.getItem("winfull"));
+  api.historyBack({
+    // frameName:'detail'
+},function(ret,err){
+    if(!ret.status){
+        api.closeWin();
+    }
+});
+}else{
+
+  api.execScript({
+      name:'videoMain',
+      frameName: 'video',
+      script:'dfull();'
+  });
+  api.execScript({
+      name:'videoMain',
+      frameName: 'ctrl',
+      script:' setctrls()'
+  });
+}//else;
+});  
+  }
+
+  function openPage(str){
+     
+    api.openFrame({
+            name: 'video',
+            url: 'frm_video.html',
+            // bounces:false,
+            rect: {
+                x: 0,
+                y: 0,
+                w: api.winWidth,
+                h: 320
+            },
+            pageParam:str,
+        })
+
+    
+}  
+      
+</script>
+
+</body>
+</html>

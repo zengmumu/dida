@@ -1,0 +1,148 @@
+<div id="footer">
+  <div class="container">
+    <div class="container">
+    <div class="row">
+      <h2 class="col-md-12">轻课堂</h2>
+      <div class="col-md-6">
+        <p> 轻课堂，UI学习视频教程网站<br/>
+          为您提供海量优质在线视频课程<br/>全新实战课程免费的源代码与设计案例<br/>
+          帮助您获得全新的个人发展和能力提升 </p>
+      </div>
+      <div class="col-md-6">
+        <div class="f-links text-right"><a href="" target="_blank">关于我们</a>- <a href="" target="_blank">联系我们</a>-<a href="" target="_blank">QQ:1738939524</a>-<a href="tel:13598859747" target="_blank">tel:13598859747</a><a href="" target="_blank">地址：郑州</a>- <a href="" target="_blank">帮助中心</a>- <a href="" target="_blank">内容招募</a>- <a href="" target="_blank">意见反馈</a> </div>
+      </div>
+      <div class="copyright text-right">© 2015 轻课堂-qingkt</div>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+<!--导航ed-->
+
+<!--模块-->
+
+<div class="modal fade signin " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="myModalLabel"> <span class="active-title">登录</span> <span>注册</span> </h4>
+      </div>
+      <div class="modal-body">
+        <div class="singIn">
+          <form class="logIn"  action="{dede:global.cfg_memberurl/}/index_do.php" method="POST">
+          <input type="hidden" name="fmdo" value="login">
+        <input type="hidden" name="dopost" value="login">
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="sr-only">用户名：</label>
+              
+              <input type="text" class="form-control ipt ipt-emall" id="exampleInputEmail1" name="userid" size="20"  placeholder="请输入邮箱">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="sr-only">密码：</label>
+              <input type="password" class="form-control ipt ipt-pwd" id="exampleInputPassword1"   name="pwd" size="20" placeholder="请输入密码">
+            </div>
+             
+          
+            {dede:php}
+        if(preg_match("#2#", $safe_gdopen))
+        {
+        echo '
+        <div class="form-group clearfix" >
+       
+         <input type="text" name="vdcode" size="8" class="ipt ipt-verify l" placeholder="请输入验证码" />
+           <a href="javascript:void(0)" class="verify-img-wrap js-verify-refresh"> <img id="vdimgck" align="absmiddle"  style="cursor:pointer;margin-left:0px;text-transform:uppercase;" alt="看不清？点击更换" src="" width="100"/>
+           </a><span class="verify-extra r"> 看不清<br>
+         <a href="javascript:void(0)"   class="js-verify-refresh" id="js-refresh1">换一张</a> </span>
+            <p class="rlf-tip-wrap"> <span style="display: none;">请输入右侧图片内容</span> </p>
+         </div> 
+        ';
+        }
+       
+        {/dede:php}
+            
+            <div class="form-group clearfix">
+            
+            <button type="submit" class="btn btn-block bg-yellow yellow">提交</button>
+            </div>
+             <div class="form-group clearfix">
+              <label for="auto-signin" class="l" hidefocus="true">
+              
+                <input type="checkbox" checked="checked"  value="2592000" name="keeptime" id="ra1">
+                自动登录</label>
+               
+              <a href="{dede:global.cfg_memberurl/}/resetpassword.php" class="r" target="_blank" hidefocus="true">忘记密码 </a> </div>
+            
+          </form>
+        </div>
+        <div class="singUp" style="display:none;">
+        <form class="logIn"  action="{dede:global.cfg_cmspath/}/member/reg_new.php"  id="regUser" name="form2">
+          <input type="hidden" value="regbase" name="dopost"/>
+          <input type="hidden" value="1" name="step"/>
+          <input type="hidden" value="个人" name="mtype"/>
+          
+          <div class="form-group">
+            <label for="exampleInputEmail1" class="sr-only">用户名：</label>
+            <input type="text" class="form-control ipt ipt-emall" id="email" name="email" placeholder="请输入邮箱"/>
+            <em id="_email">(每个电子邮邮箱只能注册一个帐号)</em> 
+            </div>
+          
+            <input type="hidden" class="intxt w200" size="20" id="uname" name="uname"/>
+           
+          <div class="form-group">
+            <label for="exampleInputPassword1" class="sr-only">密码：</label>
+            <input type="password" onkeyup="setPasswordLevel(this, document.getElementById('passwordLevel'));" class="form-control ipt ipt-pwd" id="txtPassword"  name="userpwd" placeholder="请输入密码">
+            <input id="passwordLevel" class="rank r2" disabled="disabled" name="Input"/>
+          </div>
+          <div class="form-group">
+            <input type="password" id="userpwdok" name="userpwdok"  size="20" class="form-control ipt ipt-pwd" placeholder="请再次输入密码">
+            <em id="_userpwdok"><font color="red"><b>×两次输入密码不一致</b></font></em> </div>
+          <div class="form-group">
+            <input type="text" name="userid" id="txtUsername" class=" form-control ipt ipt-nick" placeholder="请输入用户昵称">
+            <em id="_userid">(可以使用中文，但禁止除[@][.]以外的特殊符号)</em> </div>
+         
+            {dede:php}
+        if(preg_match("#2#", $safe_gdopen))
+        {
+        echo '
+        <div class="form-group clearfix" >
+       
+         <input type="text" name="vdcode" size="8" class="ipt ipt-verify l" placeholder="请输入验证码" />
+           <a href="javascript:void(0)" class="verify-img-wrap js-verify-refresh"> <img id="vdimgck2" align="absmiddle"  style="cursor:pointer;margin-left:0px;text-transform:uppercase;" alt="看不清？点击更换" src="" width="100"/>
+           </a><span class="verify-extra r"> 看不清<br>
+         <a href="javascript:void(0)"    class="js-verify-refresh" id="js-refresh2">换一张</a> </span>
+            <p class="rlf-tip-wrap"> <span style="display: none;">请输入右侧图片内容</span> </p>
+         </div> 
+        ';
+        }
+       
+        {/dede:php}
+          <button type="submit" class="btn btn-block bg-yellow yellow" id="btnSignCheck">注册</button>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer"> </div>
+  </div>
+  <!-- /.modal-content --> 
+</div>
+</div>
+
+
+<script src="/templets/default/js/sea.js"></script>
+<script>  
+  seajs.config({
+    base: "/templets/default/",
+    alias: {
+     "jquery": "/templets/default/js/jquery.js"
+    },
+    preload: ['jquery']
+  });
+ 
+    seajs.use("js/commonc"); 
+
+</script>
+
+
+<div id="lay"></div>

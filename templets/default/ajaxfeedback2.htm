@@ -1,7 +1,6 @@
 <!-- //主模板必须要引入{dede:global.cfg_cmsurl/}/include/dedeajax2.js -->
 <a name='postform'></a>
-	<script>
-		function CheckLogin() {
+	<script>function CheckLogin() {
 				var taget_obj = document.getElementById('_ajax_feedback');
 				myajax = new DedeAjax(taget_obj, false, false, '', '', '');
 				myajax.SendGet2("{dede:global.cfg_cmsurl/}/member/ajax_feedback3.php");
