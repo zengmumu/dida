@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<video width="800" height="" controls="controls" id="video1" poster="http://mat1.gtimg.com/www/qq2018/imgs/qq_logo_2018x2.png">
+			<source src="https://github.com/zengmumu/dida/blob/master/v/axure/axure-01-%E7%95%8C%E9%9D%A2%E4%B8%8E%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98.mp4?raw=true" type="video/mp4"></source>
+			
+		</video>
+		<button onclick="setPlaySpeedA()">0.7倍速度播</button>
+		<button onclick="setPlaySpeedB()">1倍速度播</button>
+		<button onclick="setPlaySpeedC()">1.5倍速度播</button>
+		<button onclick="setPlaySpeedD()">2倍速度播</button>
+		<script>
+			var vid = document.getElementById("video1");
+
+function getPlaySpeed() { 
+
+    alert(vid.playbackRate);
+
+} 
+
+
+
+function setPlaySpeedA() { 
+	var vid = document.getElementById("video1");
+    vid.playbackRate = 0.7;
+
+} 
+function setPlaySpeedB() { 
+	var vid = document.getElementById("video1");
+    vid.playbackRate = 1;
+
+} 
+function setPlaySpeedC() { 
+	var vid = document.getElementById("video1");
+    vid.playbackRate = 1.5;
+
+} 
+function setPlaySpeedD() { 
+	var vid = document.getElementById("video1");
+    vid.playbackRate = 2;
+
+} 
+			
+		</script>
+	</body>
+</html>
