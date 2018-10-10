@@ -1,11 +1,10 @@
-<!DOCTYPE >
-<html >
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
-<title>ç”¨æˆ·è¯„è®º ï¼š{dede:global.title/}</title>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>ÓÃ»§ÆÀÂÛ£º{dede:global.title/}</title>
 <link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
 <script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
-<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
 <script language="javascript">
 function postBadGood(ftype,fid)
 {
@@ -28,7 +27,7 @@ function postBadGood(ftype,fid)
 		 	  	if(j==9 && !hasid) break;
 		 	  }
 		 }
-     if(hasid) { alert('æ‚¨åˆšæ‰å·²è¡¨å†³è¿‡äº†å–”ï¼'); return false; }
+     if(hasid) { alert('Äú¸Õ²ÅÒÑ±í¾ö¹ıÁËà¸£¡'); return false; }
      else saveid += ','+fid;
 		 SetCookie('badgoodid',saveid,1);
 	}
@@ -54,7 +53,7 @@ function ajaxFeedback(aid, fid, type)
 		eval('var result = typeof CKEDITOR.instances.msg_'+fid);
 		if(result != 'undefined')
 		{
-			// åˆ é™¤å®ä¾‹
+			// É¾³ıÊµÀı
 			eval('var edit = CKEDITOR.instances.msg_'+fid);
 			CKEDITOR.remove(edit);
 		}
@@ -83,13 +82,13 @@ function ajaxQuotePost(fid)
 	var nusername = '';
 	var npwd = '';
 	var taget_obj = $DE('commetcontentNew');
-	var waithtml = "<div style='line-height:30px'><img src='{dede:global.cfg_cmsurl/}/images/loadinglit.gif' />æ­£åœ¨å‘é€ä¸­...</div>";
+	var waithtml = "<div style='line-height:30px'><img src='{dede:global.cfg_cmsurl/}/images/loadinglit.gif' />ÕıÔÚ·¢ËÍÖĞ...</div>";
 	eval('var msg = CKEDITOR.instances.msg_'+fid+'.getData()');
 
 	if(f.validate)
 	{
 		if(f.validate.value=='') {
-			alert("è¯·å¡«å†™éªŒè¯ç ï¼");
+			alert("ÇëÌîĞ´ÑéÖ¤Âë£¡");
 			return;
 		}
 		else {
@@ -129,73 +128,15 @@ function ajaxQuotePost(fid)
 }
 </script>
 <body class="commentpage">
-<script>
-	var reMethod = "POST",pwdmin = 4;
-</script>
-<div class="header_top  ">
+	{dede:include filename="../default/head2.htm"/}
 
-	<div class="center container index">
-		<span id="time" class="time hidden-xs">è½»è¯¾å ‚qingkt å…è´¹ITå…¥é—¨åŸ¹è®­å­¦ä¹ å¹³å°</span>
-		<div class="toplinks">
-			<span id="_login">
-				<a class="" data-toggle="modal" data-target="#myModal">ç™»é™†</a>
-				<a class="" data-toggle="modal" data-target="#myModal2">æ³¨å†Œ</a>
-			</span>
-			</div>
-	</div>
-</div>
-
-<div class="navbar navbar-default">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav" aria-expanded="false">
-	       
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-			<a class="navbar-brand visible-xs" href='{dede:global.cfg_cmsurl/}/'><span>è½»è¯¾å ‚</span></a>
-		</div>
-		<div class="collapse navbar-collapse" id="nav">
-			<ul class="nav navbar-nav">
-				<li >
-					<a href="/">é¦–é¡µ</a>
-				</li>
-				{dede:channel typeid="7,138,177,223" type="top" row='4' orderby='sortrank' currentstyle="
-				<li class='hover'>
-					<a href='~typelink~' ~rel~><span>~typename~</span></a>
-				</li>"}
-				<li>
-					<a href='[field:typeurl/]' [field:rel/]><span>[field:typename/]</span></a>
-					
-				</li>
-				
-				{/dede:channel}
-			</ul>
-			<form class="navbar-form navbar-right" action="{dede:global.cfg_cmsurl/}/plus/search.php">
-
-				<div class="form-group">
-					<input type="hidden" name="kwtype" value="0" />
-					<input type="text" class="form-control" placeholder="åœ¨è¿™é‡Œæœç´¢" class="search-keyword" name="q" id="search-keyword">
-					<select name="searchtype" class="form-control hidden" id="search-option">
-						<option value="title">æœç´¢æ ‡é¢˜</option>
-						<option value="titlekeyword"  selected='1'>æ™ºèƒ½æ¨¡ç³Š</option>
-					</select>
-				</div>
-				<button type="submit" class="btn btn-default btn-outline">æœç´¢</button>
-			</form>
-		</div>
-	</div>
-</div>
-
-<!-- /header -->
 <div class="w960 clear center mt1 cmt-box">
   <div class="sp-title">
-    <h2>è¯„è®º:<a href='{dede:global.arcurl/}'>{dede:global.title/}</a></h2>
+    <h2>ÆÀÂÛ:<a href='{dede:global.arcurl/}'>{dede:global.title/}</a></h2>
   </div>
   <div>
     <dl class="tbox">
-      <dt> <strong>è¯„è®ºåˆ—è¡¨ï¼ˆç½‘å‹è¯„è®ºä»…ä¾›ç½‘å‹è¡¨è¾¾ä¸ªäººçœ‹æ³•ï¼Œå¹¶ä¸è¡¨æ˜æœ¬ç«™åŒæ„å…¶è§‚ç‚¹æˆ–è¯å®å…¶æè¿°ï¼‰</strong> <span class="label"> <a href='feedback.php?aid={dede:global.aid/}&ftype=good' <?php if($ftype=='good') echo "class='thisclass'"; ?>>åªçœ‹å¥½è¯„</a> <a href='feedback.php?aid={dede:global.aid/}&ftype=bad' <?php if($ftype=='bad') echo "class='thisclass'"; ?>>åªçœ‹å·®è¯„</a> <a href='feedback.php?aid={dede:global.aid/}&ftype=feedback' <?php if($ftype=='feedback') echo "class='thisclass'"; ?>>åªçœ‹ä¸­ç«‹</a> <a href='feedback.php?aid={dede:global.aid/}' <?php if($ftype=='') echo "class='thisclass'"; ?>>å…¨éƒ¨è¯„è®º</a> </span> </dt>
+      <dt> <strong>ÆÀÂÛÁĞ±í£¨ÍøÓÑÆÀÂÛ½ö¹©ÍøÓÑ±í´ï¸öÈË¿´·¨£¬²¢²»±íÃ÷±¾Õ¾Í¬ÒâÆä¹Ûµã»òÖ¤ÊµÆäÃèÊö£©</strong> <span class="label"> <a href='feedback.php?aid={dede:global.aid/}&ftype=good' <?php if($ftype=='good') echo "class='thisclass'"; ?>>Ö»¿´ºÃÆÀ</a> <a href='feedback.php?aid={dede:global.aid/}&ftype=bad' <?php if($ftype=='bad') echo "class='thisclass'"; ?>>Ö»¿´²îÆÀ</a> <a href='feedback.php?aid={dede:global.aid/}&ftype=feedback' <?php if($ftype=='feedback') echo "class='thisclass'"; ?>>Ö»¿´ÖĞÁ¢</a> <a href='feedback.php?aid={dede:global.aid/}' <?php if($ftype=='') echo "class='thisclass'"; ?>>È«²¿ÆÀÂÛ</a> </span> </dt>
       <dd>
         <div class="dede_comment">
           <div class='decmt-box1'>
@@ -206,25 +147,25 @@ function ajaxQuotePost(fid)
               <?php
   if($fields['userid']!='') $spaceurl = $cfg_basehost.'/member/index.php?uid='.$fields['userid'];
   else $spaceurl = "#";
-  if($fields['username']=='åŒ¿å') $spaceurl = "#";
+  if($fields['username']=='ÄäÃû') $spaceurl = "#";
   $fields['bgimg'] = 'cmt-neu.gif';
-  $fields['ftypetitle'] = 'è¯¥ç”¨æˆ·è¡¨ç¤ºä¸­ç«‹';
+  $fields['ftypetitle'] = '¸ÃÓÃ»§±íÊ¾ÖĞÁ¢';
   if($fields['ftype']=='bad') {
   	$fields['bgimg'] = 'cmt-bad.gif';
-  	$fields['ftypetitle'] = 'è¯¥ç”¨æˆ·è¡¨ç¤ºå·®è¯„';
+  	$fields['ftypetitle'] = '¸ÃÓÃ»§±íÊ¾²îÆÀ';
   }
   else if($fields['ftype']=='good') {
   	$fields['bgimg'] = 'cmt-good.gif';
-  	$fields['ftypetitle'] = 'è¯¥ç”¨æˆ·è¡¨ç¤ºå¥½è¯„';
+  	$fields['ftypetitle'] = '¸ÃÓÃ»§±íÊ¾ºÃÆÀ';
   }
   if(empty($fields['mface']))
   {
-    if($fields['sex']=="å¥³") $fields['mface']="/member/templets/images/dfgirl.png";
+    if($fields['sex']=="Å®") $fields['mface']="/member/templets/images/dfgirl.png";
     else $fields['mface']="/member/templets/images/dfboy.png";
   }
 ?>
               <li> <a href='<?php echo $spaceurl; ?>' class='plpic'><img src='<?php echo $fields['mface'];?>'  height='40' width='40'/></a> <span class="title"> {dede:field.username/}<img src="{dede:global.cfg_templets_skin/}/images/{dede:field.bgimg/}" /></span>
-                <div class="comment_act"><span class="fr"> <span id='goodfb{dede:field.id/}'><a href="#" onclick="postBadGood('goodfb',{dede:field.id/})">æ”¯æŒ</a>[{dede:field.good/}]</span> <span id='badfb{dede:field.id/}'><a href="#" onclick="postBadGood('badfb',{dede:field.id/})">åå¯¹</a>[{dede:field.bad/}]</span> <span class='quote'><a href="javascript:ajaxFeedback({dede:field.id/},{dede:field.id/},'quote');">å¼•ç”¨</a></span></span> {dede:field.dtime function="MyDate('m-d H:i',@me)" /}å‘è¡¨</div>
+                <div class="comment_act"><span class="fr"> <span id='goodfb{dede:field.id/}'><a href="#" onclick="postBadGood('goodfb',{dede:field.id/})">Ö§³Ö</a>[{dede:field.good/}]</span> <span id='badfb{dede:field.id/}'><a href="#" onclick="postBadGood('badfb',{dede:field.id/})">·´¶Ô</a>[{dede:field.bad/}]</span> <span class='quote'><a href="javascript:ajaxFeedback({dede:field.id/},{dede:field.id/},'quote');">ÒıÓÃ</a></span></span> {dede:field.dtime function="MyDate('m-d H:i',@me)" /}·¢±í</div>
                 <p>
                 <?php
                 echo RemoveXSS(Quote_replace(parseSmileys($fields['msg'],$cfg_cmspath.'/images/smiley')));
@@ -242,7 +183,7 @@ function ajaxQuotePost(fid)
   </div>
   <div class="mt1">
     <dl class="tbox">
-      <dt> <strong>å‘è¡¨è¯„è®º</strong> </dt>
+      <dt> <strong>·¢±íÆÀÂÛ</strong> </dt>
       <dd>
         <div class="dede_comment_post">
           <form action="feedback.php" method="post" name="feedback">
@@ -250,15 +191,15 @@ function ajaxQuotePost(fid)
             <input type="hidden" name="comtype" value="comments">
             <input type="hidden" name="aid" value="<?php echo $aid; ?>" />
             <input type="hidden" name="isconfirm" value="yes" />
-            <div class="dcmp-title"> <small>è¯·è‡ªè§‰éµå®ˆäº’è”ç½‘ç›¸å…³çš„æ”¿ç­–æ³•è§„ï¼Œä¸¥ç¦å‘å¸ƒè‰²æƒ…ã€æš´åŠ›ã€ååŠ¨çš„è¨€è®ºã€‚</small> </div>
+            <div class="dcmp-title"> <small>Çë×Ô¾õ×ñÊØ»¥ÁªÍøÏà¹ØµÄÕş²ß·¨¹æ£¬ÑÏ½û·¢²¼É«Çé¡¢±©Á¦¡¢·´¶¯µÄÑÔÂÛ¡£</small> </div>
             <!-- /dcmp-title -->
-            <div class="dcmp-stand"> <strong>è¯„ä»·:</strong>
+            <div class="dcmp-stand"> <strong>ÆÀ¼Û:</strong>
               <input type="radio" name="feedbacktype" checked="1" value="feedback" id="dcmp-stand-neu" />
-              <label for="dcmp-stand-neu"><img src="{dede:global.cfg_templets_skin/}/images/cmt-neu.gif" />ä¸­ç«‹</label>
+              <label for="dcmp-stand-neu"><img src="{dede:global.cfg_templets_skin/}/images/cmt-neu.gif" />ÖĞÁ¢</label>
               <input type="radio" name="feedbacktype" value="good" id="dcmp-stand-good" />
-              <label for="dcmp-stand-good"><img src="{dede:global.cfg_templets_skin/}/images/cmt-good.gif" />å¥½è¯„</label>
+              <label for="dcmp-stand-good"><img src="{dede:global.cfg_templets_skin/}/images/cmt-good.gif" />ºÃÆÀ</label>
               <input type="radio" name="feedbacktype" value="bad" id="dcmp-stand-bad" />
-              <label for="dcmp-stand-bad"><img src="{dede:global.cfg_templets_skin/}/images/cmt-bad.gif" />å·®è¯„</label>
+              <label for="dcmp-stand-bad"><img src="{dede:global.cfg_templets_skin/}/images/cmt-bad.gif" />²îÆÀ</label>
             </div>
             <!-- /dcmp-stand -->
             <div class="clr"></div>
@@ -276,22 +217,22 @@ function ajaxQuotePost(fid)
             </div>
             <!-- /dcmp-content -->
             <div class="dcmp-post">
-              <!--æœªç™»é™†-->
-              <div class="dcmp-userinfo"> ç”¨æˆ·åï¼š
+              <!--Î´µÇÂ½-->
+              <div class="dcmp-userinfo"> ÓÃ»§Ãû£º
                 <?php if($cfg_ml->M_ID <= 0) { ?>
                 <input name="username" type="text" id="username" size="10" class="nb" />
-                ï¼ˆ<a href="../member/index_do.php?fmdo=user&dopost=regnew" target="_blank"><u>æ³¨å†Œæ–°ç”¨æˆ·</u></a>ï¼‰
+                £¨<a href="../member/index_do.php?fmdo=user&dopost=regnew" target="_blank"><u>×¢²áĞÂÓÃ»§</u></a>£©
                 <?php
                     }else{  echo $cfg_ml->M_LoginID."&nbsp;"; }
                    ?>
                 <input name="notuser" type="checkbox" id="notuser" value="1" />
-                åŒ¿åè¯„è®º
+                ÄäÃûÆÀÂÛ
                 <?php if(preg_match("/4/",$safe_gdopen)){ ?>
-                éªŒè¯ç ï¼š
+                ÑéÖ¤Âë£º
                 <input name="validate" type="text" id="validate" size="10" style="height:18px;width:60px;margin-right:6px;text-transform:uppercase;" class="nb" />
-                <img src='../include/vdimgck.php' width='60' height='24' style="cursor:pointer" onclick="this.src=this.src+'?'" title="ç‚¹å‡»æˆ‘æ›´æ¢å›¾ç‰‡" alt="ç‚¹å‡»æˆ‘æ›´æ¢å›¾ç‰‡" />
+                <img src='../include/vdimgck.php' width='60' height='24' style="cursor:pointer" onclick="this.src=this.src+'?'" title="µã»÷ÎÒ¸ü»»Í¼Æ¬" alt="µã»÷ÎÒ¸ü»»Í¼Æ¬" />
                 <?php } ?>
-                <button type="submit" class="btn-2">å‘è¡¨è¯„è®º</button>
+                <button type="submit" class="btn-2">·¢±íÆÀÂÛ</button>
               </div>
               <!-- /dcmp-submit -->
             </div>
@@ -305,7 +246,5 @@ function ajaxQuotePost(fid)
 </div>
 {dede:include filename="../default/footer.htm"/}
 <!-- /footer -->
-<script src="{dede:global.cfg_cmsurl/}/m/assets/js/jquery.min.js"></script>
-<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </body>
 </html>

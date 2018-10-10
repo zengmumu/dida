@@ -8,9 +8,9 @@
 			<meta name="keywords" content="{dede:field.keywords/}" />
 			<meta name="description" content="{dede:field.description function='adds(@me)'/}" />
     	<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" /> 
-     	<link href="{dede:global.cfg_templets_skin/}/css/bootstrap.css" rel="stylesheet">
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
 			<link href="{dede:global.cfg_templets_skin/}/css/style.css" rel="stylesheet">
-			<script src="/templets/default/js/jquery.js"></script>
+<script src="{dede:global.cfg_cmsurl/}/m/assets/js/jquery.min.js"></script>
 			<script type="text/javascript" src="/include/dedeajax3.js"></script>
   	
       <!--[if lt IE 9]>
@@ -73,10 +73,10 @@
   					</div>
    				</div>
    				
-   				{dede:channelartlist  typeid='reid'}
+   				
    				<!---->
    				<div class="panel panel-default">
-  					<div class="panel-heading"><h3>	<a href="/plus/list.php?tid={dede:field name='id'/}">{dede:field name='typename'/} </a> </h3></div>
+  					<div class="panel-heading"><a href="/plus/list.php?tid={dede:field name='id'/}">{dede:field name='typename'/} </a></div>
   					<div class="panel-body">
   						<ul class="">{dede:arclist titlelen='30' row="25" orderway="asc" orderby='id'}
   							
@@ -87,12 +87,12 @@
 							</ul>
   					</div>
    				</div>		
-					{/dede:channelartlist}
+				
    				
 			</div><!--container ed-->
 		</div><!--courseed-->
   <!--课程-->
-   {dede:include filename="footer2.htm"/}
+   {dede:include filename="footer.htm"/}
 <script>
 	function postBadGood(ftype, fid) {
 	var taget_obj=document.getElementById(ftype + fid);
@@ -209,7 +209,7 @@ setTimeout(function(){
 },2000)
 
 </script>
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   </body>
 </html>

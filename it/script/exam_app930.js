@@ -6,7 +6,7 @@
 						 
 						 $scope.goback=function(){
 						 	var abc = $ionicHistory.goBack();	
-
+						 	console.log($ionicHistory,$ionicHistory.backView(),"backview");
 						 	if($ionicHistory.backView()==null){
 						 		window.history.back();
 						 	}
@@ -22,7 +22,7 @@
 							// 当页面发生改变时会触发这个事件
 						$scope.$on("$stateChangeSuccess",function(event,toState,params){
 							if(toState.name=="home"&&!$scope.userData.user.M_LoginID){
-
+					//			$scope.userData.getUser($scope.checkUser);//获取用户信息
 							}
 						})
 						$scope.data=$getUser;
@@ -55,8 +55,7 @@
 							
 						}
 						$http.get($scope.host+"/start/get_course.php").success(function(data){
-							$scope.data.courseList=data;
-//							console.log($scope.data.courseList);
+							$scope.data.courseList=data;							
 						})
 						$scope.share=function(){
 							if(api){
@@ -67,8 +66,7 @@
 							    text: '一个学习python好地方',
 							    type: 'url',
 							    path:'http://www.qinkt.com/it/'
-							});
-//							alert(abc);
+							});						
 							}else{
 								alert("没有api")
 							}
@@ -98,7 +96,13 @@
 							}
 						}
 						getCourse()
-				
+							// 	for(var k in $scope.data.courseList ){
+									
+							// 	if($scope.data.courseList[k].id==$stateParams.course){
+							// 		$scope.data.course=k;
+							// 		break;
+							// 	}
+							// }
 
 						$scope.loginOut=function(){
 							$getUser.out();
@@ -119,7 +123,6 @@
 						$http.get($scope.host+"/start/get_chapters.php?reid="+$stateParams.course).success(function(data){
 							// var chapter=data.sort(function(a,b){if(a.id*1>b.id*1){return 1}else{return -1}});
 							$scope.chapters=data.sort(function(a,b){if(a.id*1>b.id*1){return 1}else{return -1}});
-							// console.log(chapter);
 
 
 							if($scope.chapters[0]){
@@ -133,7 +136,7 @@
 									$http.get($scope.host+"/start/get_unlock.php?user="+$scope.data.user.M_ID+"&type=3")
 									
 									.success(function(data){
-//										console.log(data,"unlockindexctrl")
+										console.log(data,"unlockindexctrl")
 										if(data.length){
 											for(var i=0;i<$scope.chapters.length;i++){
 												for(var k=0;k<data.length;k++){
@@ -178,10 +181,9 @@
 							 		  	}
 							 		  	$scope.sc.t=t;
 							 		  })
-							 		 
+							 		  // console.log($scope.sc);
 							 	}
 							 }
-							
 						})
 
 						$scope.changeState=function(item,index){
@@ -250,8 +252,8 @@
 									
 									$http.get($scope.host+"/start/get_unlock.php?user="+$scope.data.user.M_ID+"&type=2")
 									.success(function(data){
-//										console.log(data,"unitunlock");
-//										console.log($scope.units,"units");
+										console.log(data,"unitunlock");
+										console.log($scope.units,"units");
 										setTimeout(function(){
 										if(data.length&&$scope.units&&$scope.units.length){
 											for(var i=0;i<$scope.units.length;i++){
@@ -262,7 +264,7 @@
 															
 															$scope.units[i+1].delock=true;	
 														}
-//														console.log("hit");
+														console.log("hit");
 														$scope.$apply();
 													}
 												}
@@ -299,43 +301,22 @@
 							$scope.popover = $ionicPopover.fromTemplate('<ion-popover-view></ion-content><div class="list"><div class="item" ng-click="logout()">退出</div></div></ion-content></ion-popover-view>', {
 					        scope: $scope
 					         });
-					         $scope.sc={};
-							$scope.handelScroll=function(){
-							 	var t=$ionicScrollDelegate.getScrollPosition().top;
-							 	
-							 	if(t<88&&t>0){
-							 		  t=Math.abs(t);
-							 		  $scope.$apply(function(){
-							 		  	if(t>88){
-							 		  	t=88;	
-							 		  	}
-							 		  	$scope.sc.t=t;
-							 		  })
-							 		 
-							 	}
-							 }
-							
-					
+
+
 							$scope.logout=function(){
 								window.localStorage.removeItem("uid")
 								window.localStorage.removeItem("username")
 								$scope.popover.hide()
-//								$state.go("login");
+								$state.go("login");
 							}
 
-							$scope.slideHasChanged=function(index){
-								$scope.index=index;
-								$ionicScrollDelegate.scrollTop();
-								
-								$ionicScrollDelegate.resize();
+							$scope.slideHasChanged=function(){
 								$scope.current.showbar=false;
 								$scope.current.page= $ionicSlideBoxDelegate.currentIndex()
 								$http.get($scope.host+"/start/get_coments_count.php?aid="+$scope.questions[$scope.current.page].id)
 								.success(function(data){
 									$scope.questions[$scope.current.page].comentCount=data;
 								})
-								
-								
 
 							}
 
@@ -386,7 +367,7 @@
 //					                     	console.log(n);
 					                     		var temp=data.data[i].answer.split(",");
 					                     		data.data[i].blank_len=[];
-//					                     		console.log(data.data[i].blank_len);
+					                     		console.log(data.data[i].blank_len);
 					                     		for(var z=0;z<temp.length;z++){
 					                     				data.data[i].blank_len.push(temp[z].length);
 					                     		}
@@ -419,19 +400,19 @@
 											}
 											if(data.data[i].subtitle.indexOf("brush")!=-1){
 //												console.log(data.data[i].subtitle.substr(data.data[i].subtitle.length));
-//												console.log("hit pre")
+												console.log("hit pre")
 												data.data[i].subtitle=data.data[i].subtitle.replace(/\r\n/g,"<br/>");
         										data.data[i].subtitle=data.data[i].subtitle.replace(/\n/g,"<br/>");  
-//      										console.log("org",data.data[i].subtitle);
+        										console.log("org",data.data[i].subtitle);
 					                     		var temp=data.data[i].subtitle.split("<br/>");
 											}else if(data.data[i].subtitle.indexOf("<br")){
-//												console.log("hit <br");
+												console.log("hit <br");
 												var temp=data.data[i].subtitle.split("<br/>");
 											}
 											else{
 												data.data[i].subtitle=data.data[i].subtitle.replace(/\r\n/g,"<br/>");
         										data.data[i].subtitle=data.data[i].subtitle.replace(/\n/g,"<br/>");  
-//      										console.log("org",data.data[i].subtitle);
+        										console.log("org",data.data[i].subtitle);
 					                     		var temp=data.data[i].subtitle.split("<br/>");
 											}
 											
@@ -468,7 +449,16 @@
 					 }
 					
 					 question.currentAnswer=userAnswer.toString();
-
+//					 var sy=new SyntaxHighlighter();
+//					 sy.config.tagName="span";
+//					 sy.highlight();
+//					 console.log("abc",abc);
+					
+//var brush = new SyntaxHighlighter.brushes.JScript(),
+//	code = document.getElementById('input').innerHTML	
+//	brush.init({ toolbar: false });
+//	html = brush.getHtml(code);
+//	document.write(html);
 				}
 							$scope.selectHd=function(question,op,answer,index){
 								question.currentSelect=op;
@@ -478,7 +468,18 @@
 
 								return;
 
-								
+								/*$scope.current.showAnswerSheet=false;
+								 $http.post($scope.host+"/start/questions/detail/"+$stateParams.test_id+"/",{
+										"answer": answer,
+									    "qe_id":question.qe_id,
+									     "id":question.id
+								 }).success(function(data){
+
+								 })*/
+								// if(question.type==1){
+								// 	 $ionicSlideBoxDelegate.next()
+
+								// }
 							}
 							$scope.selectMulHd=function(question,op,answer,index){
 
@@ -512,7 +513,6 @@
 
 								 })
 								$ionicSlideBoxDelegate.next()
-
 							}
 							$scope.QaHdNext=function(question){
 								$scope.current.showAnswerSheet=false;
@@ -525,7 +525,6 @@
 
 								 })
 								$ionicSlideBoxDelegate.next()
-								
 							}
 
 							$scope.QaHdNext=function(question){
@@ -540,7 +539,6 @@
 
 								 })
 								$ionicSlideBoxDelegate.next()
-
 							}
 							$scope.BlHdNext=function(question){
 								
@@ -552,7 +550,6 @@
 
 							 	 })
 								 $ionicSlideBoxDelegate.next()
-
 							}
 
 							$scope.checkMulSelect=function(question,op){
@@ -578,7 +575,7 @@
 								if(data.status){
 									$scope.mixQuestion($scope.questions[index]);
 									// console.log($scope.questions[index]);
-
+									$ionicScrollDelegate.scrollTo(0,0);
 									$ionicSlideBoxDelegate.slide(index)
 									$scope.current.showAnswerSheet=false;
 									
@@ -639,13 +636,7 @@
 							}
 
 					$scope.nextSlide=function(question){
-								 if(!question){
-								 	if($scope.index){
-								 		question=$scope.questions[$scope.index];
-								 	}else{
-								 		question=$scope.questions[0];
-								 	}
-								 }
+								 
 								 $http.post($scope.host+"/start/set_unlock.php",{
 										"unlock":question.id,
 										"user":$scope.data.user.M_ID,
@@ -656,7 +647,6 @@
 
 								 	})
 								$ionicSlideBoxDelegate.next()
-
 							}
 					$scope.setCommetPage=function(num){
 
@@ -778,7 +768,7 @@
 					}
 
 					$scope.zan=function($event,good,id,fid){
-//					console.log((new Date().getTime()-$localData.fetchData("good"+fid+id)),1000*60)
+					console.log((new Date().getTime()-$localData.fetchData("good"+fid+id)),1000*60)
 						if((new Date().getTime()-$localData.fetchData("good"+fid+id))>1000*60||$localData.fetchData("good"+fid+id).length==0){
 							$http.get($scope.host+"/plus/zan.php?action=goodfb&aid="+id+"&fid="+fid).success(function(data){
 							
@@ -846,7 +836,7 @@
 									
 									$http.get($scope.host+"/get_unlock.php?user="+$scope.data.user.M_ID+"&type=1")
 									.success(function(data){
-//										console.log(data,"getunlock,homectrl")
+										console.log(data,"getunlock,homectrl")
 										if(data.length&&$scope.questions&&$scope.questions.length){
 											for(var i=0;i<$scope.questions.length;i++){
 												for(var k=0;k<data.length;k++){
@@ -922,7 +912,6 @@
 										    	}				 	
 									 			question.showAnswer=false;			 	
 									 			$ionicSlideBoxDelegate.next();
-									 			$ionicScrollDelegate.scrollTo(0,0);
 											},time)
 										}
 
@@ -1001,7 +990,7 @@
 										if(data.status){
 											$scope.islogin=true;						
 											$getUser.get();
-//											console.log($getUser);
+											console.log($getUser);
 												// alert("成功，即将跳转")
 											// userFactory.user=data.user;
 											// window.localStorage.setItem("uid",data.user.id);
@@ -1040,7 +1029,7 @@
 										return
 									}
 									var oldid=$localData.fetchData("user");
-//									console.log(oldid);
+									console.log(oldid);
 									if(oldid[0]){
 										oldid=oldid[0].substring(12,18)
 									}else{
@@ -1132,7 +1121,7 @@ $http.get("/start/get_tutorial_list.php?typeid="+$scope.typeid)
 .success(function(data){
 	
 	$scope.tutorList=data;
-//	console.log($scope.tutorList);
+	console.log($scope.tutorList);
 	
 })
 	

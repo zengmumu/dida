@@ -1,5 +1,10 @@
 <ion-view>
 <div ng-controller="homeCtrl" >
+	 <style>
+                  	html,body{ height: 100%;}
+                  	.myfix{position: fixed;left:0; bottom:0;z-index: 1000;}
+                  </style>
+                   <div class="myfix"><button class="button button-blue button-block" ng-click="nextSlide(question)">继续</button></div>
 <!-- on-drag="toggleLeft($event)" -->
     <alert  msg="alertServer.msg" class="addNote"></alert>
     <div class=" bar bar-header bar-positive">
@@ -24,7 +29,7 @@
  </i></div>
 </ion-scroll>
     </div>
-    <ion-content delegate-handle="ques" class="has-header has-subheader article-ion" ng-class="{'has-footer':current.showbar}" overflow-scroll='false'>
+    <ion-content delegate-handle="ques" class="has-header has-subheader article-ion" on-scroll="handelScroll()"  ng-class="{'has-footer':current.showbar}" overflow-scroll='false'>
         <ion-slide-box disable-scroll="true" enable-slide="false" show-pager="false" on-slide-changed="slideHasChanged(index)">
              <!--  <ion-slide>
                 <div class="box blue text-center">
@@ -52,7 +57,7 @@
                   <div class="col text-right col-40 "><button class="button button-blue button-block" ng-click="nextSlide(question)">继续</button></div>
                     </div>
                   </div>
-                  
+                
                   
 
               <div  class="question" ng-if="question.channel==30">

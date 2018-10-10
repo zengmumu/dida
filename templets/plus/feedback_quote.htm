@@ -6,12 +6,13 @@
 <link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
 </head>
 <body class="commentpage">
+	<!--
 <div class="header">
     <div class="top w960 center">
       <div class="title">
        <h1><a href="{dede:global.cfg_basehost/}" title="{dede:global.cfg_webname/}"><img src="{dede:global.cfg_templets_skin/}/images/logo.gif" height="54" width="216" alt="{dede:global.cfg_webname/}"/></a> </h1>
       </div>
-      <!-- /title -->
+   
 		<div class="welcome">
         <?php if($cfg_ml->M_ID <= 0) { ?>
             您好,欢迎来到本网站,您还没有登陆,请先<a href="<?php echo $cfg_memberurl; ?>/index.php">登陆</a>或者<a href="<?php echo $cfg_memberurl; ?>/index_do.php?fmdo=user&dopost=regnew">注册</a>.
@@ -25,16 +26,16 @@
         }
         ?>
 		</div>
-      <!-- /banner -->
+    
     </div>
-    <!-- /top -->
+ 
 
-	</div><!-- /nav -->
-</div><!-- /header -->
+	</div>
+</div> /header -->
 
 <div class="w960 clear center mt1 cmt-box">
 	<div class="sp-title">
-		<h2>评论:<?php echo $row['arctitle'];?></h2>
+		<h2>评3论:<?php echo $row['arctitle'];?></h2>
 	</div>
 	<div>
 		<dl class="tbox">

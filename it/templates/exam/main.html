@@ -48,7 +48,7 @@
 		</style>
 		
     </div>
-     <ion-content class="has-header has-footer article-ion" overflow-scroll='false' on-scroll="handelScroll()">
+     <ion-content class="has-header  article-ion"  overflow-scroll='false' style="top: {{200-sc.t}}px" on-scroll="handelScroll()">
       
         <div class="chapters" ng-repeat="item in chapters" ng-class-odd="'cha-odd'" ng-class-even="'cha-even'" ng-class="{'last':$last}">
      
@@ -57,7 +57,7 @@
       </a>
         </div>
       </ion-content>
-     <div class="tabs tabs-icon-top">
+<!--<div class="tabs tabs-icon-top">
   <a class="tab-item tab-item-active" style="color: dodgerblue;"  >
   	
   	<i class="icon ion-ios-lightbulb" ></i>
@@ -72,6 +72,6 @@
     教程
   </a>
  
-</div>
+</div>-->
 </div>
  </ion-view>
